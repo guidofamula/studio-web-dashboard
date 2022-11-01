@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LocalizationController;
+use \UniSharp\LaravelFilemanager\Lfm;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,12 @@ Route::group([
     Route::get('/categories/select', [CategoryController::class, 'select'])->name('categories.select');
     // Dashboard Category (index, create, edit, update, show, destoy)
     Route::resource('/categories', CategoryController::class);
+    // Dashboard file manager
+    Route::group(['prefix' => 'filemanager'], function () { 
+        Lfm::routes();
+ });
+
+
 });
 // Dashboard end
 
