@@ -85,6 +85,13 @@
 @push('js-internal')
    <script>
    $(function() {
+      // Script untuk perolehan slug
+      function generateSlug(value){
+           return value.trim()
+            .toLowerCase()
+            .replace(/[^a-z\d-]/gi, '-')
+            .replace(/-+/g, '-').replace(/^-|-$/g, "");
+      } 
       // select2 parent category
       $('#select_category_parent').select2({
          theme: 'bootstrap4',
@@ -105,6 +112,23 @@
                };
             }
          }
+      });
+      // event untuk input title categoty agar otomatis slug
+      $('#input_category_title').change(function() {
+         let title = $(this).val();
+         // instance input title dan select parent category
+         let parentCategory = $('#select_category_parent').val() ?? "";
+         // Lakukan kombinasi title dan parent category
+         $('#input_category_slug').val(generateSlug(title + " " + parentCategory));
+      });
+
+      // event untuk select parent category
+      $('#select_category_parent').change(function() {
+         let title = $('#input_category_title').val();
+         // instance input title dan select parent category
+         let parentCategory = $(this).val() ?? "";
+         // Lakukan kombinasi title dan parent category
+         $('#input_category_slug').val(generateSlug(title + " " + parentCategory));
       });
    });
    </script>
