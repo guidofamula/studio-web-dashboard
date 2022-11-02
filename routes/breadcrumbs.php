@@ -10,7 +10,7 @@ use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
 // Dashboard Parent/induk
 Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
-    $trail->push('Dashboard', route('dashboard.index'));
+    $trail->push( trans('dashboard.title.index'), route('dashboard.index'));
 });
 
 // Dashboard -> Home
@@ -22,13 +22,25 @@ Breadcrumbs::for('dashboard-home', function (BreadcrumbTrail $trail) {
 // Dashboard -> Categories
 Breadcrumbs::for('dashboard-categories', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
-    $trail->push('Categories', route('categories.index'));
+    $trail->push(trans('categories.title.index'), route('categories.index'));
 });
 
 // Dashboard -> Categories -> Add Category
 Breadcrumbs::for('add-category', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard-categories');
-    $trail->push('Add Category', '#');
+    $trail->push( trans('categories.title.create'), '#');
+});
+
+// Dashboard -> Categories -> Edit Category
+Breadcrumbs::for('edit-category', function (BreadcrumbTrail $trail, $category) {
+    $trail->parent('dashboard-categories');
+    $trail->push(trans('categories.title.edit'), route('categories.edit', ['category' => $category]));
+});
+
+// Dashboard -> Categories -> Edit Category -> Title Category
+Breadcrumbs::for('edit-category-title', function (BreadcrumbTrail $trail, $category) {
+    $trail->parent('edit-category', $category);
+    $trail->push($category->title, '#');
 });
 
 // Home > Blog
