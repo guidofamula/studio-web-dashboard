@@ -36,6 +36,17 @@ class CategoryController extends Controller
         
     }
 
+    // Fitur Translate tambahan label
+    private function attribute()
+    {
+        return [
+            'title' => trans('categories.form_control.input.title.attribute'),
+            'slug' => trans('categories.form_control.input.slug.attribute'),
+            'thumbnail' => trans('categories.form_control.input.thumbnail.attribute'),
+            'description' => trans('categories.form_control.textarea.description.attribute'),
+        ];
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -61,7 +72,9 @@ class CategoryController extends Controller
                 'slug' => ['required', 'string', 'unique:categories,slug'],
                 'thumbnail' => ['required'],
                 'description' => ['required', 'string', 'min:20', 'max:225'],
-            ]
+            ],
+            [],
+            $this->attribute()
         );
 
         if ($validated->fails()) {
