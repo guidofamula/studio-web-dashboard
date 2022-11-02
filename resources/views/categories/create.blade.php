@@ -20,7 +20,7 @@
                    <label for="input_category_title" class="font-weight-bold">
                       {{ trans('categories.form_control.input.title.label') }}
                    </label>
-                   <input id="input_category_title" value="" name="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.title.placeholder') }}" />
+                   <input id="input_category_title" value="{{ old('title') }}" name="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.title.placeholder') }}" />
                    @error('title')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
                    <label for="input_category_slug" class="font-weight-bold">
                       {{ trans('categories.form_control.input.slug.label') }}
                    </label>
-                   <input id="input_category_slug" value="" name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.slug.placeholder') }}" readonly />
+                   <input id="input_category_slug" value="{{ old('slug') }}" name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.slug.placeholder') }}" readonly />
                    @error('slug')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -50,7 +50,7 @@
                             {{ trans('categories.button.browse.value') }}
                          </button>
                       </div>
-                      <input id="input_category_thumbnail" name="thumbnail" value="" type="text" class="form-control @error('thumbnail') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.thumbnail.placeholder') }}"
+                      <input id="input_category_thumbnail" name="thumbnail" value="{{ old('thumbnail') }}" type="text" class="form-control @error('thumbnail') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.thumbnail.placeholder') }}"
                          readonly />
                          @error('thumbnail')
                            <span class="invalid-feedback" role="alert">
@@ -67,6 +67,9 @@
                 <div class="form-group">
                    <label for="select_category_parent" class="font-weight-bold">{{ trans('categories.form_control.select.parent_category.label') }}</label>
                    <select id="select_category_parent" name="parent_category" data-placeholder="{{ trans('categories.form_control.select.parent_category.placeholder') }}" class="custom-select w-100">
+                     @if (old('parent_category'))
+                        <option value="{{ old('parent_category') }}" selected>{{ old('parent_category') }}</option>
+                     @endif
                    </select>
                 </div>
                 <!-- description -->
@@ -74,7 +77,7 @@
                    <label for="input_category_description" class="font-weight-bold">
                       {{ trans('categories.form_control.textarea.description.label') }}
                    </label>
-                   <textarea id="input_category_description" name="description" class="form-control @error('description') is-invalid @enderror" rows="3" placeholder="{{ trans('categories.form_control.textarea.description.placeholder') }}"></textarea>
+                   <textarea id="input_category_description" name="description" class="form-control @error('description') is-invalid @enderror" rows="3" placeholder="{{ trans('categories.form_control.textarea.description.placeholder') }}">{{ old('description') }}</textarea>
                    @error('description')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
