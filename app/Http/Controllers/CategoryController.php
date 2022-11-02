@@ -65,6 +65,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        // Validation process store category
         $validated = Validator::make(
             $request->all(),
             [
@@ -78,6 +79,24 @@ class CategoryController extends Controller
         );
 
         if ($validated->fails()) {
+            if ($request->has('parent_category')) {
+                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            }
+            return redirect()->back()->withInput($request->all())->withErrors($validated);
+        }
+
+        // insert process while category successfull to validated
+        try {
+            Category::create([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'thumbnail' => parse_url($request->thumbnail)['path'],
+                'description' => $request->description,
+                'parent_id' => $request->parent_category,
+            ]);
+
+            return redirect()->route('categories.index');
+        } catch (\Throwable $th) {
             if ($request->has('parent_category')) {
                 $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
             }
