@@ -11,7 +11,7 @@
       <i class="fas fa-eye"></i>
     </a>
     <!-- edit -->
-    <a class="btn btn-sm btn-info" role="button">
+    <a href="{{ route('categories.edit', ['category' => $category]) }}" class="btn btn-sm btn-info" role="button">
       <i class="fas fa-edit"></i>
     </a>
     <!-- delete -->
