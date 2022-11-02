@@ -68,7 +68,7 @@
                    <label for="select_category_parent" class="font-weight-bold">{{ trans('categories.form_control.select.parent_category.label') }}</label>
                    <select id="select_category_parent" name="parent_category" data-placeholder="{{ trans('categories.form_control.select.parent_category.placeholder') }}" class="custom-select w-100">
                      @if (old('parent_category'))
-                        <option value="{{ old('parent_category') }}" selected>{{ old('parent_category') }}</option>
+                        <option value="{{ old('parent_category')->id }}" selected>{{ old('parent_category')->title }}</option>
                      @endif
                    </select>
                 </div>
