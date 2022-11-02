@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -53,12 +54,23 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => ['required', 'string', 'max:60'],
-            'slug' => ['required', 'string', 'unique:categories,slug'],
-            'thumbnail' => ['required'],
-            'description' => ['required', 'string', 'min:20', 'max:225'],
-        ]);
+        $validated = Validator::make(
+            $request->all(),
+            [
+                'title' => ['required', 'string', 'max:60'],
+                'slug' => ['required', 'string', 'unique:categories,slug'],
+                'thumbnail' => ['required'],
+                'description' => ['required', 'string', 'min:20', 'max:225'],
+            ]
+        );
+
+        if ($validated->fails()) {
+            if ($request->has('parent_category')) {
+                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            }
+            return redirect()->back()->withInput($request->all())->withErrors($validated);
+        }
+
     }
 
     /**
