@@ -108,7 +108,7 @@ class CategoryController extends Controller
                 trans('categories.alert.create.title'),
                 trans('categories.alert.create.message.error' . ['error' => $th->getMessage()])
             );
-            return redirect()->back()->withInput($request->all())->withErrors($validated);
+            return redirect()->back()->withInput($request->all());
         }
 
     }
@@ -146,7 +146,50 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        // Validation process update category
+        $validated = Validator::make(
+            $request->all(),
+            [
+                'title' => ['required', 'string', 'max:60'],
+                'slug' => 'required|string|unique:categories,slug,' . $category->id,
+                'thumbnail' => ['required'],
+                'description' => ['required', 'string', 'min:20', 'max:225'],
+            ],
+            [],
+            $this->attribute()
+        );
+
+        if ($validated->fails()) {
+            if ($request->has('parent_category')) {
+                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            }
+            return redirect()->back()->withInput($request->all())->withErrors($validated);
+        }
+
+        // edit & update process while category successfull to validated
+        try {
+            $category->update([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'thumbnail' => parse_url($request->thumbnail)['path'],
+                'description' => $request->description,
+                'parent_id' => $request->parent_category,
+            ]);
+            Alert::success(
+                trans('categories.alert.update.title'),
+                trans('categories.alert.update.message.success')
+            );
+            return redirect()->route('categories.index');
+        } catch (\Throwable $th) {
+            if ($request->has('parent_category')) {
+                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            }
+            Alert::error(
+                trans('categories.alert.update.title'),
+                trans('categories.alert.update.message.error' . ['error' => $th->getMessage()])
+            );
+            return redirect()->back()->withInput($request->all());
+        }
     }
 
     /**
