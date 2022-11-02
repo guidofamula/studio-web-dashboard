@@ -13,14 +13,14 @@
     <div class="col-md-12">
        <div class="card">
           <div class="card-body">
-             <form action="{{ route('categories.store') }}" method="POST">
+             <form action="{{ route('categories.store') }}" method="PUT">
                @csrf
                 <!-- title -->
                 <div class="form-group">
                    <label for="input_category_title" class="font-weight-bold">
                       {{ trans('categories.form_control.input.title.label') }}
                    </label>
-                   <input id="input_category_title" value="{{ old('title') }}" name="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.title.placeholder') }}" />
+                   <input id="input_category_title" value="{{ old('title', $category->title) }}" name="title" type="text" class="form-control @error('title') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.title.placeholder') }}" />
                    @error('title')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
                    <label for="input_category_slug" class="font-weight-bold">
                       {{ trans('categories.form_control.input.slug.label') }}
                    </label>
-                   <input id="input_category_slug" value="{{ old('slug') }}" name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.slug.placeholder') }}" readonly />
+                   <input id="input_category_slug" value="{{ old('slug', $category->slug) }}" name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.slug.placeholder') }}" readonly />
                    @error('slug')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
@@ -50,7 +50,7 @@
                             {{ trans('categories.button.browse.value') }}
                          </button>
                       </div>
-                      <input id="input_category_thumbnail" name="thumbnail" value="{{ old('thumbnail') }}" type="text" class="form-control @error('thumbnail') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.thumbnail.placeholder') }}"
+                      <input id="input_category_thumbnail" name="thumbnail" value="{{ old('thumbnail', asset($category->thumbnail)) }}" type="text" class="form-control @error('thumbnail') is-invalid @enderror" placeholder="{{ trans('categories.form_control.input.thumbnail.placeholder') }}"
                          readonly />
                          @error('thumbnail')
                            <span class="invalid-feedback" role="alert">
@@ -67,8 +67,9 @@
                 <div class="form-group">
                    <label for="select_category_parent" class="font-weight-bold">{{ trans('categories.form_control.select.parent_category.label') }}</label>
                    <select id="select_category_parent" name="parent_category" data-placeholder="{{ trans('categories.form_control.select.parent_category.placeholder') }}" class="custom-select w-100">
-                     @if (old('parent_category'))
-                        <option value="{{ old('parent_category')->id }}" selected>{{ old('parent_category')->title }}</option>
+                     {{-- If child have parent before edit, show the parent in the option, if not option is null --}}
+                     @if (old('parent_category', $category->parent))
+                        <option value="{{ old('parent_category', $category->parent)->id }}" selected>{{ old('parent_category', $category->parent)->title }}</option>
                      @endif
                    </select>
                 </div>
@@ -77,7 +78,7 @@
                    <label for="input_category_description" class="font-weight-bold">
                       {{ trans('categories.form_control.textarea.description.label') }}
                    </label>
-                   <textarea id="input_category_description" name="description" class="form-control @error('description') is-invalid @enderror" rows="3" placeholder="{{ trans('categories.form_control.textarea.description.placeholder') }}">{{ old('description') }}</textarea>
+                   <textarea id="input_category_description" name="description" class="form-control @error('description') is-invalid @enderror" rows="3" placeholder="{{ trans('categories.form_control.textarea.description.placeholder') }}">{{ old('description', $category->description) }}</textarea>
                    @error('description')
                       <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
