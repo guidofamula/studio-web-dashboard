@@ -22,12 +22,12 @@
     </form>
   </div>
   <!-- todo:show subcategory -->
-    @if($category->descendants)
+    {{-- @if($category->descendants)
         @include('categories._category-list', [
             'categories' => $category->descendants,
             'count' => $count + 2
         ])
-    @endif
+    @endif --}}
 </li>
 <!-- end  category list -->
 @endforeach
