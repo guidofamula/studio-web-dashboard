@@ -9,33 +9,35 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title',
-        'slug',
-        'thumbnail',
-        'description',
-        'parent_id',
-    ];
+    // protected $fillable = [
+    //     'title',
+    //     'slug',
+    //     'thumbnail',
+    //     'description',
+    //     'category_id',
+    // ];
 
-    public function scopeOnlyParent($query)
-    {
-        return $query->whereNull('parent_id');
-    }
+    protected $guarded = ['id'];
+
+    // public function scopeOnlyParent($query)
+    // {
+    //     return $query->whereNull('category_id');
+    // }
 
     // class model for child category
-    public function parent()
-    {
-        return $this->belongsTo(self::class);
-    }
+    // public function parent()
+    // {
+    //     return $this->belongsTo(self::class);
+    // }
 
     // Clas model for parent category
-    public function children()
-    {
-        return $this->hasMany(self::class, 'parent_id');
-    }
+    // public function category()
+    // {
+    //     return $this->hasMany(self::class, 'category_id');
+    // }
 
-    public function descendants()
-    {
-        return $this->children()->with('descendants');
-    }
+    // public function descendants()
+    // {
+    //     return $this->children()->with('descendants');
+    // }
 }
