@@ -13,7 +13,7 @@
     <div class="col-md-12">
        <div class="card">
           <div class="card-body">
-             <form action="{{ route('categories.update', ['category' => $category]) }}" method="POST">
+             <form action="{{ route('categories.update', ['category' => $category]) }}" method="POST" enctype="multipart/form-data">
                @method('PUT')
                @csrf
                 <!-- title -->
@@ -64,17 +64,25 @@
                 <div id="holder">
                    
                 </div>
-                <!-- parent_category -->
-                <div class="form-group">
-                   <label for="select_category_parent" class="font-weight-bold">{{ trans('categories.form_control.select.parent_category.label') }}</label>
-                   <select id="select_category_parent" name="parent_category" data-placeholder="{{ trans('categories.form_control.select.parent_category.placeholder') }}" class="custom-select w-100">
+                <!-- Category -->
+                {{-- <div class="form-group">
+                   <label for="select_category" class="font-weight-bold">{{ trans('categories.form_control.select.parent_category.label') }}</label>
+                   <select id="select_category" name="category" data-placeholder="{{ trans('categories.form_control.select.parent_category.placeholder') }}" class="custom-select w-100"> --}}
                      {{-- If child have parent before edit, show the parent in the option, if not option is null --}}
                      {{-- Status: cannot enable --}}
-                     @if (old('parent_category', $category->parent))
+                     {{-- Bug: if use same parent, after back to dashboard index, parent and child category is gone/disable --}}
+                    {{--  @if (old('parent_category', $category->parent))
                         <option value="{{ old('parent_category', $category->parent)->id }}" selected>{{ old('parent_category', $category->parent)->title }}</option>
-                     @endif
-                   </select>
-                </div>
+                     @endif --}}
+                     {{-- @foreach ($categories as $category) --}}
+                     {{-- @if (old('category_id') == $category->id)
+                        <option value="{{ $category->id }}" selected>{{ $category->title }}</option>
+                       @else
+                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                     @endif --}}
+                     {{-- @endforeach --}}
+                   {{-- </select> --}}
+                {{-- </div> --}}
                 <!-- description -->
                 <div class="form-group">
                    <label for="input_category_description" class="font-weight-bold">
@@ -126,43 +134,43 @@
             .replace(/-+/g, '-').replace(/^-|-$/g, "");
       } 
       // select2 parent category
-      $('#select_category_parent').select2({
-         theme: 'bootstrap4',
-         language: "{{ app()->getLocale() }}",
-         allowClear: true,
-         ajax: {
-            url: "{{ route('categories.select') }}",
-            dataType: 'json',
-            delay: 250,
-            processResults: function(data) {
-               return {
-                  results: $.map(data, function(item) {
-                     return {
-                        text: item.title,
-                        id: item.id
-                     }
-                  })
-               };
-            }
-         }
-      });
+      // $('#select_category').select2({
+      //    theme: 'bootstrap4',
+      //    language: "{{ app()->getLocale() }}",
+      //    allowClear: true,
+      //    ajax: {
+      //       url: "{{ route('categories.select') }}",
+      //       dataType: 'json',
+      //       delay: 250,
+      //       processResults: function(data) {
+      //          return {
+      //             results: $.map(data, function(item) {
+      //                return {
+      //                   text: item.title,
+      //                   id: item.id
+      //                }
+      //             })
+      //          };
+      //       }
+      //    }
+      // });
       // event untuk input title categoty agar otomatis slug
       $('#input_category_title').change(function() {
          let title = $(this).val();
          // instance input title dan select parent category
-         let parentCategory = $('#select_category_parent').val() ?? "";
+         let category = $('#select_category').val() ?? "";
          // Lakukan kombinasi title dan parent category
-         $('#input_category_slug').val(generateSlug(title + " " + parentCategory));
+         $('#input_category_slug').val(generateSlug(title + " " + category));
       });
 
       // event untuk select parent category
-      $('#select_category_parent').change(function() {
-         let title = $('#input_category_title').val();
-         // instance input title dan select parent category
-         let parentCategory = $(this).val() ?? "";
-         // Lakukan kombinasi title dan parent category
-         $('#input_category_slug').val(generateSlug(title + " " + parentCategory));
-      });
+      // $('#select_category').change(function() {
+      //    let title = $('#input_category_title').val();
+      //    // instance input title dan select parent category
+      //    let category = $(this).val() ?? "";
+      //    // Lakukan kombinasi title dan parent category
+      //    $('#input_category_slug').val(generateSlug(title + " " + category));
+      // });
 
       // Event thumbnail
       $('#button_category_thumbnail').filemanager('image');
