@@ -136,10 +136,10 @@
       // select2 parent category
       // $('#select_category').select2({
       //    theme: 'bootstrap4',
-      //    language: "{{ app()->getLocale() }}",
+      {{-- //    language: "{{ app()->getLocale() }}", --}}
       //    allowClear: true,
       //    ajax: {
-      //       url: "{{ route('categories.select') }}",
+      {{-- //       url: "{{ route('categories.select') }}", --}}
       //       dataType: 'json',
       //       delay: 250,
       //       processResults: function(data) {

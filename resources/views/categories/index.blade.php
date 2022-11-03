@@ -69,6 +69,7 @@
 				}).then((result) => {
 				   if (result.isConfirmed) {
 				      // todo: process of deleting categories
+				      e.target.submit();
 				   }
 				});
 			});

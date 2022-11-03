@@ -201,6 +201,19 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        try {
+            $category->delete();
+            Alert::success(
+                trans('categories.alert.delete.title'),
+                trans('categories.alert.delete.message.success')
+            );
+        } catch (\Throwable $th) {
+            Alert::error(
+                trans('categories.alert.delete.title'),
+                trans('categories.alert.delete.message.error', ['error' => $th->getMessage()])
+            );
+        }
+
+        return redirect()->back();
     }
 }

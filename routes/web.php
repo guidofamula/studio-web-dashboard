@@ -35,8 +35,8 @@ Route::group([
     // Dashboard Index
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
     // Categories method select
-    Route::get('/categories/select', [CategoryController::class, 'select'])->name('categories.select');
-    // Dashboard Category (index, create, edit, update, show, destoy)
+    // Route::get('/categories/select', [CategoryController::class, 'select'])->name('categories.select');
+    // Dashboard Category (index, create, edit, update, show, destroy)
     Route::resource('/categories', CategoryController::class);
     // Dashboard file manager
     Route::group(['prefix' => 'filemanager'], function () { 
