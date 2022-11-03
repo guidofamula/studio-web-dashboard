@@ -13,7 +13,7 @@
     <div class="col-md-12">
        <div class="card">
           <div class="card-body">
-             <form action="{{ route('categories.store') }}" method="POST">
+             <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
                @csrf
                 <!-- title -->
                 <div class="form-group">
@@ -64,14 +64,14 @@
                    
                 </div>
                 <!-- parent_category -->
-                <div class="form-group">
+                {{-- <div class="form-group">
                    <label for="select_category_parent" class="font-weight-bold">{{ trans('categories.form_control.select.parent_category.label') }}</label>
                    <select id="select_category_parent" name="parent_category" data-placeholder="{{ trans('categories.form_control.select.parent_category.placeholder') }}" class="custom-select w-100">
                      @if (old('parent_category'))
                         <option value="{{ old('parent_category')->id }}" selected>{{ old('parent_category')->title }}</option>
                      @endif
                    </select>
-                </div>
+                </div> --}}
                 <!-- description -->
                 <div class="form-group">
                    <label for="input_category_description" class="font-weight-bold">
@@ -123,43 +123,43 @@
             .replace(/-+/g, '-').replace(/^-|-$/g, "");
       } 
       // select2 parent category
-      $('#select_category_parent').select2({
-         theme: 'bootstrap4',
-         language: "{{ app()->getLocale() }}",
-         allowClear: true,
-         ajax: {
-            url: "{{ route('categories.select') }}",
-            dataType: 'json',
-            delay: 250,
-            processResults: function(data) {
-               return {
-                  results: $.map(data, function(item) {
-                     return {
-                        text: item.title,
-                        id: item.id
-                     }
-                  })
-               };
-            }
-         }
-      });
+      // $('#select_category_parent').select2({
+      //    theme: 'bootstrap4',
+      {{-- //    language: "{{ app()->getLocale() }}", --}}
+      //    allowClear: true,
+      //    ajax: {
+      {{-- //       url: "{{ route('categories.select') }}", --}}
+      //       dataType: 'json',
+      //       delay: 250,
+      //       processResults: function(data) {
+      //          return {
+      //             results: $.map(data, function(item) {
+      //                return {
+      //                   text: item.title,
+      //                   id: item.id
+      //                }
+      //             })
+      //          };
+      //       }
+      //    }
+      // });
       // event untuk input title categoty agar otomatis slug
       $('#input_category_title').change(function() {
          let title = $(this).val();
          // instance input title dan select parent category
-         let parentCategory = $('#select_category_parent').val() ?? "";
+         let category = $('#select_category_parent').val() ?? "";
          // Lakukan kombinasi title dan parent category
-         $('#input_category_slug').val(generateSlug(title + " " + parentCategory));
+         $('#input_category_slug').val(generateSlug(title + " " + category));
       });
 
       // event untuk select parent category
-      $('#select_category_parent').change(function() {
-         let title = $('#input_category_title').val();
-         // instance input title dan select parent category
-         let parentCategory = $(this).val() ?? "";
-         // Lakukan kombinasi title dan parent category
-         $('#input_category_slug').val(generateSlug(title + " " + parentCategory));
-      });
+      // $('#select_category_parent').change(function() {
+      //    let title = $('#input_category_title').val();
+      //    // instance input title dan select parent category
+      //    let parentCategory = $(this).val() ?? "";
+      //    // Lakukan kombinasi title dan parent category
+      //    $('#input_category_slug').val(generateSlug(title + " " + parentCategory));
+      // });
 
       // Event thumbnail
       $('#button_category_thumbnail').filemanager('image');
