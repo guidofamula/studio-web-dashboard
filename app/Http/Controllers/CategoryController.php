@@ -16,26 +16,25 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::onlyParent()->with('descendants')->get();
         return view('categories.index', [
-            'categories' => $categories
+            'categories' => Category::latest()->paginate(5),
         ]);
     }
 
     // Controller untuk script select2 pada categories create.blade.php
-    public function select(Request $request)
-    {
-        $categories = [];
-        if ($request->has('q')) {
-            $search = $request->q;
-            $categories = Category::select('id', 'title')->where('title', 'LIKE', "%$search%")->limit(6)->get();
-        } else {
-            $categories = Category::select('id', 'title')->onlyParent()->limit(6)->get();
-        }
+    // public function select(Request $request)
+    // {
+    //     $categories = [];
+    //     if ($request->has('q')) {
+    //         $search = $request->q;
+    //         $categories = Category::select('id', 'title')->where('title', 'LIKE', "%$search%")->limit(6)->get();
+    //     } else {
+    //         $categories = Category::select('id', 'title')->limit(6)->get();
+    //     }
 
-        return response()->json($categories);
+    //     return response()->json($categories);
         
-    }
+    // }
 
     // Fitur Translate tambahan label
     private function attribute()
@@ -72,16 +71,16 @@ class CategoryController extends Controller
             [
                 'title' => ['required', 'string', 'max:60'],
                 'slug' => ['required', 'string', 'unique:categories,slug'],
-                'thumbnail' => ['required'],
-                'description' => ['required', 'string', 'min:20', 'max:225'],
+                'thumbnail' => ['required', 'max:2048'],
+                'description' => ['required', 'string', 'max:225'],
             ],
             [],
             $this->attribute()
         );
 
         if ($validated->fails()) {
-            if ($request->has('parent_category')) {
-                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            if ($request->has('category')) {
+                $request['category'] = Category::select('id', 'title')->find($request->category);
             }
             return redirect()->back()->withInput($request->all())->withErrors($validated);
         }
@@ -93,7 +92,6 @@ class CategoryController extends Controller
                 'slug' => $request->slug,
                 'thumbnail' => parse_url($request->thumbnail)['path'],
                 'description' => $request->description,
-                'parent_id' => $request->parent_category,
             ]);
             Alert::success(
                 trans('categories.alert.create.title'),
@@ -101,12 +99,12 @@ class CategoryController extends Controller
             );
             return redirect()->route('categories.index');
         } catch (\Throwable $th) {
-            if ($request->has('parent_category')) {
-                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            if ($request->has('category')) {
+                $request['category'] = Category::select('id', 'title')->find($request->category);
             }
             Alert::error(
                 trans('categories.alert.create.title'),
-                trans('categories.alert.create.message.error' . ['error' => $th->getMessage()])
+                trans('categories.alert.create.message.error'),
             );
             return redirect()->back()->withInput($request->all());
         }
@@ -150,18 +148,19 @@ class CategoryController extends Controller
         $validated = Validator::make(
             $request->all(),
             [
-                'title' => ['required', 'string', 'max:60'],
+                'title' => 'required|string|max:60|unique:categories,title' . $category->title,
                 'slug' => 'required|string|unique:categories,slug,' . $category->id,
                 'thumbnail' => ['required'],
-                'description' => ['required', 'string', 'min:20', 'max:225'],
+                'description' => ['required', 'string', 'max:225'],
             ],
             [],
             $this->attribute()
         );
 
+
         if ($validated->fails()) {
-            if ($request->has('parent_category')) {
-                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            if ($request->has('category')) {
+                $request['category'] = Category::select('id', 'title', 'slug', 'thumbnail', 'description')->find($request->category);
             }
             return redirect()->back()->withInput($request->all())->withErrors($validated);
         }
@@ -173,7 +172,6 @@ class CategoryController extends Controller
                 'slug' => $request->slug,
                 'thumbnail' => parse_url($request->thumbnail)['path'],
                 'description' => $request->description,
-                'parent_id' => $request->parent_category,
             ]);
             Alert::success(
                 trans('categories.alert.update.title'),
@@ -181,12 +179,13 @@ class CategoryController extends Controller
             );
             return redirect()->route('categories.index');
         } catch (\Throwable $th) {
-            if ($request->has('parent_category')) {
-                $request['parent_category'] = Category::select('id', 'title')->find($request->parent_category);
+            if ($request->has('category')) {
+                $request['category'] = Category::select('id', 'title')->find($request->category);
             }
+
             Alert::error(
                 trans('categories.alert.update.title'),
-                trans('categories.alert.update.message.error' . ['error' => $th->getMessage()])
+                trans('categories.alert.update.message.error'),
             );
             return redirect()->back()->withInput($request->all());
         }
