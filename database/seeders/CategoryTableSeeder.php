@@ -23,7 +23,6 @@ class CategoryTableSeeder extends Seeder
                 'thumbnail' => 'noimage.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-                'parent_id' => null
                 ],
                 [
                 'title' => 'HTML basic',
@@ -32,7 +31,6 @@ class CategoryTableSeeder extends Seeder
                 'thumbnail' => 'noimage.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-                'parent_id' => 1
                 ],
                 [
                 'title' => 'HTML advanced',
@@ -41,7 +39,6 @@ class CategoryTableSeeder extends Seeder
                 'thumbnail' => 'noimage.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-                'parent_id' => 1
                 ],
                 [
                 'title' => 'CSS',
@@ -50,7 +47,6 @@ class CategoryTableSeeder extends Seeder
                 'thumbnail' => 'noimage.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-                'parent_id' => null
                 ],
                 [
                 'title' => 'Javascript',
@@ -59,7 +55,6 @@ class CategoryTableSeeder extends Seeder
                 'thumbnail' => 'noimage.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-                'parent_id' => null
                 ],
                 [
                 'title' => 'PHP',
@@ -68,7 +63,6 @@ class CategoryTableSeeder extends Seeder
                 'thumbnail' => 'noimage.jpg',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-                'parent_id' => null
             ],
         ]);
     }
