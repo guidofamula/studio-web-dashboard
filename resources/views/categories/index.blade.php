@@ -50,3 +50,28 @@
 	{{ $categories->links() }}
 
 @endsection
+
+@push('js-internal')
+	<script>
+		$(document).ready(function() {
+			// Event delete category
+			$("form[role='alert-delete']").submit(function(e) {
+				e.preventDefault();
+				Swal.fire({
+				   title: $(this).attr('alert-title'),
+				   text: $(this).attr('alert-text'),
+				   icon: 'warning',
+				   allowOutsideClick: false,
+				   showCancelButton: true,
+				   cancelButtonText: $(this).attr('alert-btn-cancel'),
+				   reverseButtons: true,
+				   confirmButtonText: $(this).attr('alert-btn-yes'),
+				}).then((result) => {
+				   if (result.isConfirmed) {
+				      // todo: process of deleting categories
+				   }
+				});
+			});
+		});
+	</script>
+@endpush
