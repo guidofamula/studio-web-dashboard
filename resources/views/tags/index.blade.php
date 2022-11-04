@@ -41,7 +41,7 @@
             <ul class="list-group list-group-flush">
                <!-- list tag -->
                @if (count($tags))
-               	@include('tags._tags-list')
+               	@include('tags._tag-list')
                @else
                <p>
                	<strong>

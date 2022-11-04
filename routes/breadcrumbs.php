@@ -61,11 +61,29 @@ Breadcrumbs::for('dashboard-tags', function (BreadcrumbTrail $trail) {
     $trail->push(trans('tags.title.index'), route('tags.index'));
 });
 
-// Dashboard -> Tags -> Create
+// Dashboard -> Tags -> Add
 Breadcrumbs::for('add-tag', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard-tags');
-    $trail->push(trans('tags.title.create'), route('tags.create'));
+    $trail->push(trans('tags.title.create'), '#');
 });
+
+// Dashboard -> Categories -> Edit Tag -> [title]
+Breadcrumbs::for('edit-tag', function (BreadcrumbTrail $trail, $tag) {
+    $trail->parent('dashboard-tags');
+    $trail->push(trans('tags.title.edit'), route('tags.edit', ['tag' => $tag]));
+    $trail->push($tag->title, route('tags.edit', ['tag' => $tag] ));
+});
+
+// // Dashboard -> Categories -> Edit Category -> Title Category
+// Breadcrumbs::for('edit-tag-title', function (BreadcrumbTrail $trail, $tag) {
+//     $trail->parent('edit-tag', $tag);
+// });
+
+// Breadcrumbs::for('edit-tag', function (BreadcrumbTrail $trail, $tag) {
+//     $trail->parent('dashboard-tags');
+//     $trail->push(trans('tags.title.edit'), route('tags.edit', ['tag' => $tag]));
+//     $trail->push($tag->title, route('tags.edit', ['tag' => $tag]));
+// });
 
 // Home > Blog
 // Breadcrumbs::for('blog', function (BreadcrumbTrail $trail) {
