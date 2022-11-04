@@ -40,6 +40,15 @@
          <div class="card-body">
             <ul class="list-group list-group-flush">
                <!-- list tag -->
+               @if (count($tags))
+               	@include('tags._tags-list')
+               @else
+               <p>
+               	<strong>
+               		{{ trans('tags.label.no_data.fetch') }}
+               	</strong>
+               </p>
+               @endif
             </ul>
          </div>
       </div>
