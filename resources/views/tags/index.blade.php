@@ -56,3 +56,29 @@
 </div>
 
 @endsection
+
+@push('js-internal')
+   <script>
+      $(document).ready(function() {
+         // Event for delete tag
+         $("form[role='alert']").submit(function(e) {
+            e.preventDefault();
+            Swal.fire({
+               title: "{{ trans('tags.alert.delete.title') }}",
+               text: $(this).attr('alert-text'),
+               icon: 'warning',
+               allowOutsideClick: false,
+               showCancelButton: true,
+               cancelButtonText: "{{ trans('tags.button.cancel.value') }}",
+               reverseButtons: true,
+               confirmButtonText: "{{ trans('tags.button.delete.value') }}",
+            }).then((result) => {
+               if (result.isConfirmed) {
+                  // todo: process of deleting categories
+                  e.target.submit();
+               }
+            });
+         });
+      });
+   </script>
+@endpush

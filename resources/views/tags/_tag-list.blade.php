@@ -11,7 +11,11 @@
       <i class="fas fa-edit"></i>
     </a>
     <!-- delete -->
-    <form class="d-inline" action="" method="POST">
+    <form class="d-inline" role="alert"
+    alert-text="{{ trans('tags.alert.delete.message.confirm', ['title' => $tag->title]) }}"
+    action="{{ route('tags.destroy', ['tag' => $tag]) }}" method="POST">
+    @csrf
+    @method('DELETE')
       <button type="submit" class="btn btn-sm btn-danger">
         <i class="fas fa-trash"></i>
       </button>
