@@ -128,6 +128,11 @@
 </div>
 @endsection
 
+@push('js-external')
+	{{-- Button thumbnail for file manager --}}
+	<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}" ></script>
+@endpush
+
 @push('js-internal')
 	<script>
 		$(document).ready(function() {
@@ -142,6 +147,9 @@
 			      .replace(/^-|-$/g, "")
 			  );
 			});
+			// Event untuk membuka pop up thumbnail
+			$('#button_post_thumbnail').filemanager('image');
+
 		});
 	</script>
 @endpush
