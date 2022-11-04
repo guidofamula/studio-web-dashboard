@@ -41,7 +41,7 @@ Route::group([
     Route::resource('/categories', CategoryController::class);
 
     // Dashboard Tags (index, create, edit, update, show, destroy)
-    Route::resource('/tags', TagController::class);
+    Route::resource('/tags', TagController::class)->except('show');
 
     // Dashboard file manager
     Route::group(['prefix' => 'filemanager'], function () { 
