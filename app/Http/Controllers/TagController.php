@@ -69,7 +69,7 @@ class TagController extends Controller
     }
 
     // Set for multilanguages
-    private function getAttibutes()
+    private function getAttributes()
     {
         return [
             'title' => trans('tags.form_control.input.title.attribute'),
@@ -115,7 +115,7 @@ class TagController extends Controller
             'slug' => 'required|string|unique:tags,slug,' . $tag->id,
         ],
         [],
-        $this->getAttibutes()
+        $this->getAttributes()
     )->validate();
 
         try {
