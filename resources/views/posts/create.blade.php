@@ -88,10 +88,8 @@
                        <label for="select_post_tag" class="font-weight-bold">
                           {{ trans('posts.form_control.select.tag.label') }}
                        </label>
-                       <select id="select_post_tag" name="tag" data-placeholder="" class="custom-select w-100"
-                          multiple>
-                          <option value="tag1">tag 1</option>
-                          <option value="tag2">tag 2</option>
+                       <select id="select_post_tag" name="tag" data-placeholder="" class="custom-select w-100" multiple>
+
                        </select>
                     </div>
                     <!-- status -->
@@ -125,6 +123,11 @@
 </div>
 @endsection
 
+@push('css-external')
+   <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2-bootstrap4.min.css') }}">
+@endpush
+
 @push('js-external')
 	{{-- Button thumbnail for file manager --}}
 	<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}" ></script>
@@ -132,6 +135,9 @@
 	<script src="{{ asset('vendor/tinymce5/jquery.tinymce.min.js') }}"></script>
 	{{-- JS for TinyMCE 5 --}}
 	<script src="{{ asset('vendor/tinymce5/tinymce.min.js') }}"></script>
+	{{-- JS for select2 --}}
+	<script src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
+  <script src="{{ asset('vendor/select2/js/i18n/' . app()->getLocale() . '.js') }}"></script>
 @endpush
 
 @push('js-internal')
@@ -190,7 +196,27 @@
 					}
 
 			});
-
+			// Event select2 for tags
+			$('#select_post_tag').select2({
+			   theme: 'bootstrap4',
+			   language: "{{ app()->getLocale() }}",
+			   allowClear: true,
+			   ajax: {
+			      url: "{{ route('tags.select') }}",
+			      dataType: 'json',
+			      delay: 250,
+			      processResults: function(data) {
+			         return {
+			            results: $.map(data, function(item) {
+			               return {
+			                  text: item.title,
+			                  id: item.id
+			               }
+			            })
+			         };
+			      }
+			   }
+			});
 		});
 	</script>
 @endpush

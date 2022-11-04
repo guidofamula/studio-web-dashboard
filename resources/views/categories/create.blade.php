@@ -100,14 +100,14 @@
 
 @endsection
 
-@push('css-external')
+{{-- @push('css-external')
    <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2.min.css') }}">
    <link rel="stylesheet" href="{{ asset('vendor/select2/css/select2-bootstrap4.min.css') }}">
-@endpush
+@endpush --}}
 
 @push('js-external')
-   <script src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
-   <script src="{{ asset('vendor/select2/js/i18n/' . app()->getLocale() . '.js') }}"></script>
+   {{-- <script src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
+   <script src="{{ asset('vendor/select2/js/i18n/' . app()->getLocale() . '.js') }}"></script> --}}
    {{-- JS for file manager --}}
    <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 @endpush
