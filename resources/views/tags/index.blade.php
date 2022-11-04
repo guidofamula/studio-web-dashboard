@@ -30,7 +30,7 @@
 
                </div>
                <div class="col-md-6">
-                  <a href="#" class="btn btn-primary float-right" role="button">
+                  <a href="{{ route('tags.create') }}" class="btn btn-primary float-right" role="button">
                      {{ trans('tags.button.create.value') }}
                      <i class="fas fa-plus-square"></i>
                   </a>
