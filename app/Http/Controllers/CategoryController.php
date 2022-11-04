@@ -27,7 +27,7 @@ class CategoryController extends Controller
             $categories->appends(['keyword' => $search]);
         }
         else {
-            $categories = Category::latest()->paginate(5);
+            $categories = Category::latest()->paginate(5)->appends(['keyword' => $request->get('keyword')]);
         }
         return view('categories.index', [
             'categories' => $categories,
