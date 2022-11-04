@@ -80,6 +80,12 @@ Breadcrumbs::for('dashboard-posts', function (BreadcrumbTrail $trail) {
     $trail->push(trans('posts.title.index'), route('posts.index'));
 });
 
+// Dashboard -> Posts -> Add Post
+Breadcrumbs::for('add-post', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard-posts');
+    $trail->push(trans('posts.title.create'), '#');
+});
+
 // // Dashboard -> Categories -> Edit Category -> Title Category
 // Breadcrumbs::for('edit-tag-title', function (BreadcrumbTrail $trail, $tag) {
 //     $trail->parent('edit-tag', $tag);
