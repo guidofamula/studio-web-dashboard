@@ -19,6 +19,12 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
+    // searching dependen by title
+    // public function scopeSearch($query, $title)
+    // {
+    //     return $query->where('title', 'LIKE', "%{$title}%");
+    // }
+
     // public function scopeOnlyParent($query)
     // {
     //     return $query->whereNull('category_id');

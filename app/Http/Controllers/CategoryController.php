@@ -14,11 +14,38 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $categories = Category::paginate(5);
+        $search = $request->keyword;
+
+        if($search != "") {
+            $categories = Category::where(function($query) use ($search) {
+                $query->where('title', 'like', '%'.$search.'%');
+            })
+            ->paginate(5);
+            $categories->appends(['keyword' => $search]);
+        }
+        else {
+            $categories = Category::paginate(5);
+        }
         return view('categories.index', [
-            'categories' => Category::latest()->paginate(5),
+            'categories' => $categories,
         ]);
+
+        // if ($request->has('keyword') && trim($request->keyword)) {
+        //     $category = Category::all();
+        //     $category->search($request->keyword);
+
+        //     return view('categories.index', [
+        //     'category' => $category->get()
+        // ]);
+        // }
+
+        // return view('categories.index', [
+        //     'categories' => Category::latest()->paginate(4),
+        //     'category' => $category->get()
+        // ]);
     }
 
     // Controller untuk script select2 pada categories create.blade.php

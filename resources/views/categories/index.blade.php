@@ -16,9 +16,10 @@
 	         <div class="card-header">
 	           <div class="row">
 	               <div class="col-md-6">
-	                  <form action="" method="GET">
+	               	{{-- Form search --}}
+	                  <form action="{{ route('categories.index') }}" method="GET">
 	                     <div class="input-group">
-	                        <input name="keyword" type="search" class="form-control" placeholder="{{ trans('categories.form_control.input.search.placeholder') }}">
+	                        <input name="keyword" type="search" class="form-control" value="{{ request()->get('keyword') }}" placeholder="{{ trans('categories.form_control.input.search.placeholder') }}">
 	                        <div class="input-group-append">
 	                           <button class="btn btn-primary" type="submit">
 	                              <i class="fas fa-search"></i>
@@ -26,6 +27,18 @@
 	                        </div>
 	                     </div>
 	                  </form>
+
+	                  {{-- <form action="{{ route('categories.index') }}" method="POST">
+	                  	@csrf
+	                     <div class="input-group">
+	                        <input name="q" type="text" class="form-control" value="{{ request()->get('keyword') }}" placeholder="{{ trans('categories.form_control.input.search.placeholder') }}">
+	                        <div class="input-group-append">
+	                           <button class="btn btn-primary" type="submit">
+	                              <i class="fas fa-search"></i>
+	                           </button>
+	                        </div>
+	                     </div>
+	                  </form> --}}
 	               </div>
 	               <div class="col-md-6">
 	                  <a href="{{ route('categories.create') }}" class="btn btn-primary float-right" role="button">
