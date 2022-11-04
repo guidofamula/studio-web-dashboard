@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\LocalizationController;
 use \UniSharp\LaravelFilemanager\Lfm;
 
@@ -35,13 +36,14 @@ Route::group([
 ], function(){
     // Dashboard Index
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
-    // Categories method select
-    // Route::get('/categories/select', [CategoryController::class, 'select'])->name('categories.select');
     // Dashboard Category (index, create, edit, update, show, destroy)
     Route::resource('/categories', CategoryController::class);
 
     // Dashboard Tags (index, create, edit, update, show, destroy)
     Route::resource('/tags', TagController::class)->except('show');
+
+    // Dashboard Posts (index, create, edit, update, show, destroy)
+    Route::resource('/posts', PostController::class);
 
     // Dashboard file manager
     Route::group(['prefix' => 'filemanager'], function () { 

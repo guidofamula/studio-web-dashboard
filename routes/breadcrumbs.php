@@ -67,11 +67,17 @@ Breadcrumbs::for('add-tag', function (BreadcrumbTrail $trail) {
     $trail->push(trans('tags.title.create'), '#');
 });
 
-// Dashboard -> Categories -> Edit Tag -> [title]
+// Dashboard -> Tags -> Edit Tag -> [title]
 Breadcrumbs::for('edit-tag', function (BreadcrumbTrail $trail, $tag) {
     $trail->parent('dashboard-tags');
     $trail->push(trans('tags.title.edit'), route('tags.edit', ['tag' => $tag]));
     $trail->push($tag->title, route('tags.edit', ['tag' => $tag] ));
+});
+
+// Dashboard -> Posts
+Breadcrumbs::for('dashboard-posts', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push(trans('posts.title.index'), route('posts.index'));
 });
 
 // // Dashboard -> Categories -> Edit Category -> Title Category

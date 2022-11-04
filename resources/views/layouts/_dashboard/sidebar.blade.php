@@ -14,7 +14,7 @@
             </div>
 
             {{-- Menu Posts --}}
-            <a class="nav-link" href="#">
+            <a class="nav-link {{ set_active(['posts.index', 'posts.create', 'posts.edit', 'posts.show']) }}" href="{{ route('posts.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="far fa-newspaper"></i>
                 </div>
