@@ -55,6 +55,12 @@ Breadcrumbs::for('detail-category-title', function (BreadcrumbTrail $trail, $cat
     $trail->push($category->title, '#');
 });
 
+// Dashboard -> Tags
+Breadcrumbs::for('dashboard-tags', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push(trans('tags.title.index'), route('tags.index'));
+});
+
 // Home > Blog
 // Breadcrumbs::for('blog', function (BreadcrumbTrail $trail) {
 //     $trail->parent('home');
