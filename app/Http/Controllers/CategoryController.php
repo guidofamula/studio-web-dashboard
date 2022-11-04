@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::paginate(5);
+        $categories = Category::latest()->paginate(5);
         $search = $request->keyword;
 
         if($search != "") {
@@ -27,7 +27,7 @@ class CategoryController extends Controller
             $categories->appends(['keyword' => $search]);
         }
         else {
-            $categories = Category::paginate(5);
+            $categories = Category::latest()->paginate(5);
         }
         return view('categories.index', [
             'categories' => $categories,
@@ -99,7 +99,7 @@ class CategoryController extends Controller
                 'title' => ['required', 'string', 'max:60'],
                 'slug' => ['required', 'string', 'unique:categories,slug'],
                 'thumbnail' => ['required', 'max:2048'],
-                'description' => ['required', 'string', 'max:225'],
+                'description' => ['required', 'string'],
             ],
             [],
             $this->attribute()
@@ -179,8 +179,8 @@ class CategoryController extends Controller
             [
                 'title' => 'required|string|max:60|unique:categories,title' . $category->title,
                 'slug' => 'required|string|unique:categories,slug,' . $category->id,
-                'thumbnail' => ['required'],
-                'description' => ['required', 'string', 'max:225'],
+                'thumbnail' => ['required','max:2048'],
+                'description' => ['required', 'string'],
             ],
             [],
             $this->attribute()
