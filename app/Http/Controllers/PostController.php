@@ -30,6 +30,7 @@ class PostController extends Controller
     {
         return view('posts.create', [
             'categories' => Category::all(),
+            'statuses' => $this->statuses(),
         ]);
     }
 
@@ -87,5 +88,13 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    private function statuses()
+    {
+        return [
+            'draft' => trans('posts.form_control.select.status.option.draft'),
+            'publish' => trans('posts.form_control.select.status.option.publish')
+        ];
     }
 }
