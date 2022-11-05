@@ -8,7 +8,7 @@
       </p>
       <div class="float-right">
          <!-- detail -->
-         <a href="#" class="btn btn-sm btn-primary" role="button">
+         <a href="{{ route('posts.show', ['post' => $post ]) }}" class="btn btn-sm btn-primary" role="button">
             <i class="fas fa-eye"></i>
          </a>
          <!-- edit -->

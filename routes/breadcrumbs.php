@@ -86,25 +86,9 @@ Breadcrumbs::for('add-post', function (BreadcrumbTrail $trail) {
     $trail->push(trans('posts.title.create'), '#');
 });
 
-// // Dashboard -> Categories -> Edit Category -> Title Category
-// Breadcrumbs::for('edit-tag-title', function (BreadcrumbTrail $trail, $tag) {
-//     $trail->parent('edit-tag', $tag);
-// });
-
-// Breadcrumbs::for('edit-tag', function (BreadcrumbTrail $trail, $tag) {
-//     $trail->parent('dashboard-tags');
-//     $trail->push(trans('tags.title.edit'), route('tags.edit', ['tag' => $tag]));
-//     $trail->push($tag->title, route('tags.edit', ['tag' => $tag]));
-// });
-
-// Home > Blog
-// Breadcrumbs::for('blog', function (BreadcrumbTrail $trail) {
-//     $trail->parent('home');
-//     $trail->push('Blog', route('blog'));
-// });
-
-// Home > Blog > [Category]
-// Breadcrumbs::for('category', function (BreadcrumbTrail $trail, $category) {
-//     $trail->parent('blog');
-//     $trail->push($category->title, route('category', $category));
-// });
+// Dashboard -> Posts -> Detail Category -> Title
+Breadcrumbs::for('detail-post', function (BreadcrumbTrail $trail, $post) {
+    $trail->parent('dashboard-posts');
+    $trail->push(trans('posts.title.detail'), route('posts.show', ['post' => $post]));
+    $trail->push($post->title, '#');
+});
