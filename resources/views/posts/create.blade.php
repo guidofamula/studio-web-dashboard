@@ -70,8 +70,8 @@
                        <label for="input_post_description" class="font-weight-bold">
                           {{ trans('posts.form_control.textarea.description.label') }}
                        </label>
-                       <textarea id="input_post_description" value="{{ old('description') }}" name="description" placeholder="{{ trans('posts.form_control.textarea.description.placeholder') }}" class="form-control @error('description') is-invalid @enderror"
-                          rows="3"></textarea>
+                       <textarea id="input_post_description" name="description" placeholder="{{ trans('posts.form_control.textarea.description.placeholder') }}" class="form-control @error('description') is-invalid @enderror"
+                          rows="3">{{ old('description') }}</textarea>
                           @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -83,9 +83,9 @@
                        <label for="input_post_content" class="font-weight-bold">
                           {{ trans('posts.form_control.textarea.content.label') }}
                        </label>
-                       <textarea id="input_post_content" value="{{ old('content') }}" name="content"
+                       <textarea id="input_post_content" name="content"
                        placeholder="{{ trans('posts.form_control.textarea.content.placeholder') }}" class="form-control @error('content') is-invalid @enderror"
-                          rows="20"></textarea>
+                          rows="20">{{ old('content') }}</textarea>
                           @error('content')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -121,8 +121,13 @@
                        <label for="select_post_tag" class="font-weight-bold">
                           {{ trans('posts.form_control.select.tag.label') }}
                        </label>
-                       <select id="select_post_tag" name="tag"
+                       <select id="select_post_tag" name="tag[]"
                        data-placeholder="{{ trans('posts.form_control.select.tag.placeholder') }}" class="custom-select w-100 @error('tag') is-invalid @enderror" multiple>
+                       @if (old('tag'))
+                          @foreach (old('tag') as $tag)
+                             <option value="{{ $tag->id }}" selected>{{ $tag->title }}</option>
+                          @endforeach
+                       @endif
                        </select>
                        @error('tag')
                             <span class="invalid-feedback" role="alert">
@@ -137,7 +142,7 @@
                        </label>
                        <select id="select_post_status" name="status" class="custom-select @error('status') is-invalid @enderror">
                         @foreach ($statuses as $key => $value)
-                          <option value="{{ $key }}">{{ $value }}</option>
+                          <option value="{{ $key }}" {{ old('status') == $key ? "selected" : null}} >{{ $value }}</option>
                         @endforeach
                        </select>
                        @error('status')
