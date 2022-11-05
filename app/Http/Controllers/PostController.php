@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -42,7 +43,39 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = Validator::make(
+            $request->all(),
+            [
+                'title' => 'required|string|max:100',
+                'slug' => 'required|string|unique:posts,slug',
+                'thumbnail' => 'required',
+                'description' => 'required|string|max:240',
+                'content' => 'required',
+                'category' => 'required',
+                'tag' => 'required',
+                'status' => 'required',
+            ],
+            [],
+            $this->attributes()
+        );
+        if ($validate->fails()) {
+            return redirect()->back()->withInput($request->all())->withErrors($validate);
+        }
+
+    }
+
+    private function attributes()
+    {
+        return [
+            'title' => trans('posts.form_control.input.title.attribute'),
+            'slug' => trans('posts.form_control.input.slug.attribute'),
+            'thumbnail' => trans('posts.form_control.input.thumbnail.attribute'),
+            'description' => trans('posts.form_control.textarea.description.attribute'),
+            'content' => trans('posts.form_control.textarea.content.attribute'),
+            'category' => trans('posts.form_control.input.category.attribute'),
+            'tag' => trans('posts.form_control.select.tag.attribute'),
+            'status' => trans('posts.form_control.select.status.attribute'),
+        ];
     }
 
     /**
