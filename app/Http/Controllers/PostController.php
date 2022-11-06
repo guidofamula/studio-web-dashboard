@@ -223,7 +223,28 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        DB::beginTransaction();
+        try {
+            $post->tags()->detach();
+            $post->categories()->detach();
+            $post->delete();
+
+            Alert::success(
+                trans('posts.alert.delete.title'),
+                trans('posts.alert.delete.message.success')
+            );
+            return redirect()->route('posts.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            Alert::error(
+                trans('posts.alert.delete.title'),
+                trans('posts.alert.delete.message.error', ['error' => $th->getMessage()]),
+            );
+            
+        } finally {
+            DB::commit();
+            return redirect()->back();
+        }
     }
 
     private function statuses()
