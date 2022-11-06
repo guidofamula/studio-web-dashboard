@@ -37,9 +37,10 @@
                           </div>
                        </div>
                     </div>
+                    {{-- Fitur search article --}}
                     <div class="col">
                        <div class="input-group mx-1">
-                          <input name="keyword" type="search" class="form-control"
+                          <input name="keyword" value="{{ request()->get('keyword') }}" type="search" class="form-control"
                           placeholder="{{ trans('posts.form_control.input.search.placeholder') }}">
                           <div class="input-group-append">
                              <button class="btn btn-primary" type="submit">
@@ -47,6 +48,7 @@
                              </button>
                           </div>
                        </div>
+
                     </div>
                  </form>
               </div>

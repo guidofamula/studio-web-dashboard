@@ -31,7 +31,11 @@
 @empty
 	<p>
 		<strong>
-			{{ trans('posts.label.no_data.fetch') }}
+         @if (request()->get('keyword'))
+            {{ trans('posts.label.no_data.search', ['keyword' => request()->get('keyword')]) }}
+         @else
+			   {{ trans('posts.label.no_data.fetch') }}
+         @endif
 		</strong>
 	</p>
 @endforelse

@@ -25,6 +25,11 @@ class PostController extends Controller
             'draft',
         ]) ? $request->get('status') : 'publish';
         $posts = $statusSelected == 'publish' ? Post::publish() : Post::draft();
+
+        if ($request->get('keyword')) {
+            $posts->search($request->get('keyword'));
+        }
+
         return view('posts.index', [
             'posts' => $posts->get(),
             'statuses' => $this->statuses(),
