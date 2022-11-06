@@ -11,9 +11,9 @@
 @section('content')
 <div class="row">
   <div class="col-md-12">
-     <form action="{{ route('posts.store') }}" method="POST">
+     <form action="{{ route('posts.update', ['post' => $post]) }}" method="POST">
       @csrf
-      
+      @method('PUT')
         <div class="card">
            <div class="card-body">
               <div class="row d-flex align-items-stretch">

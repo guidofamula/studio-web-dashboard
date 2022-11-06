@@ -159,7 +159,60 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $validate = Validator::make(
+            $request->all(),
+            [
+                'title' => 'required|string|max:100',
+                'slug' => 'required|string|unique:posts,slug' . $post->id,
+                'thumbnail' => 'required',
+                'description' => 'required|string|max:240',
+                'content' => 'required',
+                'category' => 'required',
+                'tag' => 'required',
+                'status' => 'required',
+            ],
+            [],
+            $this->attributes()
+        );
+        if ($validate->fails()) {
+            if ($request['tag']) {
+                $request['tag'] = Tag::select('id', 'title')->whereIn('id', $request->tag)->get();
+            }
+            return redirect()->back()->withInput($request->all())->withErrors($validate);
+        }
+
+        DB::beginTransaction();
+        try {
+            $post->update([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'thumbnail' => parse_url($request->thumbnail)['path'],
+                'description' => $request->description,
+                'content' => $request->content,
+                'status' => $request->status,
+                "user_id" => Auth::user()->id,
+            ]);
+            $post->tags()->sync($request->tag);
+            $post->categories()->sync($request->category);
+
+            Alert::success(
+                trans('posts.alert.update.title'),
+                trans('posts.alert.update.message.success')
+            );
+            return redirect()->route('posts.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            Alert::error(
+                trans('posts.alert.update.title'),
+                trans('posts.alert.update.message.error', ['error' => $th->getMessage()]),
+            );
+            if ($request['tag']) {
+                $request['tag'] = Tag::select('id', 'title')->whereIn('id', $request->tag)->get();
+            }
+            return redirect()->back()->withInput($request->all());
+        } finally {
+            DB::commit();
+        }
     }
 
     /**
