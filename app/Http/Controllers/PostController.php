@@ -18,11 +18,17 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
+        $statusSelected = in_array($request->get('status'), [
+            'publish',
+            'draft',
+        ]) ? $request->get('status') : 'publish';
+        $posts = $statusSelected == 'publish' ? Post::publish() : Post::draft();
         return view('posts.index', [
-            'posts' => $posts
+            'posts' => $posts->get(),
+            'statuses' => $this->statuses(),
+            'statusSelected' => $statusSelected,
         ]);
     }
 
