@@ -48,7 +48,11 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        //
+        return view('roles.detail', [
+            'role' => $role,
+            'authorities' => config('permission.authorities'),
+            'rolePermissions' => $role->permissions->pluck('name')->toArray()
+        ]);
     }
 
     /**

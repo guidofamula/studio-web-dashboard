@@ -5,9 +5,9 @@ language : English
 return [
     'title' => [
         'index' => 'Roles',
-        'create' => 'Add role',
-        'edit' => 'Edit role',
-        'detail' => 'Detail role',
+        'create' => 'Add Role',
+        'edit' => 'Edit Role',
+        'detail' => 'Detail Role',
     ],
     'form_control' => [
         'input' => [

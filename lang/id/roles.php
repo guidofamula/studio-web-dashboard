@@ -5,9 +5,9 @@ language : Indonesia
 return [
     'title' => [
         'index' => 'Wewenang',
-        'create' => 'Tambah wewenang',
-        'edit' => 'Ubah wewenang',
-        'detail' => 'Detail wewenang',
+        'create' => 'Tambah Wewenang',
+        'edit' => 'Ubah Wewenang',
+        'detail' => 'Detail Wewenang',
     ],
     'form_control' => [
         'input' => [

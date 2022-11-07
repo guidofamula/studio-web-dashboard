@@ -111,3 +111,10 @@ Breadcrumbs::for('dashboard-roles', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
     $trail->push(trans('roles.title.index'), route('roles.index'));
 });
+
+// Dashboard -> Roles -> Detail Role -> Title
+Breadcrumbs::for('detail-role', function (BreadcrumbTrail $trail, $role) {
+    $trail->parent('dashboard-roles');
+    $trail->push(trans('roles.title.detail'), route('roles.show', ['role' => $role]));
+    $trail->push($role->name, '#');
+});
