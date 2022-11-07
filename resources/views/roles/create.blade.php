@@ -71,7 +71,7 @@
                    @enderror
                </div>
                <div class="float-right mb-4">
-                  <a class="btn btn-warning px-4 mx-2" href="">
+                  <a class="btn btn-warning px-4 mx-2" href="{{ route('roles.index') }}">
                      {{ trans('roles.button.back.value') }}
                   </a>
                   <button type="submit" class="btn btn-primary px-4">
