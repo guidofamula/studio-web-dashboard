@@ -124,3 +124,10 @@ Breadcrumbs::for('add-role', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard-roles');
     $trail->push(trans('roles.title.create'), route('roles.create'));
 });
+
+// Dashboard -> Roles -> Edit Role -> Title
+Breadcrumbs::for('edit-role', function (BreadcrumbTrail $trail, $role) {
+    $trail->parent('dashboard-roles');
+    $trail->push(trans('roles.title.edit'), route('roles.edit', ['role' => $role]));
+    $trail->push($role->name, '#');
+});

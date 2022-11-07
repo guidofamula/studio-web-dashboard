@@ -47,12 +47,12 @@
 	                  </label>
 	                  <div>
 	                  	<!-- detail -->
-											<a href="{{ route('roles.show', ['role' => $role]) }}" class="btn btn-sm btn-primary"
-											   role="button">
-											   <i class="fas fa-eye"></i>
-											</a>
+								<a href="{{ route('roles.show', ['role' => $role]) }}" class="btn btn-sm btn-primary"
+								   role="button">
+								   <i class="fas fa-eye"></i>
+								</a>
 	                     <!-- edit -->
-	                     <a class="btn btn-sm btn-info" role="button">
+	                     <a href="{{ route('roles.edit', ['role' => $role]) }}" class="btn btn-sm btn-info" role="button">
 	                        <i class="fas fa-edit"></i>
 	                     </a>
 	                     <!-- delete -->
