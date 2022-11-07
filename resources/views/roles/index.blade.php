@@ -38,24 +38,34 @@
          <div class="card-body">
             <ul class="list-group list-group-flush">
                <!-- list role -->
-
-                  <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center pr-0">
-                     <label class="mt-auto mb-auto">
-                        <!-- Role name -->   
-                        </label>
-                        <div>
-                           <!-- edit -->
-                           <a class="btn btn-sm btn-info" role="button">
-                              <i class="fas fa-edit"></i>
-                           </a>
-                           <!-- delete -->
-                           <form class="d-inline" action="" method="POST">
-                              <button type="submit" class="btn btn-sm btn-danger">
-                                 <i class="fas fa-trash"></i>
-                              </button>
-                           </form>
-                        </div>
-                     </li>
+               @forelse ($roles as $role)
+               	<li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center pr-0">
+	               <label class="mt-auto mb-auto">
+	                  <!-- Role name -->
+	                  {{ $role->name }}
+	                  </label>
+	                  <div>
+	                     <!-- edit -->
+	                     <a class="btn btn-sm btn-info" role="button">
+	                        <i class="fas fa-edit"></i>
+	                     </a>
+	                     <!-- delete -->
+	                     <form class="d-inline" action="" method="POST">
+	                        <button type="submit" class="btn btn-sm btn-danger">
+	                           <i class="fas fa-trash"></i>
+	                        </button>
+	                     </form>
+	                  </div>
+	               </li>
+               @empty
+               	{{-- empty expr --}}
+               	<p>
+               		<strong>
+               			{{ trans('roles.label.no_data.fetch') }}
+               		</strong>
+               	</p>
+               @endforelse
+                  
                      <!-- list role -->
             </ul>
          </div>
