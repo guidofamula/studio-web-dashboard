@@ -133,7 +133,7 @@ class RoleController extends Controller
             $role->name = $request->name;
             $role->syncPermissions($request->permissions);
             $role->save();
-            
+
             Alert::success(
                 trans('roles.alert.update.title'),
                 trans('roles.alert.update.message.success'),
@@ -161,7 +161,29 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $role->revokePermissionTo($role->permissions->pluck('name')->toArray());
+            $role->delete();
+            
+            Alert::success(
+                trans('roles.alert.delete.title'),
+                trans('roles.alert.delete.message.success'),
+            );
+            
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            Alert::error(
+                trans('roles.alert.delete.title'),
+                trans('roles.alert.delete.message.error', ['error' => $th->getMessage()]),
+            );
+            
+        } finally {
+            DB::commit();
+        }
+
+        return redirect()->route('roles.index');
     }
 
     private function attributes()
