@@ -12,8 +12,9 @@
 <div class="row">
    <div class="col-md-12">
       <div class="card">
-         <form action="{{ route('roles.store') }}" method="POST">
+         <form action="{{ route('roles.update', ['role' => $role]) }}" method="POST">
          	@csrf
+         	@method('PUT')
             <div class="card-body">
                <div class="form-group">
                   <label for="input_role_name" class="font-weight-bold">
