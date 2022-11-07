@@ -18,7 +18,7 @@
                   <label for="input_role_name" class="font-weight-bold">
                      {{ trans('roles.form_control.input.name.label') }}
                   </label>
-                  <input id="input_role_name" value="" name="name" type="text" class="form-control" readonly />
+                  <input id="input_role_name" value="" name="name" type="text" class="form-control" />
                </div>
                <!-- permission -->
                <div class="form-group">
@@ -28,21 +28,27 @@
                   <div class="form-control overflow-auto h-100 " id="input_role_permission">
                      <div class="row">
                         <!-- list manage name:start -->
-                        <ul class="list-group mx-1">
+                        @foreach ($authorities as $manageName => $permissions)
+                        	<ul class="list-group mx-1">
                            <li class="list-group-item bg-dark text-white">
-                              Manage name
+                              {{ trans("permissions.{$manageName}") }}
                            </li>
                            <!-- list permission:start -->
-                           <li class="list-group-item">
+                           @foreach ($permissions as $permission)
+                           	<li class="list-group-item">
                               <div class="form-check">
-                                 <input class="form-check-input" type="checkbox" value="">
-                                 <label class="form-check-label">
-                                    Role name
+                                 <input id="{{ $permission }}" name="permissions[]" class="form-check-input" type="checkbox" value="{{ $permission }}">
+                                 <label for="{{ $permission }}" class="form-check-label">
+                                   {{ trans("permissions.{$permission}") }}
                                  </label>
                               </div>
                            </li>
+                           @endforeach
+                           
                            <!-- list permission:end -->
                         </ul>
+                        @endforeach
+                        
                         <!-- list manage name:end  -->
                      </div>
                   </div>
