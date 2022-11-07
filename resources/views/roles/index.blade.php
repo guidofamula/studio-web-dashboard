@@ -56,11 +56,15 @@
 	                        <i class="fas fa-edit"></i>
 	                     </a>
 	                     <!-- delete -->
-	                     <form class="d-inline" action="" method="POST">
-	                        <button type="submit" class="btn btn-sm btn-danger">
-	                           <i class="fas fa-trash"></i>
-	                        </button>
-	                     </form>
+                        <form class="d-inline" role="alert"
+                            alert-text="{{ trans('roles.alert.delete.message.confirm', ['name' => $role->name]) }}"
+                            action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                              <button type="submit" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i>
+                              </button>
+                         </form>
 	                  </div>
 	               </li>
                @empty
@@ -80,3 +84,29 @@
 </div>
 
 @endsection
+
+@push('js-internal')
+   <script>
+      $(document).ready(function() {
+         // Event for delete tag
+         $("form[role='alert']").submit(function(e) {
+            e.preventDefault();
+            Swal.fire({
+               title: "{{ trans('roles.alert.delete.title') }}",
+               text: $(this).attr('alert-text'),
+               icon: 'warning',
+               allowOutsideClick: false,
+               showCancelButton: true,
+               cancelButtonText: "{{ trans('roles.button.cancel.value') }}",
+               reverseButtons: true,
+               confirmButtonText: "{{ trans('roles.button.delete.value') }}",
+            }).then((result) => {
+               if (result.isConfirmed) {
+                  // todo: process of deleting categories
+                  e.target.submit();
+               }
+            });
+         });
+      });
+   </script>
+@endpush
