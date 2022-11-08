@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -54,6 +57,34 @@ class UserController extends Controller
         if ($validate->fails()) {
             $request['role'] = Role::select('id', 'name')->find($request->role);
             return redirect()->back()->withInput($request->all())->withErrors($validate);
+        }
+
+        DB::beginTransaction();
+
+        try {
+            $user = User::create(
+                [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                ]);
+            $user->assignRole($request->role);
+
+            Alert::success(
+                trans('users.alert.create.title'),
+                trans('users.alert.create.message.success'),
+            );
+            return redirect()->route('users.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            Alert::error(
+                trans('users.alert.create.title'),
+                trans('users.alert.create.message.error', ['error' => $th->getMessage()]),
+            );
+            $request['role'] = Role::select('id', 'name')->find($request->role);
+            return redirect()->back()->withInput($request->all())->withErrors($validate);
+        } finally {
+            DB::commit();
         }
 
 
