@@ -54,14 +54,14 @@ Route::group([
     Route::group(['prefix' => 'filemanager'], function () {
         Route::get('/index', [FileManagerController::class, 'index'])->name('filemanager.index');
         Lfm::routes();
+    });
 
     // Dashboard Roles (index, create, edit, update, show, destroy)
+    Route::get('/roles/select', [RoleController::class, 'select'])->name('roles.select');
     Route::resource('/roles', RoleController::class);
 
     // Dashboard Users (index, create, edit, update, show, destroy)
     Route::resource('/users', UserController::class);
- });
-
 
 });
 // Dashboard end
