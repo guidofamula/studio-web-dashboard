@@ -137,3 +137,9 @@ Breadcrumbs::for('dashboard-users', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
     $trail->push(trans('users.title.index'), route('users.index'));
 });
+
+// Dashboard -> Users -> Add User -> Tite
+Breadcrumbs::for('add-user', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push(trans('users.title.index'), route('users.create'));
+});
