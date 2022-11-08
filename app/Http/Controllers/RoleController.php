@@ -20,13 +20,13 @@ class RoleController extends Controller
         $roles = [];
 
         if ($request->has('keyword')) {
-            $roles = Role::where('name', 'LIKE', "%{$request->keyword}%")->get();
+            $roles = Role::where('name', 'LIKE', "%{$request->keyword}%")->paginate(5);
         } else {
-            $roles = Role::all();
+            $roles = Role::latest()->paginate(5);
         }
 
         return view('roles.index', [
-            'roles' => $roles,
+            'roles' => $roles->appends(['keyword' => $request->keyword ]),
         ]);
     }
 
@@ -70,7 +70,7 @@ class RoleController extends Controller
                 trans('roles.alert.create.title'),
                 trans('roles.alert.create.message.success'),
             );
-            
+
             return redirect()->route('roles.index');
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -78,7 +78,7 @@ class RoleController extends Controller
                 trans('roles.alert.create.title'),
                 trans('roles.alert.create.message.error', ['error' => $th->getMessage()]),
             );
-            
+
             return redirect()->back()->withInput($request->all());
         } finally {
             DB::commit();
@@ -146,7 +146,7 @@ class RoleController extends Controller
                 trans('roles.alert.update.title'),
                 trans('roles.alert.update.message.success'),
             );
-            
+
             return redirect()->route('roles.index');
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -154,7 +154,7 @@ class RoleController extends Controller
                 trans('roles.alert.update.title'),
                 trans('roles.alert.update.message.error', ['error' => $th->getMessage()]),
             );
-            
+
             return redirect()->back()->withInput($request->all());
         } finally {
             DB::commit();
@@ -174,19 +174,19 @@ class RoleController extends Controller
         try {
             $role->revokePermissionTo($role->permissions->pluck('name')->toArray());
             $role->delete();
-            
+
             Alert::success(
                 trans('roles.alert.delete.title'),
                 trans('roles.alert.delete.message.success'),
             );
-            
+
         } catch (\Throwable $th) {
             DB::rollBack();
             Alert::error(
                 trans('roles.alert.delete.title'),
                 trans('roles.alert.delete.message.error', ['error' => $th->getMessage()]),
             );
-            
+
         } finally {
             DB::commit();
         }
