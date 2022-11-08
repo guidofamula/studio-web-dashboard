@@ -14,21 +14,24 @@
             </div>
 
             {{-- Menu Posts --}}
-            <a class="nav-link {{ set_active(['posts.index', 'posts.create', 'posts.edit', 'posts.show']) }}" href="{{ route('posts.index') }}">
+            <a class="nav-link {{ set_active(['posts.index', 'posts.create', 'posts.edit', 'posts.show']) }}"
+                href="{{ route('posts.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="far fa-newspaper"></i>
                 </div>
                 {{ trans('dashboard.link.posts') }}
             </a>
             {{-- Menu Categories --}}
-            <a class="nav-link {{ set_active(['categories.index', 'categories.create', 'categories.edit', 'categories.show']) }}" href="{{ route('categories.index') }}">
+            <a class="nav-link {{ set_active(['categories.index', 'categories.create', 'categories.edit', 'categories.show']) }}"
+                href="{{ route('categories.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="fas fa-bookmark"></i>
                 </div>
                 {{ trans('dashboard.link.categories') }}
             </a>
             {{-- Menu Tags --}}
-            <a class="nav-link {{ set_active(['tags.index', 'tags.create', 'tags.edit', 'tags.show']) }}" href="{{ route('tags.index') }}">
+            <a class="nav-link {{ set_active(['tags.index', 'tags.create', 'tags.edit', 'tags.show']) }}"
+                href="{{ route('tags.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="fas fa-tags"></i>
                 </div>
@@ -37,14 +40,17 @@
             <div class="sb-sidenav-menu-heading">
                 {{ trans('dashboard.menu.user_permission') }}
             </div>
-            <a class="nav-link" href="#">
+            {{-- Menu Users --}}
+            <a class="nav-link {{ set_active(['users.index', 'users.create', 'users.edit', 'users.show']) }}"
+                href="{{ route('users.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="fas fa-user"></i>
                 </div>
                 {{ trans('dashboard.link.users') }}
             </a>
             {{-- Menu Roles --}}
-            <a class="nav-link {{ set_active(['roles.index', 'roles.create', 'roles.edit', 'roles.show']) }}" href="{{ route('roles.index') }}">
+            <a class="nav-link {{ set_active(['roles.index', 'roles.create', 'roles.edit', 'roles.show']) }}"
+                href="{{ route('roles.index') }}">
                 <div class="sb-nav-link-icon">
                     <i class="fas fa-user-shield"></i>
                 </div>
