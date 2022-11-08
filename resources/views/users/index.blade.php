@@ -38,6 +38,7 @@
                 <div class="card-body">
                     <div class="row">
                         <!-- list users -->
+                        @include('users._users-list')
                     </div>
                 </div>
                 <div class="card-footer">
