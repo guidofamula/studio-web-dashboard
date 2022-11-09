@@ -74,7 +74,8 @@ return [
             'message' => [
                 'confirm' => "Yakin akan menghapus wewenang :name ?",
                 'success' => "Wewenang berhasil dihapus",
-                'error' => "Terjadi kesalahan saat menghapus wewenang. :error"
+                'error' => "Terjadi kesalahan saat menghapus wewenang. :error",
+                'warning' => "Maaf, wewenang :name belum dapat dihapus. Karena masih digunakan.",
             ]
         ],
     ]
