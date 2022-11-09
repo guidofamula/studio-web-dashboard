@@ -143,3 +143,10 @@ Breadcrumbs::for('add-user', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard-users');
     $trail->push(trans('users.title.create'), route('users.create'));
 });
+
+// Dashboard -> Users -> Edit User -> Title
+Breadcrumbs::for('edit-user', function (BreadcrumbTrail $trail, $user) {
+    $trail->parent('dashboard-users');
+    $trail->push(trans('users.title.edit'), route('users.edit', ['user' => $user]));
+    $trail->push($user->name, '#');
+});
