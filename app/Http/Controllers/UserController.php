@@ -22,13 +22,13 @@ class UserController extends Controller
         $users = [];
 
         if ($request->get('keyword')) {
-            $users = User::search($request->keyword)->get();
+            $users = User::search($request->keyword)->paginate(6);
         } else {
-            $users = User::all();
+            $users = User::latest()->paginate(6);
         }
 
         return view('users.index', [
-            'users' => $users,
+            'users' => $users->appends(['keyword' => $request->keyword]),
         ]);
     }
 
