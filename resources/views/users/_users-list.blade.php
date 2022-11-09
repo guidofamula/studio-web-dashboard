@@ -47,10 +47,14 @@
                         <i class="fas fa-edit"></i>
                     </a>
                     <!-- delete -->
-                    <form action="" method="POST" role="alert" class="d-inline">
-                        <button type="submit" class="btn btn-sm btn-danger">
+                    <form class="d-inline" role="alert"
+                        alert-text="{{ trans('users.alert.delete.message.confirm', ['name' => $user->name]) }}"
+                        action="{{ route('users.destroy', ['user' => $user]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                          <button type="submit" class="btn btn-sm btn-danger">
                             <i class="fas fa-trash"></i>
-                        </button>
+                          </button>
                     </form>
                 </div>
             </div>

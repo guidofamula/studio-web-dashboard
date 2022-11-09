@@ -168,7 +168,25 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        DB::beginTransaction();
+
+        try {
+            $user->removeRole($user->roles->first());
+            $user->delete();
+            Alert::success(
+                trans('users.alert.delete.title'),
+                trans('users.alert.delete.message.success'),
+            );
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            Alert::error(
+                trans('users.alert.delete.title'),
+                trans('users.alert.delete.message.error', ['error' => $th->getMessage()]),
+            );
+        } finally {
+            DB::commit();
+            return redirect()->back();
+        }
     }
 
     private function attributes()

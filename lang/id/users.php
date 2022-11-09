@@ -91,7 +91,7 @@ return [
         'delete' => [
             'title' => 'Hapus Pengguna',
             'message' => [
-                'confirm' => "Yakin Akan Menghapus Pengguna :title ?",
+                'confirm' => "Yakin Akan Menghapus Pengguna :name ?",
                 'success' => "Pengguna Berhasil Dihapus",
                 'error' => "Terjadi Kesalahan Saat Menghapus Pengguna. :error"
             ]
