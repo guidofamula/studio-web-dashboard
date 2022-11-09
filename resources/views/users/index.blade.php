@@ -18,7 +18,7 @@
                             {{-- Form search --}}
                             <form action="" method="GET">
                                 <div class="input-group">
-                                    <input name="keyword" value="" type="search" class="form-control" placeholder="">
+                                    <input name="keyword" value="{{ request()->get('keyword') }}" type="search" class="form-control" placeholder="">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="submit">
                                             <i class="fas fa-search"></i>

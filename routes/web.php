@@ -44,6 +44,7 @@ Route::group([
 
     // Dashboard Tags (index, create, edit, update, show, destroy)
     Route::resource('/tags', TagController::class)->except('show');
+    
     // Tags for select in create post
     Route::get('/tags/select', [TagController::class, 'select'])->name('tags.select');
 
@@ -61,7 +62,7 @@ Route::group([
     Route::resource('/roles', RoleController::class);
 
     // Dashboard Users (index, create, edit, update, show, destroy)
-    Route::resource('/users', UserController::class);
+    Route::resource('/users', UserController::class)->except('show');
 
 });
 // Dashboard end
