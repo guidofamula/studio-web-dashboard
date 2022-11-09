@@ -123,7 +123,41 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validate = Validator::make(
+            $request->all(),
+            [
+                'role' => 'required',
+            ],
+            [],
+            $this->attributes()
+        );
+
+        if ($validate->fails()) {
+            $request['role'] = Role::select('id', 'name')->find($request->role);
+            return redirect()->back()->withInput($request->all())->withErrors($validate);
+        }
+
+        DB::beginTransaction();
+
+        try {
+            $user->syncRoles($request->role);
+
+            Alert::success(
+                trans('users.alert.update.title'),
+                trans('users.alert.update.message.success'),
+            );
+            return redirect()->route('users.index');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            Alert::error(
+                trans('users.alert.update.title'),
+                trans('users.alert.update.message.error', ['error' => $th->getMessage()]),
+            );
+            $request['role'] = Role::select('id', 'name')->find($request->role);
+            return redirect()->back()->withInput($request->all())->withErrors($validate);
+        } finally {
+            DB::commit();
+        }
     }
 
     /**
