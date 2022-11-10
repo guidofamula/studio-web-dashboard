@@ -30,10 +30,12 @@
 
                </div>
                <div class="col-md-6">
-                  <a href="{{ route('tags.create') }}" class="btn btn-primary float-right" role="button">
-                     {{ trans('tags.button.create.value') }}
-                     <i class="fas fa-plus-square"></i>
-                  </a>
+                  @can('tag_create')
+                     <a href="{{ route('tags.create') }}" class="btn btn-primary float-right" role="button">
+                        {{ trans('tags.button.create.value') }}
+                        <i class="fas fa-plus-square"></i>
+                     </a>
+                  @endcan
                </div>
             </div>
          </div>

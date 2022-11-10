@@ -34,32 +34,38 @@
                 </a>
             @endcan
             {{-- Menu Tags --}}
-            <a class="nav-link {{ set_active(['tags.index', 'tags.create', 'tags.edit', 'tags.show']) }}"
-                href="{{ route('tags.index') }}">
-                <div class="sb-nav-link-icon">
-                    <i class="fas fa-tags"></i>
-                </div>
-                {{ trans('dashboard.link.tags') }}
-            </a>
+            @can('manage_tags')
+                <a class="nav-link {{ set_active(['tags.index', 'tags.create', 'tags.edit', 'tags.show']) }}"
+                    href="{{ route('tags.index') }}">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    {{ trans('dashboard.link.tags') }}
+                </a>
+            @endcan
             <div class="sb-sidenav-menu-heading">
                 {{ trans('dashboard.menu.user_permission') }}
             </div>
             {{-- Menu Users --}}
-            <a class="nav-link {{ set_active(['users.index', 'users.create', 'users.edit', 'users.show']) }}"
-                href="{{ route('users.index') }}">
-                <div class="sb-nav-link-icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                {{ trans('dashboard.link.users') }}
-            </a>
+            @can('manage_users')
+                <a class="nav-link {{ set_active(['users.index', 'users.create', 'users.edit', 'users.show']) }}"
+                    href="{{ route('users.index') }}">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    {{ trans('dashboard.link.users') }}
+                </a>
+            @endcan
             {{-- Menu Roles --}}
-            <a class="nav-link {{ set_active(['roles.index', 'roles.create', 'roles.edit', 'roles.show']) }}"
-                href="{{ route('roles.index') }}">
-                <div class="sb-nav-link-icon">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                {{ trans('dashboard.link.roles') }}
-            </a>
+            @can('manage_roles')
+                <a class="nav-link {{ set_active(['roles.index', 'roles.create', 'roles.edit', 'roles.show']) }}"
+                    href="{{ route('roles.index') }}">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    {{ trans('dashboard.link.roles') }}
+                </a>
+            @endcan
             <div class="sb-sidenav-menu-heading">
                 {{ trans('dashboard.menu.setting') }}
             </div>

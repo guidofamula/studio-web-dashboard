@@ -32,10 +32,12 @@
                         </div>
                         <div class="col-md-6">
                             {{-- Add new role --}}
-                            <a href="{{ route('roles.create') }}" class="btn btn-primary float-right" role="button">
-                                {{ trans('roles.button.create.value') }}
-                                <i class="fas fa-plus-square"></i>
-                            </a>
+                            @can('role_create')
+                                <a href="{{ route('roles.create') }}" class="btn btn-primary float-right" role="button">
+                                    {{ trans('roles.button.create.value') }}
+                                    <i class="fas fa-plus-square"></i>
+                                </a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -51,25 +53,31 @@
                                 </label>
                                 <div>
                                     <!-- detail -->
-                                    <a href="{{ route('roles.show', ['role' => $role]) }}" class="btn btn-sm btn-primary"
-                                        role="button">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
+                                    @can('role_detail')
+                                        <a href="{{ route('roles.show', ['role' => $role]) }}" class="btn btn-sm btn-primary"
+                                            role="button">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    @endcan
                                     <!-- edit -->
-                                    <a href="{{ route('roles.edit', ['role' => $role]) }}" class="btn btn-sm btn-info"
-                                        role="button">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
+                                    @can('role_update')
+                                        <a href="{{ route('roles.edit', ['role' => $role]) }}" class="btn btn-sm btn-info"
+                                            role="button">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    @endcan
                                     <!-- delete -->
-                                    <form class="d-inline" role="alert"
-                                        alert-text="{{ trans('roles.alert.delete.message.confirm', ['name' => $role->name]) }}"
-                                        action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
+                                    @can('role_delete')
+                                        <form class="d-inline" role="alert"
+                                            alert-text="{{ trans('roles.alert.delete.message.confirm', ['name' => $role->name]) }}"
+                                            action="{{ route('roles.destroy', ['role' => $role]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    @endcan
                                 </div>
                             </li>
                         @empty

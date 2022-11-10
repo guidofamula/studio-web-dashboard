@@ -25,6 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // Gate Permission for posts
         Gate::define('manage_posts', function($user) {
             return $user->hasAnyPermission([
                 'post_show',
@@ -35,6 +36,7 @@ class AuthServiceProvider extends ServiceProvider
             ]);
         });
 
+        // Gate Permission for categories
         Gate::define('manage_categories', function($user) {
             return $user->hasAnyPermission([
                 'category_show',
@@ -42,6 +44,38 @@ class AuthServiceProvider extends ServiceProvider
                 'category_update',
                 'category_detail',
                 'category_delete',
+            ]);
+        });
+
+        // Gate Permission for tags
+        Gate::define('manage_tags', function($user) {
+            return $user->hasAnyPermission([
+                'tag_show',
+                'tag_create',
+                'tag_update',
+                'tag_delete',
+            ]);
+        });
+
+        // Gate Permission for users
+        Gate::define('manage_users', function($user) {
+            return $user->hasAnyPermission([
+                'user_show',
+                'user_detail',
+                'user_create',
+                'user_update',
+                'user_delete',
+            ]);
+        });
+
+        // Gate Permission for roles
+        Gate::define('manage_roles', function($user) {
+            return $user->hasAnyPermission([
+                'role_show',
+                'role_detail',
+                'role_create',
+                'role_update',
+                'role_delete',
             ]);
         });
     }
