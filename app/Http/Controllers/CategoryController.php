@@ -9,6 +9,15 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
+    // Permission setup for category
+    public function __construct()
+    {
+        $this->middleware('permission:category_show', ['only' => 'index']);
+        $this->middleware('permission:category_detail', ['only' => 'show']);
+        $this->middleware('permission:category_delete', ['only' => 'destroy']);
+        $this->middleware('permission:category_create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:category_update', ['only' => ['edit', 'update']]);
+    }
     /**
      * Display a listing of the resource.
      *
