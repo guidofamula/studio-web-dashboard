@@ -53,10 +53,13 @@
                  </form>
               </div>
               <div class="col-md-6">
+               {{-- Add new post --}}
+               @can('post_create')
                  <a href="{{ route('posts.create') }}" class="btn btn-primary float-right" role="button">
                     {{ trans('posts.button.create.value') }}
                     <i class="fas fa-plus-square"></i>
                  </a>
+               @endcan
               </div>
            </div>
         </div>
