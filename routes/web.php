@@ -3,7 +3,6 @@
 use UniSharp\LaravelFilemanager\Lfm;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -11,6 +10,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\LocalizationController;
+
+// Blog clients
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +25,9 @@ use App\Http\Controllers\LocalizationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Dashboard start
 
@@ -77,4 +79,6 @@ Auth::routes([
 Route::get('localization/{language}', [LocalizationController::class, 'switch'])->name('localization.switch');
 // Localization end
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Route for clients blog
+Route::get('/', [BlogController::class, 'home'])->name('blog.home');
