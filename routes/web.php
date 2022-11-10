@@ -12,6 +12,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\LocalizationController;
 
+// Frontend route
+use App\Http\Controllers\Layout\LandingController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,9 +26,9 @@ use App\Http\Controllers\LocalizationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//    return view('welcome');
+// });
 
 // Dashboard start
 
@@ -77,4 +80,5 @@ Auth::routes([
 Route::get('localization/{language}', [LocalizationController::class, 'switch'])->name('localization.switch');
 // Localization end
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Home landing
+Route::get('/', [LandingController::class, 'home'])->name('landing.home');
