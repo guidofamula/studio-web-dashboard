@@ -8,6 +8,38 @@ use Diglactic\Breadcrumbs\Breadcrumbs;
 //  with `$trail`. This is nice for IDE type checking and completion.
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
+// ===LANDING BREADCRUMBS===
+// Blog
+Breadcrumbs::for('blog', function (BreadcrumbTrail $trail) {
+    $trail->push( config('app.name'), route('blog.home'));
+});
+
+// Blog -> Home
+Breadcrumbs::for('blog-home', function (BreadcrumbTrail $trail) {
+    $trail->parent('blog');
+    $trail->push( trans('blog.title.home'), route('blog.home'));
+});
+
+// Blog -> Categories
+Breadcrumbs::for('blog-categories', function (BreadcrumbTrail $trail) {
+    $trail->parent('blog');
+    $trail->push( trans('blog.title.categories'), route('blog.categories'));
+});
+
+// Blog -> Tags
+Breadcrumbs::for('blog-tags', function (BreadcrumbTrail $trail) {
+    $trail->parent('blog');
+    $trail->push( trans('blog.title.tags'), route('blog.tags'));
+});
+
+// Blog -> Search
+Breadcrumbs::for('blog-search', function (BreadcrumbTrail $trail, $keyword) {
+    $trail->parent('blog');
+    $trail->push( 'Search', route('blog.search'));
+    $trail->push( $keyword , route('blog.search'));
+});
+
+// ===DASHBOARD BREADCRUMBS===
 // Dashboard Parent/induk
 Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
     $trail->push( trans('dashboard.title.index'), route('dashboard.index'));

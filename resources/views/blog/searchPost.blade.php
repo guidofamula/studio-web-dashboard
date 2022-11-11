@@ -1,16 +1,16 @@
 @extends('layouts.blog')
 
 @section('title')
-	{{ trans('blog.title.home') }}
+	{{ request()->get('keyword') }}
 @endsection
 
 @section('content')
 <!-- page title -->
 <h2 class="my-3">
-   {{ trans('blog.title.home') }}
+   {{ trans('blog.title.search', ['keyword' => request()->get('keyword')]) }}
 </h2>
 <!-- Breadcrumbs:start -->
-{{ Breadcrumbs::render('blog-home') }}
+{{ Breadcrumbs::render('blog-search', request()->get('keyword')) }}
 <!-- Breadcrumbs:end -->
 
 <div class="row">
@@ -48,7 +48,7 @@
       @empty
       <!-- empty -->
 	      <h3 class="text-center">
-	         {{ trans('blog.no_data.posts') }}
+	         {{ trans('blog.no_data.search_posts') }}
 	      </h3>
       @endforelse
       <!-- Post list:end -->
