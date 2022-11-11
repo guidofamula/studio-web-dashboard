@@ -42,4 +42,38 @@ class BlogController extends Controller
                     ->appends(['keyword' => $request->keyword]),
         ]);
     }
+
+    public function showPostsByCategory($slug)
+    {
+        $posts = Post::publish()->whereHas('categories', function ($query) use($slug) {
+            return $query->where('slug', $slug);
+        })->latest()->paginate(5);
+
+        $category = Category::where('slug', $slug)->first();
+
+        $categories = Category::all();
+
+        return view('blog.posts-category', [
+            'posts' => $posts,
+            'category' => $category,
+            'categories' => $categories,
+        ]);
+    }
+
+    public function showPostsByTag($slug)
+    {
+        $posts = Post::publish()->whereHas('tags', function ($query) use($slug) {
+            return $query->where('slug', $slug);
+        })->latest()->paginate(5);
+
+        $tag = Tag::where('slug', $slug)->first();
+
+        $tags = Tag::all();
+
+        return view('blog.posts-tag', [
+            'posts' => $posts,
+            'tag' => $tag,
+            'tags' => $tags,
+        ]);
+    }
 }

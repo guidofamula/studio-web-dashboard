@@ -26,10 +26,24 @@ Breadcrumbs::for('blog-categories', function (BreadcrumbTrail $trail) {
     $trail->push( trans('blog.title.categories'), route('blog.categories'));
 });
 
+// Blog -> Categories -> Title
+Breadcrumbs::for('blog-posts-category', function (BreadcrumbTrail $trail, $title) {
+    $trail->parent('blog');
+    $trail->push( trans('blog.title.categories'), route('blog.categories'));
+    $trail->push( $title, '#');
+});
+
 // Blog -> Tags
 Breadcrumbs::for('blog-tags', function (BreadcrumbTrail $trail) {
     $trail->parent('blog');
     $trail->push( trans('blog.title.tags'), route('blog.tags'));
+});
+
+// Blog -> Tag -> Title
+Breadcrumbs::for('blog-posts-tag', function (BreadcrumbTrail $trail, $title) {
+    $trail->parent('blog');
+    $trail->push( trans('blog.title.tags'), route('blog.tags'));
+    $trail->push( $title, '#');
 });
 
 // Blog -> Search

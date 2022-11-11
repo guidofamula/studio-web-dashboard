@@ -29,7 +29,7 @@
          <!-- thumbnail:end -->         
          <div class="card-body">
             <h4 class="card-title">
-               <a href="">
+               <a href="{{ route('blog.posts-category', ['slug' => $category->slug]) }}">
                   {{ $category->title }}
                </a>
             </h4>

@@ -17,10 +17,10 @@
       <div class="col">
       	@forelse ($tags as $tag)
           <!-- true -->
-          <a href=""
+          <a href="{{ route('blog.posts-tag', ['slug' => $tag->slug]) }}"
              class="badge badge-info py-3 px-5">
-             	{{ $tag->title }}
-             </a>
+             	#{{ $tag->title }}
+          </a>
       	@empty
           <!-- false -->
           <h3 class="text-center">

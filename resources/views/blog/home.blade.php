@@ -59,7 +59,7 @@
 @if ($posts->hasPages())
 	<div class="row">
 	   <div class="col">
-	   	{{ $posts->links('vendor.pagination.bootstrap-4') }}
+	   	{{ $posts->links('vendor.pagination.bootstrap-5') }}
 	   </div>
 	</div>
 @endif
