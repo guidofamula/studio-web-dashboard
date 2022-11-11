@@ -81,4 +81,4 @@ Route::get('localization/{language}', [LocalizationController::class, 'switch'])
 // Localization end
 
 // Home landing
-Route::get('/', [LandingController::class, 'home'])->name('landing.home');
+Route::get('/', [LandingController::class, 'homePage'])->name('landing.home');

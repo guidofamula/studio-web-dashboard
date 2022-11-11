@@ -14,7 +14,7 @@
 
 <body>
     {{-- Navbar Start --}}
-    @include('layouts.partials.navbar')
+    @include('layouts.partials-landing.navbar')
     {{-- Navbar End --}}
 
     {{-- Content Start --}}
@@ -22,7 +22,7 @@
     {{-- Content End --}}
 
     {{-- Footer start --}}
-    @include('layouts.partials.footer')
+    @include('layouts.partials-landing.footer')
     {{-- Footer end --}}
 
     <!-- SCRIPT tailwind -->

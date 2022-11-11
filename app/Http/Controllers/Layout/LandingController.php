@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
-    public function home()
+    public function homePage()
     {
-        return view('landing.home');
+        return view('landing.home-page.home');
     }
 }
