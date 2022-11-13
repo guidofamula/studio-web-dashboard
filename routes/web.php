@@ -47,7 +47,7 @@ Route::group([
 
     // Dashboard Tags (index, create, edit, update, show, destroy)
     Route::resource('/tags', TagController::class)->except('show');
-    
+
     // Tags for select in create post
     Route::get('/tags/select', [TagController::class, 'select'])->name('tags.select');
 
@@ -82,3 +82,10 @@ Route::get('localization/{language}', [LocalizationController::class, 'switch'])
 
 // Home landing
 Route::get('/', [LandingController::class, 'homePage'])->name('landing.home');
+
+// Blog Landing
+Route::get('/blog', [LandingController::class, 'blogPage'])->name('landing.blog');
+
+// Post Detail Landing
+Route::get('/blog/{slug}', [LandingController::class, 'showPostDetail'])->name('landing.post-detail');
+

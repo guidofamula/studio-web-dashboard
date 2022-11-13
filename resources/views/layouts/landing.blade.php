@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="@yield('description')">
     <title>@yield('title') | {{ config('app.name') }}</title>
 
     <!-- Tailwind -->
@@ -28,7 +29,7 @@
     <!-- SCRIPT tailwind -->
     {{-- @vite('resources/js/nav-toggle.js') --}}
     {{-- Script hamburger --}}
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
+    <script type="text/javascript" src="/assets/js/scripts.js"></script>
 </body>
 
 </html>
