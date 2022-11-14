@@ -8,6 +8,9 @@
     <meta name="description" content="@yield('description')">
     <title>@yield('title') | {{ config('app.name') }}</title>
 
+    <!-- fontawesome free -->
+    <script src="{{ asset('vendor/fontawesome-free/js/all.min.js') }}"></script>
+
     <!-- Tailwind -->
     @vite('resources/css/app.css')
 
@@ -15,7 +18,7 @@
 
 <body>
     {{-- Navbar Start --}}
-    @include('layouts.partials-landing.navbar')
+    {{-- @include('layouts.partials-landing.navbar') --}}
     {{-- Navbar End --}}
 
     {{-- Content Start --}}

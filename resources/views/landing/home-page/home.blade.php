@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+    {{-- Navhome section start --}}
+    @include('landing.home-page.partials.navhome')
+    {{-- Navhome section end --}}
+
     {{-- Hero section start --}}
     @include('landing.home-page.partials.hero')
     {{-- Hero section end --}}

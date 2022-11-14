@@ -2,7 +2,7 @@
     <div class="container">
         <div class="flex items-center justify-between relative">
             <div class="px-4">
-                <a class=" text-lg text-primary block py-6 font-bold" href="#home">GUIDOFAMULA</a>
+                <a class=" text-lg text-primary block py-6 font-bold" href="{{ route('landing.home') }}">GUIDOFAMULA</a>
             </div>
             <div class="flex items-center px-4">
                 <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
@@ -15,19 +15,19 @@
                     <ul class="block lg:flex">
                         <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
-                                href="#home">HOME</a>
+                                href="/#home">HOME</a>
                         </li>
                         <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
-                                href="{{ route('landing.about') }}">ABOUT</a>
+                                href="/#about">ABOUT</a>
                         </li>
                         <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
-                                href="#portfolio">PORTFOLIO</a>
+                                href="/#portfolio">PORTFOLIO</a>
                         </li>
                         <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
-                                href="#clients">CLIENTS</a>
+                                href="/#clients">CLIENTS</a>
                         </li>
                         <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
@@ -35,7 +35,7 @@
                         </li>
                         <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
-                                href="#contact">CONTACT</a>
+                                href="/#contact">CONTACT</a>
                         </li>
                     </ul>
                 </nav>

@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-    Blog
+    Tag: {{ $tag->title }}
 @endsection
 
 @section('content')
@@ -12,20 +12,13 @@
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Kumpulan Blog</h2>
-                    <h4 class="font-semibold text-lg text-primary mb-2">GUIDOFAMULA.COM</h4>
-
-                    {{-- Search box start --}}
-                    <form action="{{ route('landing.blog') }}" method="get">
-                        <div class="flex justify-center mt-5">
-                            <div class="mb-3 xl:w-96">
-                                <input type="search" name="keyword" type="search" value="{{ request()->get('keyword') }}"
-                                    class="form-control block w-full px-3 py-1.5 text-base font-normal text-secondary bg-white bg-clip-padding border border-solid border-gray-300 rounded-md transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary focus:outline-none"
-                                    id="exampleSearch" placeholder="Cari artikel..." />
-                            </div>
-                        </div>
-                    </form>
-                    {{-- Search box ends --}}
+                    <h2 class="uppercase font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-3xl">Tag Postingan</h2>
+                    <div class="mt-10">
+                        <a href="#"
+                            class="text-base uppercase font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">
+                            {{ $tag->title }}
+                        </a>
+                    </div>
                 </div>
             </div>
             {{-- Start card blog --}}
@@ -48,8 +41,9 @@
                                 <p class="font-medium text-base text-secondary mb-6">
                                     {{ $post->description }}
                                 </p>
-                                <a class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
-                                    href="{{ route('landing.post-detail', ['slug' => $post->slug]) }}">Baca Selengkapnya</a>
+                                <a class="flex justify-center font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                                    href="{{ route('landing.post-detail', ['slug' => $post->slug]) }}">Baca
+                                    Selengkapnya</a>
                             </div>
                         </div>
                     </div>

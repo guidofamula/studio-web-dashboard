@@ -89,3 +89,19 @@ Route::get('/blog', [LandingController::class, 'blogPage'])->name('landing.blog'
 // Post Detail Landing
 Route::get('/blog/{slug}', [LandingController::class, 'showPostDetail'])->name('landing.post-detail');
 
+// Categories Landing
+Route::get('/categories', [LandingController::class, 'showCategories'])->name('landing.categories');
+
+// Posts By Category
+Route::get('/categories/{slug}', [LandingController::class, 'showPostsByCategory'])->name('landing.post-category');
+
+// Tags Landing
+Route::get('/tags', [LandingController::class, 'showTags'])->name('landing.tags');
+
+// Posts By Tag
+Route::get('/tags/{slug}', [LandingController::class, 'showPostsByTag'])->name('landing.post-tag');
+
+
+// About Landing
+Route::get('/about', [LandingController::class, 'aboutPage'])->name('landing.about');
+

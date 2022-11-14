@@ -9,6 +9,9 @@
 @endsection
 
 @section('content')
+    {{-- Navhome section start --}}
+    @include('landing.blog-page.partials-blog.navblog')
+    {{-- Navhome section end --}}
     <div class="container mt-10 py-6 md:py-10">
         <div class="mx-auto max-w-4xl">
             <div class="">
@@ -22,17 +25,26 @@
                     </div>
                     <div class="pl-5">
                         <span class="block font-body text-xl font-semibold text-dark">
-                            By {{ auth()->user()->name }}
+                            By Guido Famula
                         </span>
                         <span class="block pt-1 font-body text-xl text-secondary text-grey-30">
                             {{ $post->created_at->diffForHumans() }}
                         </span>
                     </div>
                 </div>
+                {{-- Start thumbnail --}}
+                <div class="bg-white rounded-xl mt-5 shadow-lg overflow-hidden mb-5">
+                    @if (file_exists(public_path($post->thumbnail)))
+                        <img class="w-full" src="{{ asset($post->thumbnail) }}" alt="{{ $post->title }}">
+                    @else
+                        <img class="w-full" src="http://via.placeholder.com/360x200" alt="{{ $post->title }}">
+                    @endif
+                </div>
+                {{-- End Thumbnail --}}
                 <div class="border-t-2 mt-4">
                     <div class="flex pt-4">
                         @foreach ($categories as $category)
-                            <a href="/"
+                            <a href="{{ route('landing.post-category', ['slug' => $category->slug]) }}"
                                 class="rounded-xl bg-primary px-4 py-1 mr-1 mt-4 font-body font-bold text-white hover:bg-grey-20">
                                 {{ $category->title }}
                             </a>
@@ -81,11 +93,11 @@
                     class="flex flex-col items-center border-t border-lila py-12 pt-12 md:flex-row md:items-start xl:pb-20">
                     <div class="w-3/4 sm:w-2/5 lg:w-1/4 xl:w-1/5">
                         <img src="{{ asset('assets/images/guido-profil-2.png') }}" class="border-t-2 rounded-full shadow"
-                            alt="{{ auth()->user()->name }}" />
+                            alt="Guido Famula" />
                     </div>
                     <div class="ml-0 text-center md:ml-10 md:w-5/6 md:text-left">
                         <h3 class="pt-10 font-body text-2xl font-bold text-secondary md:pt-0">
-                            {{ auth()->user()->name }}
+                            Guido Famula
                         </h3>
                         <p
                             class="pt-5 font-body text-lg leading-8 text-secondary sm:leading-9 md:text-xl md:leading-9 lg:leading-9 xl:leading-9">
