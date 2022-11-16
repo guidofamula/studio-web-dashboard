@@ -22,7 +22,7 @@
     {{-- Portfolio section end --}}
 
     {{-- Clients section start --}}
-    @include('landing.home-page.partials.clients')
+    {{-- @include('landing.home-page.partials.clients') --}}
     {{-- Clients section end --}}
 
     {{-- Posts section start --}}

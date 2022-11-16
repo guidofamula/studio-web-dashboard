@@ -25,10 +25,11 @@
                     </div>
                     <div class="pl-5">
                         <span class="block font-body text-xl font-semibold text-dark">
-                            By Guido Famula
+                            By: Guido Famula
                         </span>
                         <span class="block pt-1 font-body text-xl text-secondary text-grey-30">
-                            {{ $post->created_at->diffForHumans() }}
+                            <i class="text-primary fas fa-regular fa-calendar-check"></i>
+                            {{ $post->created_at->format('d M Y') }}
                         </span>
                     </div>
                 </div>
@@ -66,7 +67,7 @@
                 </h4>
                 <div class="flex pt-3">
                     @foreach ($tags as $tag)
-                        <a href="/"
+                        <a href="{{ route('landing.post-tag', ['slug' => $tag->slug]) }}"
                             class="rounded-xl bg-primary px-4 mr-1 py-1 font-body font-bold text-white hover:bg-grey-20">
                             #{{ $tag->title }}
                         </a>
@@ -97,7 +98,9 @@
                     </div>
                     <div class="ml-0 text-center md:ml-10 md:w-5/6 md:text-left">
                         <h3 class="pt-10 font-body text-2xl font-bold text-secondary md:pt-0">
-                            Guido Famula
+                            <a class="hover:text-primary" href="{{ route('landing.about') }}">
+                                Guido Famula
+                            </a>
                         </h3>
                         <p
                             class="pt-5 font-body text-lg leading-8 text-secondary sm:leading-9 md:text-xl md:leading-9 lg:leading-9 xl:leading-9">
@@ -108,7 +111,7 @@
                         <div class="flex items-center justify-center pt-5 md:justify-start">
                             {{-- Youtube icon start --}}
                             <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
-                                href="#" target="_blank">
+                                href="https://www.youtube.com/guidofamula29/" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <title>YouTube</title>
@@ -120,7 +123,7 @@
 
                             {{-- Instagram icon start --}}
                             <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
-                                href="#" target="_blank">
+                                href="https://www.instagram.com/guidofamula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <title>Instagram</title>
@@ -132,7 +135,7 @@
 
                             {{-- Quora icon start --}}
                             <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
-                                href="#" target="_blank">
+                                href="https://id.quora.com/profile/Guido-Famula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <title>Quora</title>
@@ -144,7 +147,7 @@
 
                             {{-- Linkedn icon start --}}
                             <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
-                                href="#" target="_blank">
+                                href="https://id.linkedin.com/in/guido-famula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <title>LinkedIn</title>
@@ -156,7 +159,7 @@
 
                             {{-- Github icon start --}}
                             <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
-                                href="#" target="_blank">
+                                href="https://www.github.com/guidofamula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <title>GitHub</title>

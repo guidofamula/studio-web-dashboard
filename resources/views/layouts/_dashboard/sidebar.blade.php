@@ -43,6 +43,19 @@
                     {{ trans('dashboard.link.tags') }}
                 </a>
             @endcan
+            {{-- Menu Inbox --}}
+            <div class="sb-sidenav-menu-heading">
+                {{ trans('dashboard.menu.inbox') }}
+            </div>
+            @can('manage_inbox')
+                <a class="nav-link {{ set_active(['dashboard.inbox', 'dashboard.inbox-detail']) }}"
+                    href="{{ route('dashboard.inbox') }}">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    {{ trans('dashboard.link.message') }}
+                </a>
+            @endcan
             <div class="sb-sidenav-menu-heading">
                 {{ trans('dashboard.menu.user_permission') }}
             </div>

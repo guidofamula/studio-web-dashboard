@@ -3,11 +3,11 @@
         <div class="flex flex-wrap">
             <div class="w-full px-4 mb-10 lg:w-1/2">
                 <h4 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
-                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Yuk, bikin website modern bareng saya
+                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Butuh jasa pembuatan website?
                 </h2>
-                <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Tersedia untuk situs website statis
+                    dan dinamis,
+                    Simak profil dan layanan yang disajikan dibawah ini</p>
                 <div class="mt-5">
                     <a href="{{ route('landing.about') }}"
                         class="text-base font-semibold text-white bg-primary py-3 px-6 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">
@@ -16,11 +16,10 @@
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2">
-                <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Temukan saya</h3>
-                <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation.</p>
+                <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Mari Berteman</h3>
+                <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Temukan saya melalui jaringan sosial
+                    media dibawah ini, untuk mengetahui update dan ragam proyek website apa saja yang telah saya racik
+                </p>
                 <div class="flex items-center">
                     {{-- Youtube icon start --}}
                     <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"

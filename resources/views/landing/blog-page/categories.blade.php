@@ -29,13 +29,13 @@
                             @endif
                             <div class="py-8 px-6">
                                 <h3>
-                                    <a class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate"
+                                    <a class="block mb-3 font-semibold text-xl text-dark hover:text-primary"
                                         href="{{ route('landing.post-category', ['slug' => $category->slug]) }}">
                                         {{ $category->title }}
                                     </a>
                                 </h3>
                                 <p class="font-medium text-base text-secondary mb-6">
-                                    {{ $category->description }}
+                                    {{ Str::limit($category->description, 120) }}
                                 </p>
                                 <a class="flex justify-center font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
                                     href="{{ route('landing.post-category', ['slug' => $category->slug]) }}">

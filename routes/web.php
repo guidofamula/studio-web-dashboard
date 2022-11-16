@@ -7,12 +7,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InboxController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FileManagerController;
-use App\Http\Controllers\LocalizationController;
 
 // Frontend route
+use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\Layout\LandingController;
 
 /*
@@ -51,6 +53,13 @@ Route::group([
     // Tags for select in create post
     Route::get('/tags/select', [TagController::class, 'select'])->name('tags.select');
 
+    // Dashboard Inbox index
+    Route::get('/inbox', [InboxController::class, 'index'])->name('dashboard.inbox');
+    // Dashiboard Inbox Detail
+    Route::get('/inbox/{inbox}', [InboxController::class, 'detail'])->name('dashboard.inbox-detail');
+    // Dashboard Inbox delete
+    Route::delete('/inbox/{inbox}', [InboxController::class, 'destroy'])->name('dashboard.inbox-delete');
+
     // Dashboard Posts (index, create, edit, update, show, destroy)
     Route::resource('/posts', PostController::class);
 
@@ -83,6 +92,11 @@ Route::get('localization/{language}', [LocalizationController::class, 'switch'])
 // Home landing
 Route::get('/', [LandingController::class, 'homePage'])->name('landing.home');
 
+// Home landing
+Route::get('/#contact', [ContactUsFormController::class, 'createForm'])->name('landing.home-contact');
+// Contact Form
+Route::post('/', [ContactUsFormController::class, 'contactUsForm'])->name('contact.store');
+
 // Blog Landing
 Route::get('/blog', [LandingController::class, 'blogPage'])->name('landing.blog');
 
@@ -104,4 +118,6 @@ Route::get('/tags/{slug}', [LandingController::class, 'showPostsByTag'])->name('
 
 // About Landing
 Route::get('/about', [LandingController::class, 'aboutPage'])->name('landing.about');
+
+
 

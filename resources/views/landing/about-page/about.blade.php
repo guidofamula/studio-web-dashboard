@@ -18,13 +18,18 @@
                     Saya Guido Famula, Sebagai Web Programmer
                 </h4>
                 <p class="pt-6 font-body leading-relaxed text-grey-20">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id est laborum.
+                    Masih tinggal di <span class="text-secondary">Pontianak, Kalimantan Barat, Indonesia</span>. <br><br>
+                    Dengan hal ini menyatakan untuk dapat melayani permintaan Jasa Pemograman Website. <br>
+                    Web yang diracik dapat berupa statis maupun dinamis, baik untuk pribadi maupun skala
+                    bisnis/perusahaan. <br><br>
+                    Markup & Bahasa Pemogramman yang saya terapkan dalam membangun website adalah dengan menggunakan
+                    <span class="text-primary font-bold">HTML, CSS, JAVASCRIPT, PHP.</span>
+                    Untuk stack framework saya menggunakan <span class="text-primary font-bold">Laravel</span>, lalu
+                    untuk Version Control System saya menggunakan <span class="text-primary font-bold">GIT -> Github</span>
+                    melalui terminal Linux dalam melakukan update
+                    repository. <br><br>
+                    Oh ya, untuk styling saya dapat menggunakan <span class="text-primary font-bold">Vanilla CSS /
+                        Bootstrap / Tailwind CSS</span>.
                 </p>
                 <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
                     <div class="flex items-center justify-center sm:justify-start">
@@ -96,6 +101,12 @@
                         </a>
                         {{-- Github icon end --}}
                     </div>
+
+                </div>
+                <div class="mt-5">
+                    <a href="#layanan"
+                        class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Cek
+                        Layanan</a>
                 </div>
             </div>
             {{-- Profil about start --}}
@@ -109,123 +120,78 @@
         </div>
     </div>
 
-    <div class="container py-16 md:py-20" id="services">
-        <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Here's what I'm good at
+    <div class="container py-16 md:py-20">
+        <h2 id="layanan"
+            class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            Layanan Yang Tersedia
         </h2>
         <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            These are the services Ioffer
+            Terkait Dengan Program Pengembangan Website
         </h3>
 
         <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary first:transition duration-300 ease-in-out">
                 <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                     <div class="hidden group-hover:block">
-                        <img src="/assets/img/icon-development-white.svg" alt="development icon" />
+                        <img src="/assets/images/icon-design-white.svg" alt="Jasa Bikin Website Pontianak" />
                     </div>
                     <div class="block group-hover:hidden">
-                        <img src="/assets/img/icon-development-black.svg" alt="development icon" />
+                        <img src="/assets/images/icon-design-black.svg" alt="Jasa Bikin Website Pontianak" />
                     </div>
                 </div>
                 <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                        WEB DEVELOPMENT
+                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
+                        WEB PRIBADI/LAINNYA
                     </h3>
                     <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Meracik website untuk kepentingan portfolio pribadi, resume/cv, landing page secara statis maupun
+                        dinamis (fitur CMS)
                     </p>
                 </div>
             </div>
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary transition duration-300 ease-in-out">
                 <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                     <div class="hidden group-hover:block">
-                        <img src="/assets/img/icon-content-white.svg" alt="content marketing icon" />
+                        <img src="/assets/images/icon-development-white.svg" alt="Jasa Bikin Company Profile" />
                     </div>
                     <div class="block group-hover:hidden">
-                        <img src="/assets/img/icon-content-black.svg" alt="content marketing icon" />
+                        <img src="/assets/images/icon-development-black.svg" alt="Jasa Bikin Company Profile" />
                     </div>
                 </div>
                 <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                        Technical Writing
+                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
+                        WEB PERUSAHAAN/BISNIS
                     </h3>
                     <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Menyediakan fitur bagi yang membutuhkan laman web untuk company profile, UMKM Profile, atau landing
+                        page produk/jasa
                     </p>
                 </div>
             </div>
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary transition duration-300 ease-in-out">
                 <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                     <div class="hidden group-hover:block">
-                        <img src="/assets/img/icon-mobile-white.svg" alt="Mobile Application icon" />
+                        <img src="/assets/images/icon-content-white.svg" alt="Sistem Manajemen Konten" />
                     </div>
                     <div class="block group-hover:hidden">
-                        <img src="/assets/img/icon-mobile-black.svg" alt="Mobile Application icon" />
+                        <img src="/assets/images/icon-content-black.svg" alt="Sistem Manajemen Konten" />
                     </div>
                 </div>
                 <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                        Mobile Development
+                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
+                        SISTEM MANAJEMEN KONTEN (CMS)
                     </h3>
                     <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Kebutuhan untuk website dinamis dengan sistem penyimpanan melalui database server, sehingga
+                        pengolahan data dapat lebih terkontrol dan memiliki autentikasi setiap user yang terlibat.
                     </p>
                 </div>
             </div>
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-                <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                    <div class="hidden group-hover:block">
-                        <img src="/assets/img/icon-email-white.svg" alt="Email Marketing icon" />
-                    </div>
-                    <div class="block group-hover:hidden">
-                        <img src="/assets/img/icon-email-black.svg" alt="Email Marketing icon" />
-                    </div>
-                </div>
-                <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                        Email Development
-                    </h3>
-                    <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                </div>
-            </div>
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-                <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                    <div class="hidden group-hover:block">
-                        <img src="/assets/img/icon-design-white.svg" alt="Theme Design icon" />
-                    </div>
-                    <div class="block group-hover:hidden">
-                        <img src="/assets/img/icon-design-black.svg" alt="Theme Design icon" />
-                    </div>
-                </div>
-                <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                        Graphic Design
-                    </h3>
-                    <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                </div>
-            </div>
-            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-                <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                    <div class="hidden group-hover:block">
-                        <img src="/assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />
-                    </div>
-                    <div class="block group-hover:hidden">
-                        <img src="/assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />
-                    </div>
-                </div>
-                <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                        Web Design
-                    </h3>
-                    <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                </div>
-            </div>
+        </div>
+        <div class="mt-5 flex items-center justify-center relative">
+            <a href="{{ route('landing.home-contact') }}"
+                class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Kirim
+                Pesan Sekarang</a>
         </div>
     </div>
 @endsection

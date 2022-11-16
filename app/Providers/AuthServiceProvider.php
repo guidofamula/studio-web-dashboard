@@ -78,5 +78,14 @@ class AuthServiceProvider extends ServiceProvider
                 'role_delete',
             ]);
         });
+
+        // Gate Permission for inbox
+        Gate::define('manage_inbox', function($user) {
+            return $user->hasAnyPermission([
+                'inbox_show',
+                'inbox_detail',
+                'inbox_delete',
+            ]);
+        });
     }
 }

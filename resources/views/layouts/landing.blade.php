@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,13 @@
     <meta name="description" content="@yield('description')">
     <title>@yield('title') | {{ config('app.name') }}</title>
 
-    <!-- fontawesome free -->
-    <script src="{{ asset('vendor/fontawesome-free/js/all.min.js') }}"></script>
-
     <!-- Tailwind -->
     @vite('resources/css/app.css')
+
+    {{-- Language Indonesia --}}
+    {{-- {{ strtoupper(app()->getLocale()) }} --}}
+    {{-- <link href="{{ route('localization.switch', ['language' => 'id']) }}"> --}}
+    {{-- {{ trans('localization.id') }} --}}
 
 </head>
 
@@ -33,6 +35,9 @@
     {{-- @vite('resources/js/nav-toggle.js') --}}
     {{-- Script hamburger --}}
     <script type="text/javascript" src="/assets/js/scripts.js"></script>
+    <!-- fontawesome free -->
+    <script src="{{ asset('vendor/fontawesome-free/js/all.min.js') }}"></script>
+    @include('sweetalert::alert')
 </body>
 
 </html>

@@ -25,10 +25,10 @@
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
                                 href="/#portfolio">PORTFOLIO</a>
                         </li>
-                        <li class="group">
+                        {{-- <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
                                 href="/#clients">CLIENTS</a>
-                        </li>
+                        </li> --}}
                         <li class="group">
                             <a class="text-base text-dark py-2 mx-8 flex group-hover:text-primary transition duration-300 ease-in-out"
                                 href="/#blog">BLOG</a>

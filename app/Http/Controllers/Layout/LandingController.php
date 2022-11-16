@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Layout;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\Category;
-use App\Models\Tag;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class LandingController extends Controller
 {
