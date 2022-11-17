@@ -15,6 +15,10 @@
                 {{ Session::get('success') }}
             </div>
         @endif
+
+        {{-- Render NoCaptcha --}}
+        {!! NoCaptcha::renderJs() !!}
+
         <form action="{{ route('contact.store') }}" method="post">
             @csrf
             <div class="w-full lg:w-2/3 lg:mx-auto">
@@ -51,6 +55,23 @@
                         </span>
                     @enderror
                 </div>
+                {{-- Start display reCaptcha --}}
+                <div class="container">
+                    <div class="flex mx-auto justify-center sm:w-full mb-5">
+                        {!! NoCaptcha::display() !!}
+                    </div>
+                    <div class="invalid-feedback text-red-600 flex mx-auto justify-center sm:w-full mb-5">
+                        @if ($errors->has('recaptcha'))
+                            <strong>{{ $errors->first('recaptcha') }}</strong>
+                        @endif
+                        {{-- @error('g-recaptcha-response')
+                            <span class="invalid-feedback text-red-600" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror --}}
+                    </div>
+                </div>
+                {{-- End display reCaptcha --}}
                 <div class="w-full">
                     <button type="submit" name="send"
                         class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">

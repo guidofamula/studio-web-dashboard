@@ -198,6 +198,9 @@ return [
         // Service for intervention image
         Intervention\Image\ImageServiceProvider::class,
 
+        // Application for captcha
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+
     ],
 
     /*
@@ -213,7 +216,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
     ])->toArray(),
 
 ];

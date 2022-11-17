@@ -20,7 +20,8 @@ class ContactUsFormController extends Controller
         Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
-            'message' => 'required'
+            'message' => 'required',
+            'recaptcha' => 'required|captcha',
         ],
         [],
         $this->getAttributes()
@@ -31,6 +32,7 @@ class ContactUsFormController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'message' => $request->message,
+                'recaptcha' => $request->recapctha,
             ]);
             Alert::success(
                 'Pesan Terkirim',
