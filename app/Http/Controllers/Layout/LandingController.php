@@ -49,6 +49,21 @@ class LandingController extends Controller
         $categories = $post->categories;
         $tags = $post->tags;
 
+        // Related post by category start
+        $postRelated = Post::where('slug', '=', $slug)->first();
+        $related_category = $post->categories()->pluck('categories.id');
+        $related_posts = Post::whereHas('categories', function ($q) use($related_category) {
+            $q->whereIn('category_id', $related_category);
+        })
+        ->where('id', '<>', $post->id)
+        ->take(3)
+        ->get();
+        // Related post by category end
+
+
+        $next_id = Post::publish()->where('id', '>', $post->id)->min('id');
+        $prev_id = Post::publish()->where('id', '<', $post->id)->max('id');
+
         if(!$post) {
             return redirect()->route('landing.blog');
         }
@@ -57,6 +72,9 @@ class LandingController extends Controller
             'post' => $post,
             'categories' => $categories,
             'tags' => $tags,
+            'next' => Post::find($next_id),
+            'previous' => Post::find($prev_id),
+            'relatedPost' => $related_posts,
         ],
         $this->footerAttributes()
     );

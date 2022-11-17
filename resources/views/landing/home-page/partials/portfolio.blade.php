@@ -5,7 +5,7 @@
                 <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
                 <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Update Project</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">Dibawah ini ringkasan proyek-proyek yang telah
-                    saya buat maupun yang sedang dalam tahapan proses pengembangan, baik komersil maupun yang tidak.</p>
+                    saya buat maupun yang sedang dalam proses pengembangan, baik komersil maupun individu.</p>
             </div>
         </div>
         <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">

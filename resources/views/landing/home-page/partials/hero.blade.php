@@ -9,12 +9,12 @@
                         Famula</span></h1>
                 <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Web <span
                         class="text-dark">Programmer</span></h2>
-                <p class="font-medium text-secondary mb-10 leading-relaxed">Selamat datang di website portfolio dan blog
+                <p class="font-medium text-secondary mb-10 leading-relaxed">Selamat datang di website
                     <span class="text-primary font-bold"><a
                             class="hover:text-black hover:shadow-lg transition duration-300 ease-in-out"
-                            href="/">GUIDOFAMULA.COM</a></span>, bagi yang
+                            href="/">GUIDOFAMULA.COM</a></span><br>Bagi yang
                     membutuhkan konsultasi dan jasa perihal membuat website, jangan sungkan menghubungi
-                    saya melalui dibawah ini...
+                    saya melalui tombol link dibawah ini...
                 </p>
                 <a href="#contact"
                     class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Kirim

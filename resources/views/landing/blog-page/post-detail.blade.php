@@ -43,10 +43,11 @@
                 </div>
                 {{-- End Thumbnail --}}
                 <div class="border-t-2 mt-4">
-                    <div class="flex pt-4">
+                    <div
+                        class="flex max-sm:flex-col md:flex-row md:mx-0 md:w-full md:space-x-2 max-sm:w-52 max-sm:space-y-4 max-sm:mx-auto md:pt-3">
                         @foreach ($categories as $category)
                             <a href="{{ route('landing.post-category', ['slug' => $category->slug]) }}"
-                                class="rounded-xl bg-primary px-4 py-1 mr-1 mt-4 font-body font-bold text-white hover:bg-grey-20">
+                                class="rounded-xl max-sm:text-center md:px-4 bg-primary md:mr-1 py-1 font-body font-bold text-white hover:bg-grey-20">
                                 {{ $category->title }}
                             </a>
                         @endforeach
@@ -75,20 +76,33 @@
                 </div>
                 {{-- Tag End --}}
 
-                {{-- Previous & next post --}}
+                {{-- Previous & next post  start --}}
                 <div class="mt-10 flex justify-between border-t border-lila py-12">
-                    <a href="/" class="flex items-center">
-                        <i class="bx bx-left-arrow-alt text-2xl text-primary"></i>
-                        <span class="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5">Previous
-                            Post</span>
-                    </a>
-                    <a href="/" class="flex items-center">
-                        <span class="block pr-2 font-body text-lg font-bold uppercase text-primary md:pr-5">Next
-                            Post</span>
-                        <i class="bx bx-right-arrow-alt text-2xl text-primary"></i>
-                    </a>
+                    @if ($previous)
+                        <a href="{{ route('landing.post-detail', ['slug' => $previous->slug]) }}"
+                            class="flex items-center">
+                            <span
+                                class="block pr-2 font-body lg:text-lg sm:text-xs font-bold uppercase text-primary md:pr-5">
+                                <i class="fas fa-solid fa-chevron-left text-2xl text-primary"></i>
+                                Sebelumnya
+                                <p class="hover:text-dark hover:opacity-80 transition duration-300 ease-in-out">
+                                    {{ Str::limit($previous->title, 25) }}</p>
+                            </span>
+                        </a>
+                    @endif
+                    @if ($next)
+                        <a href="{{ route('landing.post-detail', ['slug' => $next->slug]) }}" class="flex items-center">
+                            <span
+                                class="block pl-2 font-body text-right lg:text-lg sm:text-xs font-bold uppercase text-primary md:pl-5 ">
+                                Selanjutnya
+                                <i class="fas fa-solid fa-chevron-right text-2xl text-primary"></i>
+                                <p class="hover:text-dark hover:opacity-80 transition duration-300 ease-in-out">
+                                    {{ Str::limit($next->title, 25) }}</p>
+                            </span>
+                        </a>
+                    @endif
                 </div>
-                {{-- Previous & next post --}}
+                {{-- Previous & next post end --}}
 
                 <div
                     class="flex flex-col items-center border-t border-lila py-12 pt-12 md:flex-row md:items-start xl:pb-20">
@@ -104,9 +118,11 @@
                         </h3>
                         <p
                             class="pt-5 font-body text-lg leading-8 text-secondary sm:leading-9 md:text-xl md:leading-9 lg:leading-9 xl:leading-9">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia asperiores quam ipsam
-                            laudantium eligendi nam rerum quisquam accusantium, impedit autem, porro rem ullam, maiores
-                            possimus repellat voluptatibus dolor ut numquam!
+                            Seorang web programmer yang tertarik dengan open source seputaran internet/IT, kernel linux,
+                            distro OS, dan teknologi-teknologi framework.<br>
+                            <span
+                                class="text-primary font-mono hover:text-dark cursor-pointer transition duration-300 ease-in-out">#
+                                pacman -Sy megantrovert</span>
                         </p>
                         <div class="flex items-center justify-center pt-5 md:justify-start">
                             {{-- Youtube icon start --}}
@@ -168,6 +184,48 @@
                                 </svg>
                             </a>
                             {{-- Github icon end --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-lila py-5">
+                    <h3 class="font-bold text-center uppercase text-primary text-lg mb-3 mt-1">
+                        Artikel Terkait
+                    </h3>
+                    <div class="flex justify-center border-t border-lila py-5">
+                        <div class="flex flex-wrap">
+                            @forelse($relatedPost as $post)
+                                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                                        @if (file_exists(public_path($post->thumbnail)))
+                                            <img class="w-full" src="{{ asset($post->thumbnail) }}"
+                                                alt="{{ $post->title }}">
+                                        @else
+                                            <img class="w-full" src="http://via.placeholder.com/360x200"
+                                                alt="{{ $post->title }}">
+                                        @endif
+                                        <div class="py-8 px-6">
+                                            <h3>
+                                                <a class="block mb-3 font-semibold text-xl text-dark hover:text-primary"
+                                                    href="{{ route('landing.post-detail', ['slug' => $post->slug]) }}">
+                                                    {{ $post->title }}
+                                                </a>
+                                            </h3>
+                                            <p class="font-medium text-base text-secondary mb-6">
+                                                {{ Str::limit($post->description, 50) }}
+                                            </p>
+                                            <a class="flex justify-center font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                                                href="{{ route('landing.post-detail', ['slug' => $post->slug]) }}">Baca
+                                                Selengkapnya</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                                <div class="w-full px-4 ">
+                                    <p class="font-medium sm:text-center text-base text-secondary mb-6">
+                                        Belum ada artikel terkait
+                                    </p>
+                                </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>

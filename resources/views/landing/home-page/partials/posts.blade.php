@@ -6,12 +6,14 @@
                 <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">
                     <a class="hover:text-primary transition duration-300 ease-in-out" href="{{ route('landing.blog') }}"
                         target="_blank">
-                        Artikel Terbaru
+                        Update Artikel
                     </a>
                 </h2>
-                <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit. Repudiandae, rem ratione ut minus velit quam itaque. Natus earum blanditiis
-                    suscipit.</p>
+                <p class="font-medium text-md text-secondary md:text-lg">Dibawah ini merupakan artikel-artikel terbaru,
+                    tampilan berdasarkan postingan terbaru, untuk melihat semua kumpulan artikel, kamu
+                    bisa klik tombol <span class="text-dark hover:text-primary">Lihat Semua Artikel</span> yang terletak
+                    dibawah
+                    tampilan post ini.</p>
             </div>
         </div>
         {{-- Start card blog --}}
@@ -42,7 +44,7 @@
             @empty
                 <div class="pt-36 pb-32 w-full px-4 text-center">
                     <h3 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">
-                        Artikel tidak ditemukan
+                        Artikel belum ada
                     </h3>
                 </div>
             @endforelse

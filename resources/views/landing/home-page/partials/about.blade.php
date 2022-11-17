@@ -6,8 +6,8 @@
                 <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Butuh jasa pembuatan website?
                 </h2>
                 <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Tersedia untuk situs website statis
-                    dan dinamis,
-                    Simak profil dan layanan yang disajikan dibawah ini</p>
+                    maupun dinamis,
+                    Simak profil dan layanan yang disajikan melalui link tombol di bawah ini</p>
                 <div class="mt-5">
                     <a href="{{ route('landing.about') }}"
                         class="text-base font-semibold text-white bg-primary py-3 px-6 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">
