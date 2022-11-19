@@ -15,26 +15,26 @@
     <div class="container mt-10 py-6 md:py-10">
         <div class="mx-auto max-w-4xl">
             <div class="">
-                <h1 class="pt-10 font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl ">
+                <h1 class="font-body pt-10 text-3xl font-semibold text-primary sm:text-4xl md:text-5xl">
                     {{ $post->title }}
                 </h1>
                 <div class="flex items-center pt-5 md:pt-10">
                     <div>
                         <img src="{{ asset('assets/images/guido-profil-2.png') }}"
-                            class="h-20 w-20 rounded-full border-2 border-grey-70 shadow" alt="author image" />
+                            class="border-grey-70 h-20 w-20 rounded-full border-2 shadow" alt="author image" />
                     </div>
                     <div class="pl-5">
-                        <span class="block font-body text-xl font-semibold text-dark">
+                        <span class="font-body block text-xl font-semibold text-dark">
                             By: Guido Famula
                         </span>
-                        <span class="block pt-1 font-body text-xl text-secondary text-grey-30">
-                            <i class="text-primary fas fa-regular fa-calendar-check"></i>
+                        <span class="font-body text-grey-30 block pt-1 text-xl text-secondary">
+                            <i class="fas fa-regular fa-calendar-check text-primary"></i>
                             {{ $post->created_at->format('d M Y') }}
                         </span>
                     </div>
                 </div>
                 {{-- Start thumbnail --}}
-                <div class="bg-white rounded-xl mt-5 shadow-lg overflow-hidden mb-5">
+                <div class="mt-5 mb-5 overflow-hidden rounded-xl bg-white shadow-lg">
                     @if (file_exists(public_path($post->thumbnail)))
                         <img class="w-full" src="{{ asset($post->thumbnail) }}" alt="{{ $post->title }}">
                     @else
@@ -42,12 +42,12 @@
                     @endif
                 </div>
                 {{-- End Thumbnail --}}
-                <div class="border-t-2 mt-4">
+                <div class="mt-4 border-t-2">
                     <div
-                        class="flex max-sm:flex-col md:flex-row md:mx-0 md:w-full md:space-x-2 max-sm:w-52 max-sm:space-y-4 max-sm:mx-auto md:pt-3">
+                        class="max-sm:flex-col max-sm:w-52 max-sm:space-y-4 max-sm:mx-auto flex md:mx-0 md:w-full md:flex-row md:space-x-2 md:pt-3">
                         @foreach ($categories as $category)
                             <a href="{{ route('landing.post-category', ['slug' => $category->slug]) }}"
-                                class="rounded-xl max-sm:text-center md:px-4 bg-primary md:mr-1 py-1 font-body font-bold text-white hover:bg-grey-20">
+                                class="max-sm:text-center font-body hover:bg-grey-20 rounded-xl bg-primary py-1 font-bold text-white md:mr-1 md:px-4">
                                 {{ $category->title }}
                             </a>
                         @endforeach
@@ -56,20 +56,20 @@
             </div>
             <div class="prose max-w-none pt-8">
                 {{-- Start content --}}
-                <div class="font-medium text-base text-slate-700 mb-6 lg:text-lg">
+                <div class="mb-6 text-base font-medium text-slate-700 lg:text-lg">
                     {!! $post->content !!}
                 </div>
                 {{-- End content --}}
 
                 {{-- Tag start --}}
-                <h4 class="font-bold uppercase text-primary text-lg mb-3 mt-10">
+                <h4 class="mb-3 mt-10 text-lg font-bold uppercase text-primary">
                     <span class="text-dark">Tag: </span>
                     {{ $post->title }}
                 </h4>
                 <div class="flex pt-3">
                     @foreach ($tags as $tag)
                         <a href="{{ route('landing.post-tag', ['slug' => $tag->slug]) }}"
-                            class="rounded-xl bg-primary px-4 mr-1 py-1 font-body font-bold text-white hover:bg-grey-20">
+                            class="font-body hover:bg-grey-20 mr-1 rounded-xl bg-primary px-4 py-1 font-bold text-white">
                             #{{ $tag->title }}
                         </a>
                     @endforeach
@@ -77,15 +77,15 @@
                 {{-- Tag End --}}
 
                 {{-- Previous & next post  start --}}
-                <div class="mt-10 flex justify-between border-t border-lila py-12">
+                <div class="border-lila mt-10 flex justify-between border-t py-12">
                     @if ($previous)
                         <a href="{{ route('landing.post-detail', ['slug' => $previous->slug]) }}"
                             class="flex items-center">
                             <span
-                                class="block pr-2 font-body lg:text-lg sm:text-xs font-bold uppercase text-primary md:pr-5">
+                                class="font-body block pr-2 font-bold uppercase text-primary sm:text-xs md:pr-5 lg:text-lg">
                                 <i class="fas fa-solid fa-chevron-left text-2xl text-primary"></i>
                                 Sebelumnya
-                                <p class="hover:text-dark hover:opacity-80 transition duration-300 ease-in-out">
+                                <p class="transition duration-300 ease-in-out hover:text-dark hover:opacity-80">
                                     {{ Str::limit($previous->title, 25) }}</p>
                             </span>
                         </a>
@@ -93,10 +93,10 @@
                     @if ($next)
                         <a href="{{ route('landing.post-detail', ['slug' => $next->slug]) }}" class="flex items-center">
                             <span
-                                class="block pl-2 font-body text-right lg:text-lg sm:text-xs font-bold uppercase text-primary md:pl-5 ">
+                                class="font-body block pl-2 text-right font-bold uppercase text-primary sm:text-xs md:pl-5 lg:text-lg">
                                 Selanjutnya
                                 <i class="fas fa-solid fa-chevron-right text-2xl text-primary"></i>
-                                <p class="hover:text-dark hover:opacity-80 transition duration-300 ease-in-out">
+                                <p class="transition duration-300 ease-in-out hover:text-dark hover:opacity-80">
                                     {{ Str::limit($next->title, 25) }}</p>
                             </span>
                         </a>
@@ -105,28 +105,28 @@
                 {{-- Previous & next post end --}}
 
                 <div
-                    class="flex flex-col items-center border-t border-lila py-12 pt-12 md:flex-row md:items-start xl:pb-20">
+                    class="border-lila flex flex-col items-center border-t py-12 pt-12 md:flex-row md:items-start xl:pb-20">
                     <div class="w-3/4 sm:w-2/5 lg:w-1/4 xl:w-1/5">
-                        <img src="{{ asset('assets/images/guido-profil-2.png') }}" class="border-t-2 rounded-full shadow"
+                        <img src="{{ asset('assets/images/guido-profil-2.png') }}" class="rounded-full border-t-2 shadow"
                             alt="Guido Famula" />
                     </div>
                     <div class="ml-0 text-center md:ml-10 md:w-5/6 md:text-left">
-                        <h3 class="pt-10 font-body text-2xl font-bold text-secondary md:pt-0">
+                        <h3 class="font-body pt-10 text-2xl font-bold text-secondary md:pt-0">
                             <a class="hover:text-primary" href="{{ route('landing.about') }}">
                                 Guido Famula
                             </a>
                         </h3>
                         <p
-                            class="pt-5 font-body text-lg leading-8 text-secondary sm:leading-9 md:text-xl md:leading-9 lg:leading-9 xl:leading-9">
+                            class="font-body pt-5 text-lg leading-8 text-secondary sm:leading-9 md:text-xl md:leading-9 lg:leading-9 xl:leading-9">
                             Seorang web programmer yang tertarik dengan open source seputaran internet/IT, kernel linux,
                             distro OS, dan teknologi-teknologi framework.<br>
                             <span
-                                class="text-primary font-mono hover:text-dark cursor-pointer transition duration-300 ease-in-out">#
+                                class="cursor-pointer font-mono text-primary transition duration-300 ease-in-out hover:text-dark">#
                                 pacman -Sy megantrovert</span>
                         </p>
                         <div class="flex items-center justify-center pt-5 md:justify-start">
                             {{-- Youtube icon start --}}
-                            <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                            <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                                 href="https://www.youtube.com/guidofamula29/" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +138,7 @@
                             {{-- Youtube icon end --}}
 
                             {{-- Instagram icon start --}}
-                            <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                            <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                                 href="https://www.instagram.com/guidofamula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +150,7 @@
                             {{-- Instagram icon end --}}
 
                             {{-- Quora icon start --}}
-                            <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                            <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                                 href="https://id.quora.com/profile/Guido-Famula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +162,7 @@
                             {{-- Quora icon end --}}
 
                             {{-- Linkedn icon start --}}
-                            <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                            <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                                 href="https://id.linkedin.com/in/guido-famula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -174,7 +174,7 @@
                             {{-- Linkedn icon end --}}
 
                             {{-- Github icon start --}}
-                            <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                            <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                                 href="https://www.github.com/guidofamula" target="_blank">
                                 <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -187,15 +187,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="border-t border-lila py-5">
-                    <h3 class="font-bold text-center uppercase text-primary text-lg mb-3 mt-1">
+                <div class="border-lila border-t py-5">
+                    <h3 class="mb-3 mt-1 text-center text-lg font-bold uppercase text-primary">
                         Artikel Terkait
                     </h3>
-                    <div class="flex justify-center border-t border-lila py-5">
+                    <div class="border-lila flex justify-center border-t py-5">
                         <div class="flex flex-wrap">
                             @forelse($relatedPost as $post)
                                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg">
                                         @if (file_exists(public_path($post->thumbnail)))
                                             <img class="w-full" src="{{ asset($post->thumbnail) }}"
                                                 alt="{{ $post->title }}">
@@ -205,23 +205,23 @@
                                         @endif
                                         <div class="py-8 px-6">
                                             <h3>
-                                                <a class="block mb-3 font-semibold text-xl text-dark hover:text-primary"
+                                                <a class="mb-3 block text-xl font-semibold text-dark hover:text-primary"
                                                     href="{{ route('landing.post-detail', ['slug' => $post->slug]) }}">
                                                     {{ $post->title }}
                                                 </a>
                                             </h3>
-                                            <p class="font-medium text-base text-secondary mb-6">
+                                            <p class="mb-6 text-base font-medium text-secondary">
                                                 {{ Str::limit($post->description, 50) }}
                                             </p>
-                                            <a class="flex justify-center font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80"
+                                            <a class="flex justify-center rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80"
                                                 href="{{ route('landing.post-detail', ['slug' => $post->slug]) }}">Baca
                                                 Selengkapnya</a>
                                         </div>
                                     </div>
                                 </div>
                             @empty
-                                <div class="w-full px-4 ">
-                                    <p class="font-medium sm:text-center text-base text-secondary mb-6">
+                                <div class="w-full px-4">
+                                    <p class="mb-6 text-base font-medium text-secondary sm:text-center">
                                         Belum ada artikel terkait
                                     </p>
                                 </div>

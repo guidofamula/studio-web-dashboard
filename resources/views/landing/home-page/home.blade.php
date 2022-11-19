@@ -33,3 +33,7 @@
     @include('landing.home-page.partials.contact')
     {{-- Contact section end --}}
 @endsection
+
+@push('js-darkmode')
+    <script src="{{ asset('assets/js/darkThemeStorage.js') }}"></script>
+@endpush

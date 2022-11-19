@@ -1,28 +1,30 @@
-<section id="about" class="pt-36 pb-32">
+<section id="about" class="pt-36 pb-32 dark:bg-dark">
     <div class="container">
         <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <h4 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h4>
-                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">Butuh jasa pembuatan website?
+            <div class="mb-10 w-full px-4 lg:w-1/2">
+                <h4 class="mb-3 text-lg font-bold uppercase text-primary">Tentang Saya</h4>
+                <h2 class="mb-5 max-w-md text-3xl font-bold text-dark dark:text-white lg:text-4xl">Butuh jasa pembuatan
+                    website?
                 </h2>
-                <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Tersedia untuk situs website statis
+                <p class="max-w-xl text-base font-medium text-secondary lg:text-lg">Tersedia untuk situs website statis
                     maupun dinamis,
                     Simak profil dan layanan yang disajikan melalui link tombol di bawah ini</p>
                 <div class="mt-5">
                     <a href="{{ route('landing.about') }}"
-                        class="text-base font-semibold text-white bg-primary py-3 px-6 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">
+                        class="rounded-full bg-primary py-3 px-6 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">
                         Cek Profil
                     </a>
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2">
-                <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Mari Berteman</h3>
-                <p class="font-medium text-base text-secondary mb-6 lg:text-lg">Temukan saya melalui jaringan sosial
+                <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">Mari Berteman
+                </h3>
+                <p class="mb-6 text-base font-medium text-secondary lg:text-lg">Temukan saya melalui jaringan sosial
                     media dibawah ini, untuk mengetahui update dan ragam proyek website apa saja yang telah saya racik
                 </p>
                 <div class="flex items-center">
                     {{-- Youtube icon start --}}
-                    <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                    <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:text-white dark:hover:border-primary dark:hover:text-dark"
                         href="https://www.youtube.com/guidofamula29/" target="_blank">
                         <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +36,7 @@
                     {{-- Youtube icon end --}}
 
                     {{-- Instagram icon start --}}
-                    <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                    <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:text-white dark:hover:border-primary dark:hover:text-dark"
                         href="https://www.instagram.com/guidofamula" target="_blank">
                         <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +48,7 @@
                     {{-- Instagram icon end --}}
 
                     {{-- Quora icon start --}}
-                    <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                    <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:text-white dark:hover:border-primary dark:hover:text-dark"
                         href="https://id.quora.com/profile/Guido-Famula" target="_blank">
                         <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +60,7 @@
                     {{-- Quora icon end --}}
 
                     {{-- Linkedn icon start --}}
-                    <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                    <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:text-white dark:hover:border-primary dark:hover:text-dark"
                         href="https://id.linkedin.com/in/guido-famula" target="_blank">
                         <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +72,7 @@
                     {{-- Linkedn icon end --}}
 
                     {{-- Github icon start --}}
-                    <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                    <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:text-white dark:hover:border-primary dark:hover:text-dark"
                         href="https://www.github.com/guidofamula" target="_blank">
                         <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">

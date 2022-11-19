@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="@yield('description')">
     <title>@yield('title') | {{ config('app.name') }}</title>
+
+    {{-- Local storage theme --}}
+    @stack('js-darkmode')
 
     <!-- Tailwind -->
     @vite('resources/css/app.css')
@@ -19,10 +22,6 @@
 </head>
 
 <body>
-    {{-- Navbar Start --}}
-    {{-- @include('layouts.partials-landing.navbar') --}}
-    {{-- Navbar End --}}
-
     {{-- Content Start --}}
     @yield('content')
     {{-- Content End --}}
@@ -30,6 +29,10 @@
     {{-- Footer start --}}
     @include('layouts.partials-landing.footer')
     {{-- Footer end --}}
+
+    {{-- Back to top button start --}}
+    @include('layouts.partials-landing.backToTop')
+    {{-- Back to top button end --}}
 
     <!-- SCRIPT tailwind -->
     {{-- @vite('resources/js/nav-toggle.js') --}}

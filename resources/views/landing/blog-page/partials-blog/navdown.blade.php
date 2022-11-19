@@ -1,19 +1,19 @@
 <div class="container mt-5">
-    <div class="flex items-center justify-center relative">
+    <div class="relative flex items-center justify-center">
         <div class="flex items-center px-6">
             <nav id="nav-menu"
-                class="py-5 w-full right-4 top-full transition duration-300 ease-in-out lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none ">
+                class="right-4 top-full w-full py-5 transition duration-300 ease-in-out lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none">
                 <ul class="block lg:flex">
                     <li class="group">
-                        <a class="mt-2 flex justify-center font-medium text-lg text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 mx-8 group-hover:text-dark transition duration-300 ease-in-out"
+                        <a class="mx-8 mt-2 flex justify-center rounded-lg bg-primary py-2 px-4 text-lg font-medium text-white transition duration-300 ease-in-out hover:opacity-80 group-hover:text-dark"
                             href="{{ route('landing.blog') }}">Semua Postingan</a>
                     </li>
                     <li class="group">
-                        <a class="mt-2 flex justify-center font-medium text-lg text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 mx-8 group-hover:text-dark transition duration-300 ease-in-out"
+                        <a class="mx-8 mt-2 flex justify-center rounded-lg bg-primary py-2 px-4 text-lg font-medium text-white transition duration-300 ease-in-out hover:opacity-80 group-hover:text-dark"
                             href="{{ route('landing.tags') }}">Semua Tag</a>
                     </li>
                     <li class="group">
-                        <a class="mt-2 flex justify-center font-medium text-lg text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 mx-8 group-hover:text-dark transition duration-300 ease-in-out"
+                        <a class="mx-8 mt-2 flex justify-center rounded-lg bg-primary py-2 px-4 text-lg font-medium text-white transition duration-300 ease-in-out hover:opacity-80 group-hover:text-dark"
                             href="{{ route('landing.categories') }}">Semua Kategori</a>
                     </li>
                 </ul>

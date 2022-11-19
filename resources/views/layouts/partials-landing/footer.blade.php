@@ -1,73 +1,73 @@
 <footer class="bg-dark pt-24 pb-12">
     <div class="container">
         <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/4">
-                <h2 class="font-bold text-4xl text-white mb-5">GUIDO FAMULA</h2>
-                <h3 class="font-bold text-2xl mb-2">Hubungi</h3>
+            <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/4">
+                <h2 class="mb-5 text-4xl font-bold text-white">GUIDO FAMULA</h2>
+                <h3 class="mb-2 text-2xl font-bold">Hubungi</h3>
                 <p>Email: <strong>guidofamula@gmail.com</strong></p>
                 <p>Pontianak, Kalimantan Barat, Indonesia</p>
             </div>
-            <div class="w-full px-4 mb-12 md:w-1/4">
-                <h3 class="font-semibold text-xl text-white mb-5">
+            <div class="mb-12 w-full px-4 md:w-1/4">
+                <h3 class="mb-5 text-xl font-semibold text-white">
                     Kategori Artikel
                 </h3>
                 @foreach ($footerCategories as $footerCategory)
                     <ul class="text-slate-300">
                         <li>
                             <a href="{{ route('landing.post-category', ['slug' => $footerCategory->slug]) }}"
-                                class="uppercase inline-block text-base hover:text-primary mb-3">
+                                class="mb-3 inline-block text-base uppercase hover:text-primary">
                                 {{ $footerCategory->title }}
                             </a>
                         </li>
                     </ul>
                 @endforeach
             </div>
-            <div class="w-full px-4 mb-12 md:w-1/4">
-                <h3 class="font-semibold text-xl text-white mb-5">
+            <div class="mb-12 w-full px-4 md:w-1/4">
+                <h3 class="mb-5 text-xl font-semibold text-white">
                     Tag Artikel
                 </h3>
                 @foreach ($footerTags as $footerTag)
                     <ul class="text-slate-300">
                         <li>
                             <a href="{{ route('landing.post-tag', ['slug' => $footerTag->slug]) }}"
-                                class="uppercase inline-block text-base hover:text-primary mb-3">
+                                class="mb-3 inline-block text-base uppercase hover:text-primary">
                                 {{ $footerTag->title }}
                             </a>
                         </li>
                     </ul>
                 @endforeach
             </div>
-            <div class="w-full px-4 mb-12 md:w-1/4">
-                <h3 class="font-semibold text-xl text-white mb-5">
+            <div class="mb-12 w-full px-4 md:w-1/4">
+                <h3 class="mb-5 text-xl font-semibold text-white">
                     Label Tautan
                 </h3>
                 <ul class="text-slate-300">
                     <li>
-                        <a href="/#home" class="inline-block text-base hover:text-primary mb-3">HOME</a>
+                        <a href="/#home" class="mb-3 inline-block text-base hover:text-primary">HOME</a>
                     </li>
                     <li>
-                        <a href="/#about" class="inline-block text-base hover:text-primary mb-3">ABOUT</a>
+                        <a href="/#about" class="mb-3 inline-block text-base hover:text-primary">ABOUT</a>
                     </li>
                     <li>
-                        <a href="/#portfolio" class="inline-block text-base hover:text-primary mb-3">PORTFOLIO</a>
+                        <a href="/#portfolio" class="mb-3 inline-block text-base hover:text-primary">PORTFOLIO</a>
                     </li>
-                    <li>
-                        <a href="/#clients" class="inline-block text-base hover:text-primary mb-3">CLIENTS</a>
-                    </li>
+                    {{-- <li>
+                        <a href="/#clients" class="mb-3 inline-block text-base hover:text-primary dark:hover:text-white dark:hover:font-bold">CLIENTS</a>
+                    </li> --}}
                     <li>
                         <a href="{{ route('landing.blog') }}"
-                            class="inline-block text-base hover:text-primary mb-3">BLOG</a>
+                            class="mb-3 inline-block text-base hover:text-primary">BLOG</a>
                     </li>
                     <li>
-                        <a href="/#contact" class="inline-block text-base hover:text-primary mb-3">CONTACT</a>
+                        <a href="/#contact" class="mb-3 inline-block text-base hover:text-primary">CONTACT</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="w-full pt-10 border-t border-slate-700">
-            <div class="flex items-center justify-center mb-5">
+        <div class="w-full border-t border-slate-700 pt-10">
+            <div class="mb-5 flex items-center justify-center">
                 {{-- Youtube icon start --}}
-                <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                     href="https://www.youtube.com/guidofamula29/" target="_blank">
                     <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@
                 {{-- Youtube icon end --}}
 
                 {{-- Instagram icon start --}}
-                <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                     href="https://www.instagram.com/guidofamula" target="_blank">
                     <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +91,7 @@
                 {{-- Instagram icon end --}}
 
                 {{-- Quora icon start --}}
-                <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                     href="https://id.quora.com/profile/Guido-Famula" target="_blank">
                     <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@
                 {{-- Quora icon end --}}
 
                 {{-- Linkedn icon start --}}
-                <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                     href="https://id.linkedin.com/in/guido-famula" target="_blank">
                     <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +115,7 @@
                 {{-- Linkedn icon end --}}
 
                 {{-- Github icon start --}}
-                <a class="w-9 h-9 mr-3 rounded-full flex justify-center items-center text-slate-300 border border-slate-300 hover:border-primary hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+                <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
                     href="https://www.github.com/guidofamula" target="_blank">
                     <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +126,7 @@
                 </a>
                 {{-- Github icon end --}}
             </div>
-            <p class="font-medium text-xs text-slate-500 text-center">Diracik dengan &#10084; oleh <a
+            <p class="text-center text-xs font-medium text-slate-500">Diracik dengan &#10084; oleh <a
                     class="font-bold text-primary" target="_blank"
                     href="https://www.guidofamula.com">{{ config('app.name') }}</a> - {{ date('Y') }}</p>
         </div>
