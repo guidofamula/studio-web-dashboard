@@ -8,17 +8,18 @@
     {{-- Navhome section start --}}
     @include('landing.home-page.partials.navhome')
     {{-- Navhome section end --}}
-    <div class="bg-grey-50" id="about">
+    <div class="bg-grey-50 dark:bg-slate-700" id="about">
         <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
             <div class="mt-9 w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
                 <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
                     Perkenalkan...
                 </h2>
-                <h4 class="font-header pt-6 text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+                <h4 class="font-header pt-6 text-xl font-medium text-black dark:text-white sm:text-2xl lg:text-3xl">
                     Saya Guido Famula, Sebagai Web Programmer
                 </h4>
-                <p class="font-body text-grey-20 pt-6 leading-relaxed">
-                    Masih tinggal di <span class="text-secondary">Pontianak, Kalimantan Barat, Indonesia</span>. <br><br>
+                <p class="font-body text-grey-20 pt-6 leading-relaxed dark:text-slate-300">
+                    Masih tinggal di <span class="text-secondary dark:text-primary">Pontianak, Kalimantan Barat,
+                        Indonesia</span>. <br><br>
                     Dengan hal ini menyatakan untuk dapat melayani permintaan Jasa Pemograman Website. <br>
                     Web yang diracik dapat berupa statis maupun dinamis, baik untuk pribadi maupun skala
                     bisnis/perusahaan. <br><br>
@@ -33,7 +34,7 @@
                 </p>
                 <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
                     <div class="flex items-center justify-center sm:justify-start">
-                        <p class="font-body text-grey-20 text-lg font-semibold uppercase">
+                        <p class="font-body text-grey-20 text-lg font-semibold uppercase dark:text-white">
                             Terhubung Dengan Saya
                         </p>
                         <div class="hidden pl-3 sm:block">
@@ -42,7 +43,7 @@
                     </div>
                     <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
                         {{-- Youtube icon start --}}
-                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:border-dark dark:text-slate-300 dark:hover:border-white dark:hover:text-dark"
                             href="https://www.youtube.com/guidofamula29/" target="_blank">
                             <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +55,7 @@
                         {{-- Youtube icon end --}}
 
                         {{-- Instagram icon start --}}
-                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:border-dark dark:text-slate-300 dark:hover:border-white dark:hover:text-dark"
                             href="https://www.instagram.com/guidofamula" target="_blank">
                             <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +67,7 @@
                         {{-- Instagram icon end --}}
 
                         {{-- Quora icon start --}}
-                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:border-dark dark:text-slate-300 dark:hover:border-white dark:hover:text-dark"
                             href="https://id.quora.com/profile/Guido-Famula" target="_blank">
                             <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +79,7 @@
                         {{-- Quora icon end --}}
 
                         {{-- Linkedn icon start --}}
-                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:border-dark dark:text-slate-300 dark:hover:border-white dark:hover:text-dark"
                             href="https://id.linkedin.com/in/guido-famula" target="_blank">
                             <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +91,7 @@
                         {{-- Linkedn icon end --}}
 
                         {{-- Github icon start --}}
-                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white"
+                        <a class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 transition duration-300 ease-in-out hover:border-primary hover:bg-primary hover:text-white dark:border-dark dark:text-slate-300 dark:hover:border-white dark:hover:text-dark"
                             href="https://www.github.com/guidofamula" target="_blank">
                             <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +106,7 @@
                 </div>
                 <div class="mt-5">
                     <a href="#layanan"
-                        class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Cek
+                        class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg dark:hover:bg-secondary">Cek
                         Layanan</a>
                 </div>
             </div>
@@ -119,79 +120,83 @@
             {{-- Profil about end --}}
         </div>
     </div>
+    <section class="bg-slate-100 pt-10 pb-32 dark:bg-slate-700">
+        <div class="container py-16 md:py-20">
+            <h2 id="layanan"
+                class="font-header text-center text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+                Layanan Yang Tersedia
+            </h2>
+            <h3
+                class="font-header pt-6 text-center text-xl font-medium text-black dark:text-secondary sm:text-2xl lg:text-3xl">
+                Terkait Dengan Program Pengembangan Website
+            </h3>
 
-    <div class="container py-16 md:py-20">
-        <h2 id="layanan"
-            class="font-header text-center text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-            Layanan Yang Tersedia
-        </h2>
-        <h3 class="font-header pt-6 text-center text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-            Terkait Dengan Program Pengembangan Website
-        </h3>
-
-        <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
-            <div class="group rounded px-8 py-12 shadow duration-300 ease-in-out first:transition hover:bg-primary">
-                <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                    <div class="hidden group-hover:block">
-                        <img src="/assets/images/icon-design-white.svg" alt="Jasa Bikin Website Pontianak" />
+            <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
+                <div class="group rounded px-8 py-12 shadow duration-300 ease-in-out first:transition hover:bg-primary">
+                    <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                        <div class="hidden group-hover:block dark:block dark:group-hover:hidden">
+                            <img src="/assets/images/icon-design-white.svg" alt="Jasa Bikin Website Pontianak" />
+                        </div>
+                        <div class="block group-hover:hidden dark:hidden dark:group-hover:block">
+                            <img src="/assets/images/icon-design-black.svg" alt="Jasa Bikin Website Pontianak" />
+                        </div>
                     </div>
-                    <div class="block group-hover:hidden">
-                        <img src="/assets/images/icon-design-black.svg" alt="Jasa Bikin Website Pontianak" />
+                    <div class="text-center">
+                        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
+                            WEB PRIBADI/LAINNYA
+                        </h3>
+                        <p class="text-grey pt-4 text-sm group-hover:text-white dark:text-slate-300 md:text-base">
+                            Meracik website untuk kepentingan portfolio pribadi, resume/cv, landing page secara statis
+                            maupun
+                            dinamis (fitur CMS)
+                        </p>
                     </div>
                 </div>
-                <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
-                        WEB PRIBADI/LAINNYA
-                    </h3>
-                    <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Meracik website untuk kepentingan portfolio pribadi, resume/cv, landing page secara statis maupun
-                        dinamis (fitur CMS)
-                    </p>
+                <div class="group rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:bg-primary">
+                    <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                        <div class="hidden group-hover:block dark:block dark:group-hover:hidden">
+                            <img src="/assets/images/icon-development-white.svg" alt="Jasa Bikin Company Profile" />
+                        </div>
+                        <div class="block group-hover:hidden dark:hidden dark:group-hover:block">
+                            <img src="/assets/images/icon-development-black.svg" alt="Jasa Bikin Company Profile" />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
+                            WEB PERUSAHAAN/BISNIS
+                        </h3>
+                        <p class="text-grey pt-4 text-sm group-hover:text-white dark:text-slate-300 md:text-base">
+                            Menyediakan fitur bagi yang membutuhkan laman web untuk company profile, UMKM Profile, atau
+                            landing
+                            page produk/jasa
+                        </p>
+                    </div>
+                </div>
+                <div class="group rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:bg-primary">
+                    <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                        <div class="hidden group-hover:block dark:block dark:group-hover:hidden">
+                            <img src="/assets/images/icon-content-white.svg" alt="Sistem Manajemen Konten" />
+                        </div>
+                        <div class="block group-hover:hidden dark:hidden dark:group-hover:block">
+                            <img src="/assets/images/icon-content-black.svg" alt="Sistem Manajemen Konten" />
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
+                            SISTEM MANAJEMEN KONTEN (CMS)
+                        </h3>
+                        <p class="text-grey pt-4 text-sm group-hover:text-white dark:text-slate-300 md:text-base">
+                            Kebutuhan untuk website dinamis dengan sistem penyimpanan melalui database server, sehingga
+                            pengolahan data dapat lebih terkontrol dan memiliki autentikasi setiap user yang terlibat.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="group rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:bg-primary">
-                <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                    <div class="hidden group-hover:block">
-                        <img src="/assets/images/icon-development-white.svg" alt="Jasa Bikin Company Profile" />
-                    </div>
-                    <div class="block group-hover:hidden">
-                        <img src="/assets/images/icon-development-black.svg" alt="Jasa Bikin Company Profile" />
-                    </div>
-                </div>
-                <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
-                        WEB PERUSAHAAN/BISNIS
-                    </h3>
-                    <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Menyediakan fitur bagi yang membutuhkan laman web untuk company profile, UMKM Profile, atau landing
-                        page produk/jasa
-                    </p>
-                </div>
-            </div>
-            <div class="group rounded px-8 py-12 shadow transition duration-300 ease-in-out hover:bg-primary">
-                <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-                    <div class="hidden group-hover:block">
-                        <img src="/assets/images/icon-content-white.svg" alt="Sistem Manajemen Konten" />
-                    </div>
-                    <div class="block group-hover:hidden">
-                        <img src="/assets/images/icon-content-black.svg" alt="Sistem Manajemen Konten" />
-                    </div>
-                </div>
-                <div class="text-center">
-                    <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl">
-                        SISTEM MANAJEMEN KONTEN (CMS)
-                    </h3>
-                    <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                        Kebutuhan untuk website dinamis dengan sistem penyimpanan melalui database server, sehingga
-                        pengolahan data dapat lebih terkontrol dan memiliki autentikasi setiap user yang terlibat.
-                    </p>
-                </div>
+            <div class="relative mt-5 flex items-center justify-center">
+                <a href="{{ route('landing.home-contact') }}"
+                    class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg dark:hover:bg-secondary">Kirim
+                    Pesan Sekarang</a>
             </div>
         </div>
-        <div class="relative mt-5 flex items-center justify-center">
-            <a href="{{ route('landing.home-contact') }}"
-                class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Kirim
-                Pesan Sekarang</a>
-        </div>
-    </div>
+    </section>
 @endsection

@@ -9,7 +9,7 @@
     <title>@yield('title') | {{ config('app.name') }}</title>
 
     {{-- Local storage theme --}}
-    @stack('js-darkmode')
+    <script src="{{ asset('assets/js/darkThemeStorage.js') }}"></script>
 
     <!-- Tailwind -->
     @vite('resources/css/app.css')
@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    <div id="buttonUp"></div>
     {{-- Content Start --}}
     @yield('content')
     {{-- Content End --}}

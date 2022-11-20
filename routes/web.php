@@ -28,13 +28,7 @@ use App\Http\Controllers\Layout\LandingController;
 |
 */
 
-// Route::get('/', function () {
-//    return view('welcome');
-// });
-
 // Dashboard start
-
-
 Route::group([
     'prefix' => 'dashboard',
     'middleware' => [

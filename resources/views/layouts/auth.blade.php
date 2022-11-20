@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="{{ asset('vendor/my-auth/css/auth.css') }}">
 </head>
 
-<body class="bg-primary">
+<body class="bg-secondary">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card mt-5 rounded-lg border-0 shadow-lg">
                                 <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">
+                                    <h3 class="font-weight-light my-4 text-center">
                                         <!-- todo: show content title-->
                                         @yield('title')
                                     </h3>

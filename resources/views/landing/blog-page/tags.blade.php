@@ -8,11 +8,11 @@
     {{-- Navhome section start --}}
     @include('landing.blog-page.partials-blog.navblog')
     {{-- Navhome section end --}}
-    <section id="blog" class="bg-slate-100 pt-36 pb-32">
+    <section id="blog" class="bg-slate-100 pt-36 pb-32 dark:bg-slate-700">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto mb-16 max-w-xl text-center">
-                    <h2 class="mb-4 text-3xl font-bold uppercase text-dark sm:text-4xl lg:text-3xl">
+                    <h2 class="mb-4 text-3xl font-bold uppercase text-dark dark:text-primary sm:text-4xl lg:text-3xl">
                         Label Tag
                     </h2>
                 </div>
@@ -44,7 +44,7 @@
             @if ($tags->hasPages())
                 <div class="row">
                     <div class="col">
-                        {{ $tags->links('vendor.pagination.tailwind') }}
+                        {{ $tags->links('vendor.pagination.simple-tailwind') }}
                     </div>
                 </div>
             @endif

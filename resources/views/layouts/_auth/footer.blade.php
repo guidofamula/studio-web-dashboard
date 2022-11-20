@@ -1,11 +1,8 @@
-<footer class="py-4 bg-light mt-auto">
+<footer class="bg-light mt-auto py-4">
     <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-            <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
+        <div class="d-flex align-items-center justify-content-center medium">
+            <div class="text-muted">Copyright &copy;
+                <a href="{{ route('landing.home') }}">{{ config('app.name') }}</a> - {{ date('Y') }}
             </div>
         </div>
     </div>

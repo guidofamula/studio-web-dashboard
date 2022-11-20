@@ -1,0 +1,785 @@
+[33mcommit 6d0f65d44e7273d736616b4897e44ce7b6f12cfe[m[33m ([m[1;36mHEAD -> [m[1;32mdev-with-tailwind[m[33m, [m[1;31morigin/dev-with-tailwind[m[33m)[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 19 09:18:04 2022 +0700
+
+    setup landing page with darkmode, scroll smooth, etc with tailwind css
+
+[33mcommit 7084651550ce158c8b825cfa57d8ae81224dc557[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 18 06:52:24 2022 +0700
+
+    install composer clockwork
+
+[33mcommit 5b876a35c024a2266624eb174d02b0f77b8fcb4e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 18 06:26:19 2022 +0700
+
+    after add noCaptcha with recaptcha google and package from composer a.k.a Anhskohbo
+
+[33mcommit ccc98c5d6b2b9b0d4eaf599f69698e375e79266e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 18 05:29:43 2022 +0700
+
+    final edited copywriting on homepage and done to fit related posts on detail post
+
+[33mcommit 18a8671311092af6f922faf6306959a2fd0f2ffa[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 16 19:27:37 2022 +0700
+
+    optimize blog post, project posts, and adding images for stuff profile
+
+[33mcommit 39e831e9a71ccba648b120588715c1ba25b04935[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 14 11:53:02 2022 +0700
+
+    adding style, setup landing category, tags and detail posts
+
+[33mcommit d457f2717abac5328b06b0c6a6683b55d8c9a3e2[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sun Nov 13 07:09:15 2022 +0700
+
+    adding view for blogs and detail post
+
+[33mcommit da14b03a8a5914e884ec7d86e199a6236e67a566[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 12 06:08:27 2022 +0700
+
+    change desain ui with tailwind
+
+[33mcommit 4438062d52999393dc2ed3cf4d5c9b87beb03940[m[33m ([m[1;31morigin/develop-1[m[33m)[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 11 03:38:12 2022 +0700
+
+    adding new assets & configure with tailwind css
+
+[33mcommit 4bf64df62ff73e41742334ab83276523b4f7d953[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 10 20:41:22 2022 +0700
+
+    init tailwindcss for layout landing/blog
+
+[33mcommit 7e9c4a6145034610b44616841769ad471382c8e7[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 10 20:18:32 2022 +0700
+
+    adding permission for category, tag, users and roles
+
+[33mcommit 8ad6f3c723198f79d475737ebea1a0537501982d[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 10 14:31:04 2022 +0700
+
+    implementation permission to category for users
+
+[33mcommit 7ebed466fa2dd69d44ec1cbee8062d7b31b90c65[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 10 14:13:20 2022 +0700
+
+    implementation permission for hidding/enable button for each roles
+
+[33mcommit 6d81064eb385c3de16bbb75ac5aab021569b1b1f[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 21:25:07 2022 +0700
+
+    validation to prevent delete role if user have the role
+
+[33mcommit 423ba147633dee59b3dc8ae49f4432f441edb0df[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 21:07:54 2022 +0700
+
+    adding pagination in users data index
+
+[33mcommit 93b981cf0713595c793d4f569832c510dad8c08f[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 20:52:33 2022 +0700
+
+    adding feature for search user on index
+
+[33mcommit 020454e8f67db7b8305b5ead364a9676d4a60dc5[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 20:27:31 2022 +0700
+
+    make delete method for data user
+
+[33mcommit b4957e2c73579bb2c091fa63e467a6796e7c6b34[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 19:49:47 2022 +0700
+
+    update process after edit the user
+
+[33mcommit e0f25ead62cfb9e7865fea443f6643820e1f62ae[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 19:37:55 2022 +0700
+
+    make edit page for user/role
+
+[33mcommit 2e2a181d56cd0a73ff7a8c0f533d66b9aa967106[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 05:43:57 2022 +0700
+
+    continue to add
+
+[33mcommit a86742dd9c05142a72936897c0ec98374b8e00a8[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 05:41:48 2022 +0700
+
+    process insert users to database with role
+
+[33mcommit f019ca813c66384ab7e50ce4172ea26dcc6365ed[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 05:06:50 2022 +0700
+
+    set values for create user page
+
+[33mcommit 351322dd91d532bf2ffb142ba674614378a96460[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 04:50:19 2022 +0700
+
+    make validation add user
+
+[33mcommit 2959716cabe626dd7070f3003d17067184fc2b12[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 9 04:21:06 2022 +0700
+
+    config for input select role user
+
+[33mcommit 52a7284552e24a157cb45cbe35c84f56652b49d4[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 11:56:27 2022 +0700
+
+    make config for input select create user
+
+[33mcommit a3024484b942ca0946d19e2e66daaadbcc888e70[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 11:23:10 2022 +0700
+
+    adding data user to index users view
+
+[33mcommit c3d4308b26e68d05990c23e828bb95606c59de39[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 10:52:25 2022 +0700
+
+    make main page for users
+
+[33mcommit 399e328890c43a9948636669c5797b9f2c853a3d[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 10:24:11 2022 +0700
+
+    adding pagination to index roles
+
+[33mcommit f004d944c73015fe52ad8886a4027626a1890bcc[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 06:12:13 2022 +0700
+
+    make feature of searching each data role/user from index roles
+
+[33mcommit c74248b6f9d862d443bb0c02c10cd809f158221c[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 05:43:24 2022 +0700
+
+    make process to execute delete role
+
+[33mcommit e948ff82f5b4e79608a5a15a1836f9ecb90fc1a2[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 05:32:31 2022 +0700
+
+    make confirmation before delete a role
+
+[33mcommit 9bedfd4fb21eee1004ca0b1f5fc58371970553d6[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 05:22:41 2022 +0700
+
+    adding process update after edit is valid
+
+[33mcommit d1a631d73182ba3649602973260e21238debbd98[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 05:11:43 2022 +0700
+
+    make page for role edit
+
+[33mcommit 1d2d5b3f548165851af9cab47e2dec5677b0aaaa[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 04:54:02 2022 +0700
+
+    make role store with try and catch in roler controller
+
+[33mcommit 31102b187531d8d4907a9dda5277981dc17f25c7[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 04:36:58 2022 +0700
+
+    config input validation roles for each users
+
+[33mcommit f0e73725d5af52915bc13667a009a78036020b66[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 8 04:08:05 2022 +0700
+
+    config for add role permission input
+
+[33mcommit f87e07b1214532dd9b1b9372cdf43b9fb059deaf[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 7 21:00:10 2022 +0700
+
+    make add role/user page
+
+[33mcommit 2c04afa877952b5a17538db9c89addc3738ff858[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 7 20:06:29 2022 +0700
+
+    adding & config detail page about roles users
+
+[33mcommit 5ff3dc66c6f3110412d80f7524d934cedcd0a54e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 7 19:21:46 2022 +0700
+
+    init data role user view
+
+[33mcommit eb2fe1f5818f4c3deeef77a089756454c460c3fb[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 7 19:12:28 2022 +0700
+
+    make index page & setup breadcrumbs for roles index
+
+[33mcommit f1d6471b1bef26652950d97f2693f519b822a784[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 7 18:56:05 2022 +0700
+
+    make & adding seeder permissions
+
+[33mcommit 92803cf102a745b9e221e767d786c87b321caa17[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 7 17:31:12 2022 +0700
+
+    add & instalation spatie package for user permission
+
+[33mcommit 4c58f84830c441a0bfb685d6abfc794d8fb54c08[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Mon Nov 7 06:02:08 2022 +0700
+
+    adding main page for file manager, setup controller
+
+[33mcommit 00888a90afc2108b330ff989d5d3c6b9af267cac[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sun Nov 6 11:57:07 2022 +0700
+
+    adding paginate for index and searching condition
+
+[33mcommit 8bc113eeec3ca67d6d0431afaa2d3f91e3f63297[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sun Nov 6 11:44:44 2022 +0700
+
+    adding search feature for article separate by publish and draft posts
+
+[33mcommit ee66caf6ed9d7da03c081240dde8b4927555461b[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sun Nov 6 11:28:52 2022 +0700
+
+    adding feature for status publish and draft on index posts
+
+[33mcommit 0f715c181bfd670ad93e8d4d4766dcd3ed4bcd0d[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sun Nov 6 11:06:19 2022 +0700
+
+    setup method delete for post controller
+
+[33mcommit 14983f82092bd62d7d3c40c06532e39f476ea2d3[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sun Nov 6 10:37:18 2022 +0700
+
+    setup config update method on post controller
+
+[33mcommit f98fd1cdc12288fa049932ee960e8625acd1f9c1[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sun Nov 6 10:19:25 2022 +0700
+
+    adding view edit posts & setup method edit in post controller
+
+[33mcommit 2d5e1b02ac8d2bab08fabc948c9e23d588ac6791[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 21:35:21 2022 +0700
+
+    adding & config detail post
+
+[33mcommit 899b1a664268d44f099791418a479e8dc15e37f0[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 16:48:53 2022 +0700
+
+    config for method store controller posts and reconfigure pivot table post_tag
+
+[33mcommit 1fcb344b40c347445a89f5e49ddeaaf020cb6f21[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 14:15:28 2022 +0700
+
+    adding & set old value tag, category, status for validation
+
+[33mcommit 18062ce9300fd49e4dffe86a413cb5f96136f334[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 13:49:29 2022 +0700
+
+    adding config for post validation
+
+[33mcommit 377f65727c2b7b8c77c230f9aebb5a91a40c552f[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 12:58:06 2022 +0700
+
+    adding placeholder to content posts
+
+[33mcommit 1b7fe7c1e317f1150e80343a960ec4b278dc9365[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 12:43:39 2022 +0700
+
+    config for status input on create post
+
+[33mcommit 0a330aa622b325f7cecaf6d4a2330a1cdc62c932[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 04:16:50 2022 +0700
+
+    config tag in create post with method select & adding route for select plugin
+
+[33mcommit 9a916afb8c9d5cb7b06054625210612e689b0f6f[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 03:54:16 2022 +0700
+
+    Sync file manager to toolbar tinyMCE
+
+[33mcommit 7e68019a208b41d026ec805a28ad00bff4d15c30[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 03:43:20 2022 +0700
+
+    adding and configuration text editor to create posts with TinyMCE 5
+
+[33mcommit 46bf55792ebf5bd8cfc7dec5f7f5708f3684e2cf[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 03:30:07 2022 +0700
+
+    config relation category with create posts
+
+[33mcommit 119c32d23a4ec8c9579c76c2de5012e0ba97d723[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 03:14:52 2022 +0700
+
+    make configuration for laravel file manager with thumbnail post
+
+[33mcommit 543e9387f1276d8786a95373c15692b5008a2baa[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 03:06:34 2022 +0700
+
+    adding js for generate slug from title post
+
+[33mcommit 642df1e54873935700667d7ba6e5dec5a8d68f06[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 02:03:26 2022 +0700
+
+    adding page for create post
+
+[33mcommit acd170357bab3393117d025131f325855664e9b7[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 01:42:40 2022 +0700
+
+    custom list posts on index
+
+[33mcommit cecb1b042d1aa607edd31613e5bf56a0b02fec46[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 01:35:13 2022 +0700
+
+    adding main page and functional mulitlanguage for index posts
+
+[33mcommit d3af559fe857ef2021fa294785d5c69f4088637b[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 00:45:24 2022 +0700
+
+    make migrations, model & controller for posts with relations category and tag
+
+[33mcommit e1a3bda234d8f3b841def8b1c44627dcf1cf1bf7[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 00:15:28 2022 +0700
+
+    remove or except method show on tags
+
+[33mcommit 5db7d4342a4832714d4d44e3c6044fbb2f7699d0[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Sat Nov 5 00:09:50 2022 +0700
+
+    adding filter search in index tags and the functional
+
+[33mcommit e0204d82217b31798f6cb872b7fbd2b8c19ca63a[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 23:37:44 2022 +0700
+
+    adding functional button delete to TagController
+
+[33mcommit 2c2a777679c5e5a39dc5bd153172143298770ad7[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 23:01:18 2022 +0700
+
+    refactor category controller create and update
+
+[33mcommit c0e252e359c259755511bd1cc825f2f68c0303bc[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 22:46:03 2022 +0700
+
+    add validation update for tag
+
+[33mcommit d824078c905b388f4c8f79e4483acc4bb69bff04[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 22:10:24 2022 +0700
+
+    make page for edit tags
+
+[33mcommit 587c7314a8638f0163f760e9a2ab9df46ee6b8dd[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 20:16:20 2022 +0700
+
+    adding tag from validate with sweetalert
+
+[33mcommit d30edfbed1e7c4b2b75ef6ca34abf766a963fe13[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 19:32:48 2022 +0700
+
+    adding validation for create tag before to store
+
+[33mcommit eb34202d6244b61328a0d2579f833de217ae0a1a[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 19:15:11 2022 +0700
+
+    adding and set for create tags
+
+[33mcommit 22d4b7be9a3c176a76e5d750a57ef60a067a9b08[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 18:48:28 2022 +0700
+
+    custom edit to view data tag from database
+
+[33mcommit 3358bf3f315611b37852b409b662f50cf0683060[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 18:36:05 2022 +0700
+
+    make controller, model, index view & breadcrumbs for tags
+
+[33mcommit ad06b2f4b38bd27338317fbbfbad5b63695f2977[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 18:10:11 2022 +0700
+
+    make table tag, migrate and seeding with custom data tags
+
+[33mcommit e8fe3806354c8027d6254ab8503f0e719919d49b[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 17:51:00 2022 +0700
+
+    adding pagination on index data categories
+
+[33mcommit 6c11c64a915230a1cfab723df4a56153a898bb7e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 17:17:31 2022 +0700
+
+    adding condtion if searching not found or dont have any category
+
+[33mcommit f1037609d396b08f88296d2511d42d6994f85f1e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 07:19:28 2022 +0700
+
+    adding feature search on categories index
+
+[33mcommit f323c051a8e8c443401a5b88bcb6d9c3984d63c3[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 05:11:27 2022 +0700
+
+    build & adding delete category
+
+[33mcommit fe7a3adc645c4f2c24b617e4952b9d6451e0dba7[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:45:44 2022 +0700
+
+    adding sweetalert js for delete category
+
+[33mcommit 18b9b7a9ca787dbd257fd1b259e4bdb46ca45272[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:44:32 2022 +0700
+
+    adding attribute role and alert custom to multilanguage
+
+[33mcommit 16b31b80296f904ab3da6e65d088f905dae2f9cf[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:43:24 2022 +0700
+
+    change default config load sweetalert to true
+
+[33mcommit cb55ddea42d00ad2d46a7fb69e852ea15aae4fbe[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:15:20 2022 +0700
+
+    adding active for show.blade category to sidebar
+
+[33mcommit d38b46d849236ad7ec6b9e5a2a149972fbab621c[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:14:21 2022 +0700
+
+    adding css internal for show.blade to detail category
+
+[33mcommit 0e531a3edaaebf9a06060a90c9ba3a8b3f87ce3e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:13:41 2022 +0700
+
+    adding breadcrumb for detail kategori & multilanguage
+
+[33mcommit 9a077956f6bfd2c0fb303cbfba8cc5685321e1f7[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:13:06 2022 +0700
+
+    adding show.blade for category detail
+
+[33mcommit c0aa261c57149d2dc46a9cb82cf7ca744b1be165[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:12:26 2022 +0700
+
+    adding route to show category
+
+[33mcommit b0282da19981fde4bb090c7bce0ab0daf40b0d1a[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Fri Nov 4 04:11:36 2022 +0700
+
+    add view to method show category
+
+[33mcommit 760acd534cdc57b0e680b059bb57680ebca9d70e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:18:37 2022 +0700
+
+    add link categories pagination(5)
+
+[33mcommit a56579a1e0e42b291946f75e5cfe26bf72683d5e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:17:30 2022 +0700
+
+    remove parent_category and script with select
+
+[33mcommit dfab4d1429757099427c7e5aaf0fb0f427156718[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:16:23 2022 +0700
+
+    remove parent_category from create
+
+[33mcommit 5cbdebf059e09423f699d4674f10fcc1d09d43b2[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:15:13 2022 +0700
+
+    remove icon from sub categories and delete child
+
+[33mcommit d1861649563dd89625063cd020a14c8f0cdc5a19[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:13:33 2022 +0700
+
+    remove parent_id from list
+
+[33mcommit d45b6bd031b9add92b2028a668476b431c00adf9[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:11:47 2022 +0700
+
+    use paginator with bootstrap to category index
+
+[33mcommit d229b944da008e7a84263ac962a4d2892ea18147[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:11:13 2022 +0700
+
+    remove parent & chile method
+
+[33mcommit e7dd1610a2981a2cc3327e219a45709d21080a91[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 22:10:26 2022 +0700
+
+    remove parent category, change to single category
+
+[33mcommit bbbc02fee6a6c389e5afb7211e68082896ade0d2[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 17:37:23 2022 +0700
+
+    remove schema for child category from databases
+
+[33mcommit 05ac4d41d49d91e57ac7df54a9aad749f627904a[m[33m ([m[1;31morigin/development[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelopment[m[33m)[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 04:42:25 2022 +0700
+
+    fix route in form action
+
+[33mcommit 6c27b239ef93d665b11af29ebd2207a6755a040a[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 04:39:54 2022 +0700
+
+    add method update with validation and alert
+
+[33mcommit 71f83a265a415f9098ed97f9a48767042df0c5fa[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 03:35:43 2022 +0700
+
+    adding old value while edit category but still have bug = cannot enable for old parent category if the category has parent
+
+[33mcommit f438bcc7aad9a83b3e1fefed53f947b64e210ac0[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 03:33:59 2022 +0700
+
+    adding method parent with hasbelongsTo self::class
+
+[33mcommit 7f3a0fa932f075986295ecde70f8c3366a71560c[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 00:16:48 2022 +0700
+
+    adding active status for categories sidebar if views edit category clicked/visited
+
+[33mcommit 34cb36695c6db13c7552278e7ec5ec26de7fda23[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 00:15:23 2022 +0700
+
+    adding/setup edit method to views edit with variable
+
+[33mcommit 1bbb121d8437a1b3a2064b605f7b839890d03a45[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 00:14:10 2022 +0700
+
+    adding route category edit for button edit
+
+[33mcommit 522829c701973d6f45ecb4f48b1d3c3b56974375[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 00:12:31 2022 +0700
+
+    add breadcrumbs for edit and detail edit
+
+[33mcommit dd95ec8c8affce1981b7149ea9a403d041e5b5b3[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Thu Nov 3 00:11:10 2022 +0700
+
+    add views edit category
+
+[33mcommit 83f46e89f2c3f1a437d5274d8e4abc29ab52be9d[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 23:39:56 2022 +0700
+
+    include alert.blade to main layout dashboard
+
+[33mcommit bfe7879e184dbffbddaca3ae2eb2ffdfac8a46d6[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 23:38:19 2022 +0700
+
+    call sweetalert class to category controller and implement to try and catch
+
+[33mcommit 02423692306a596950c0a5e6098f30be7defc3c1[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 23:36:28 2022 +0700
+
+    add blade sweetalert to views
+
+[33mcommit 714775d1433d0e95505daf8762ec5269ce564f3b[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 23:34:22 2022 +0700
+
+    instalation sweetalert with composer
+
+[33mcommit cc5f2701bef689ee48389486fb13851aa746a121[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 23:33:06 2022 +0700
+
+    setting time for alert in 10000 second pop up alert
+
+[33mcommit 93bb4cdb12adbcc91080947ef7d2f74f463ef578[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 12:58:10 2022 +0700
+
+    initialize insert data process while category success to validated
+
+[33mcommit b2ddd1d348f0661f620fbc0998d3300c4be4fa06[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 12:56:09 2022 +0700
+
+    adding protected fillable for insert data to serve CategoryController
+
+[33mcommit eeac4fa5714ef8aab2304b08382f1902d5e8a421[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 12:23:54 2022 +0700
+
+    make private method attribute for custom notice multilanguage in error
+
+[33mcommit 3b971565b01f39511c768d38d3ce55a1089c95ab[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 12:19:52 2022 +0700
+
+    add multilanguage with bahasa for notice error
+
+[33mcommit 9e75203ac3442236d8918bf1f2ae725f2d5b53b5[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 12:00:50 2022 +0700
+
+    refactor method store with Validator
+
+[33mcommit b3905bd3f37bf70d5a886860acdaed3eea33f506[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 11:59:39 2022 +0700
+
+    add condition error while selected parent_category
+
+[33mcommit 7c05b8bd1630039c69d5e6ebc2ca310b07f6721f[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 11:36:23 2022 +0700
+
+    enable old value if input with error condition
+
+[33mcommit e014884fb2a17d4b76cff1962394342615538dfa[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 11:23:02 2022 +0700
+
+    Initialize method store with validate before category saved
+
+[33mcommit 8dd5b72192f2676fff0132c14d88150c93d76aa0[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 11:20:52 2022 +0700
+
+    Initialize route for form action & validate error on require
+
+[33mcommit 568d558f95d31902d00aeeb135f61bb48543722e[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 05:12:56 2022 +0700
+
+    Make copy for image driver use gd, its important for custom size and editing file image while uploads on dashboard
+
+[33mcommit 36d6ee460c0f6fc6cadc91242b1a5f8dccb048bd[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 05:11:11 2022 +0700
+
+    Setup & input class intervention image to  then make class aliases for image
+
+[33mcommit 9d15620fb6afdc630c3382a42b48d6af76d54a6a[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 05:09:21 2022 +0700
+
+    Initialize unisharp/laravel-filemanager & intervention/image
+
+[33mcommit 3f864a1a836a2849b1679ac59adc17670274439f[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 05:07:52 2022 +0700
+
+    enter data-preview for upload thumbnail & event file manager with javascript
+
+[33mcommit 7e2de56b456e344e339e7d4dd7ea9deaed8cf977[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 03:53:55 2022 +0700
+
+    Initialize file manager package with laravel file manager (LFM)
+
+[33mcommit 7813ffec7b28369e27e7f92c5a069245a1b77915[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Wed Nov 2 03:33:15 2022 +0700
+
+    configuration slug input for create category
+
+[33mcommit 541e07fb6b4b26479a48d294f319d4e8bb72344f[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 1 23:46:03 2022 +0700
+
+    setup php config for deploy testing
+
+[33mcommit 1bd7e003f4ba67108fb6e3b12a16b5648fe349aa[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 1 10:45:11 2022 +0700
+
+    composer update/install to php ^8.1
+
+[33mcommit eff0f26ef9fd25449dccd23602b8253dc081db29[m
+Author: Guido Famula <guidofamula29@gmail.com>
+Date:   Tue Nov 1 09:15:46 2022 +0700
+
+    first commit

@@ -4,7 +4,7 @@
             <div class="mx-auto mb-16 max-w-xl text-center">
                 <h4 class="mb-2 text-lg font-semibold text-primary">Blog</h4>
                 <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:text-5xl">
-                    <a class="transition duration-300 ease-in-out hover:text-primary dark:text-white"
+                    <a class="transition duration-300 ease-in-out hover:text-primary dark:text-white dark:hover:text-primary"
                         href="{{ route('landing.blog') }}" target="_blank">
                         Update Artikel
                     </a>
