@@ -87,5 +87,12 @@ class AuthServiceProvider extends ServiceProvider
                 'inbox_delete',
             ]);
         });
+
+        // Gate Permission for file manager
+        Gate::define('manage_filemanager', function($user) {
+            return $user->hasAnyPermission([
+                'filemanager_show',
+            ]);
+        });
     }
 }

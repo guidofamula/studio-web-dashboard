@@ -36,4 +36,6 @@ return [
     'user_update' => 'Mengubah',
     'user_detail' => 'Detail',
     'user_delete' => 'Menghapus',
+    'manage_filemanager' => 'Atur File',
+    'filemanager_show' => 'Melihat',
 ];

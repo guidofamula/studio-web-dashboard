@@ -8,6 +8,9 @@
     <meta name="description" content="@yield('description')">
     <title>@yield('title') | {{ config('app.name') }}</title>
 
+    {{-- Favicon icon --}}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/guido-profil.png') }}">
+
     {{-- Local storage theme --}}
     <script src="{{ asset('assets/js/darkThemeStorage.js') }}"></script>
 

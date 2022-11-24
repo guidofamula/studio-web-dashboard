@@ -35,6 +35,11 @@
         </div>
         {{-- Google recaptcha start --}}
         {!! NoCaptcha::display() !!}
+        @if ($errors->has('g-recaptcha-response'))
+            <span class="help-block text-danger">
+                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+            </span>
+        @endif
         {{-- Google recaptcha end --}}
         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
             {{-- @if (Route::has('password.request'))

@@ -36,4 +36,6 @@ return [
     'user_update' => 'Update',
     'user_detail' => 'Detail',
     'user_delete' => 'Delete',
+    'manage_filemanager' => 'Manage File',
+    'filemanager_show' => 'Show',
 ];

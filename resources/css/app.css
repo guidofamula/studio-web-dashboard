@@ -1,4 +1,48 @@
 @tailwind base;
+
+@layer base {
+    .no-tailwindcss-base div,
+    .no-tailwindcss-base p,
+    .no-tailwindcss-base code,
+    .no-tailwindcss-base h1,
+    .no-tailwindcss-base h2,
+    .no-tailwindcss-base h3,
+    .no-tailwindcss-base h4,
+    .no-tailwindcss-base h5,
+    .no-tailwindcss-base h6 {
+        font-size: revert;
+        font-weight: revert;
+        margin: revert;
+        padding: revert;
+        color: revert;
+        overflow-x: scroll;
+    }
+
+    .no-tailwindcss-base a:hover {
+        color: #6366f1;
+    }
+
+    .no-tailwindcss-base a {
+        text-decoration: revert;
+    }
+
+    .no-tailwindcss-base blockquote {
+        font: 14px/22px normal helvetica, sans-serif;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        padding-left: 15px;
+        border-left: 3px solid #ccc;
+    }
+
+    .no-tailwindcss-base ol,
+    .no-tailwindcss-base ul {
+        list-style: revert;
+        margin: revert;
+        padding: revert;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
 

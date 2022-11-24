@@ -41,6 +41,9 @@ return [
             'user_detail',
             'user_delete'
         ],
+        'manage_filemanager' => [
+            'filemanager_show',
+        ],
     ],
 
     'models' => [

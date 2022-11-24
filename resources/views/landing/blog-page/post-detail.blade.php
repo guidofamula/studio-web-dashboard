@@ -43,7 +43,7 @@
                         @endif
                     </div>
                     {{-- End Thumbnail --}}
-                    <div class="mt-4 border-t-2 dark:border-slate-500">
+                    <div class="mt-4">
                         <div
                             class="max-sm:flex-col max-sm:w-52 max-sm:space-y-4 max-sm:mx-auto flex md:mx-0 md:w-full md:flex-row md:space-x-2 md:pt-3">
                             @foreach ($categories as $category)
@@ -58,7 +58,9 @@
                 <div class="prose max-w-none pt-8">
                     {{-- Start content --}}
                     <div class="mb-6 text-base font-medium text-slate-700 dark:text-slate-300 lg:text-lg">
-                        {!! $post->content !!}
+                        <div class="no-tailwindcss-base">
+                            {!! $post->content !!}
+                        </div>
                     </div>
                     {{-- End content --}}
 
@@ -123,7 +125,8 @@
                             </h3>
                             <p
                                 class="font-body pt-5 text-lg leading-8 text-secondary dark:text-slate-300 sm:leading-9 md:text-xl md:leading-9 lg:leading-9 xl:leading-9">
-                                Seorang web programmer yang tertarik dengan open source seputaran internet/IT, kernel linux,
+                                Seorang web programmer yang tertarik dengan open source seputaran internet/IT, kernel
+                                linux,
                                 distro OS, dan teknologi-teknologi framework.<br>
                                 <span
                                     class="cursor-pointer font-mono text-primary transition duration-300 ease-in-out hover:text-dark dark:hover:text-secondary">#

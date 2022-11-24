@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class FileManagerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:filemanager_show', ['only' => 'index']);
+    }
+    
     public function index(Request $request)
     {
         $typeSelected = in_array($request->type, ['image', 'file']) ? $request->type : 'image';

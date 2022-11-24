@@ -83,12 +83,14 @@
                 {{ trans('dashboard.menu.setting') }}
             </div>
             {{-- Menu File Manager --}}
-            <a class="nav-link {{ set_active(['filemanager.index']) }}" href="{{ route('filemanager.index') }}">
-                <div class="sb-nav-link-icon">
-                    <i class="fas fa-photo-video"></i>
-                </div>
-                {{ trans('dashboard.link.file_manager') }}
-            </a>
+            @can('manage_filemanager')
+                <a class="nav-link {{ set_active(['filemanager.index']) }}" href="{{ route('filemanager.index') }}">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-photo-video"></i>
+                    </div>
+                    {{ trans('dashboard.link.file_manager') }}
+                </a>
+            @endcan
         </div>
     </div>
     <div class="sb-sidenav-footer">

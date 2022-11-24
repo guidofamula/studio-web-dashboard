@@ -1,3 +1,0 @@
-Daftar checklist darkmode dan setup FE
-- toggle back to top belum sinkron pada link blog/navblog
-- halaman solo about belum ditambahkan darkmode
