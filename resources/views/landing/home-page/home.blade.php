@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('title')
-    Hallo
+    Beranda
 @endsection
 
 @section('content')

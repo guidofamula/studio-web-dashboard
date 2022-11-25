@@ -17,22 +17,27 @@ class ContactUsFormController extends Controller
 
     public function ContactUsForm(Request $request)
     {
-        Validator::make($request->all(), [
+        $validate = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'message' => 'required',
-            'recaptcha' => 'required|captcha',
+            // 'g-recaptcha-response' => 'required|captcha',
         ],
         [],
         $this->getAttributes()
-        )->validate();
+        );
+
+        if ($validate->fails()) {
+            return redirect()->route('landing.home-contact')
+                             ->withInput($request->all())
+                             ->withErrors($validate);
+        }
 
         try {
             Contact::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'message' => $request->message,
-                'recaptcha' => $request->recapctha,
             ]);
             Alert::success(
                 'Pesan Terkirim',

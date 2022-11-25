@@ -16,6 +16,7 @@
         padding: revert;
         color: revert;
         overflow-x: scroll;
+        overflow-y: hidden;
     }
 
     .no-tailwindcss-base a:hover {
