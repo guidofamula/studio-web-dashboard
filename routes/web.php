@@ -8,11 +8,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InboxController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FileManagerController;
 
 // Frontend route
+use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\Layout\LandingController;
@@ -109,9 +110,9 @@ Route::get('/tags', [LandingController::class, 'showTags'])->name('landing.tags'
 // Posts By Tag
 Route::get('/tags/{slug}', [LandingController::class, 'showPostsByTag'])->name('landing.post-tag');
 
-
 // About Landing
 Route::get('/about', [LandingController::class, 'aboutPage'])->name('landing.about');
 
-
+// Route for sitemap
+Route::get('/sitemap', [SitemapController::class, 'sitemapGenerator'])->name('landing-sitemap');
 

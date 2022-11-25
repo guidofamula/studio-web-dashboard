@@ -4,6 +4,10 @@
     Beranda
 @endsection
 
+@section('description')
+    Web programmer yang mengulas tentang coding, linux dan sebagai situs untuk update portfolio pribadi maupun team.
+@endsection
+
 @section('content')
     {{-- Navhome section start --}}
     @include('landing.home-page.partials.navhome')
