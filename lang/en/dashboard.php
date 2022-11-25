@@ -13,6 +13,7 @@ return [
         'master' => 'Master',
         'user_permission' => 'User permission',
         'setting' => 'Setting',
+        'inbox' => 'Inbox',
     ],
     'link' => [
         'dashboard' => 'Dashboard',
@@ -23,6 +24,7 @@ return [
         'roles' => 'Roles',
         'users' => 'Users',
         'profile' => 'Profile',
+        'message' => "Contact Message",
         'logout' => 'Logout',
     ],
     'label' => [

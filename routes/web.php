@@ -7,12 +7,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InboxController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FileManagerController;
-use App\Http\Controllers\LocalizationController;
 
 // Frontend route
+use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\Layout\LandingController;
 
 /*
@@ -26,13 +28,7 @@ use App\Http\Controllers\Layout\LandingController;
 |
 */
 
-// Route::get('/', function () {
-//    return view('welcome');
-// });
-
 // Dashboard start
-
-
 Route::group([
     'prefix' => 'dashboard',
     'middleware' => [
@@ -47,9 +43,16 @@ Route::group([
 
     // Dashboard Tags (index, create, edit, update, show, destroy)
     Route::resource('/tags', TagController::class)->except('show');
-    
+
     // Tags for select in create post
     Route::get('/tags/select', [TagController::class, 'select'])->name('tags.select');
+
+    // Dashboard Inbox index
+    Route::get('/inbox', [InboxController::class, 'index'])->name('dashboard.inbox');
+    // Dashiboard Inbox Detail
+    Route::get('/inbox/{inbox}', [InboxController::class, 'detail'])->name('dashboard.inbox-detail');
+    // Dashboard Inbox delete
+    Route::delete('/inbox/{inbox}', [InboxController::class, 'destroy'])->name('dashboard.inbox-delete');
 
     // Dashboard Posts (index, create, edit, update, show, destroy)
     Route::resource('/posts', PostController::class);
@@ -81,4 +84,34 @@ Route::get('localization/{language}', [LocalizationController::class, 'switch'])
 // Localization end
 
 // Home landing
-Route::get('/', [LandingController::class, 'home'])->name('landing.home');
+Route::get('/', [LandingController::class, 'homePage'])->name('landing.home');
+
+// Home landing
+Route::get('/#contact', [ContactUsFormController::class, 'createForm'])->name('landing.home-contact');
+// Contact Form
+Route::post('/', [ContactUsFormController::class, 'contactUsForm'])->name('contact.store');
+
+// Blog Landing
+Route::get('/blog', [LandingController::class, 'blogPage'])->name('landing.blog');
+
+// Post Detail Landing
+Route::get('/blog/{slug}', [LandingController::class, 'showPostDetail'])->name('landing.post-detail');
+
+// Categories Landing
+Route::get('/categories', [LandingController::class, 'showCategories'])->name('landing.categories');
+
+// Posts By Category
+Route::get('/categories/{slug}', [LandingController::class, 'showPostsByCategory'])->name('landing.post-category');
+
+// Tags Landing
+Route::get('/tags', [LandingController::class, 'showTags'])->name('landing.tags');
+
+// Posts By Tag
+Route::get('/tags/{slug}', [LandingController::class, 'showPostsByTag'])->name('landing.post-tag');
+
+
+// About Landing
+Route::get('/about', [LandingController::class, 'aboutPage'])->name('landing.about');
+
+
+

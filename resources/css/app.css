@@ -1,59 +1,109 @@
 @tailwind base;
+
+@layer base {
+    .no-tailwindcss-base div,
+    .no-tailwindcss-base p,
+    .no-tailwindcss-base code,
+    .no-tailwindcss-base h1,
+    .no-tailwindcss-base h2,
+    .no-tailwindcss-base h3,
+    .no-tailwindcss-base h4,
+    .no-tailwindcss-base h5,
+    .no-tailwindcss-base h6 {
+        font-size: revert;
+        font-weight: revert;
+        margin: revert;
+        padding: revert;
+        color: revert;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .no-tailwindcss-base a:hover {
+        color: #6366f1;
+    }
+
+    .no-tailwindcss-base a {
+        text-decoration: revert;
+    }
+
+    .no-tailwindcss-base blockquote {
+        font: 14px/22px normal helvetica, sans-serif;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 50px;
+        padding-left: 15px;
+        border-left: 3px solid #ccc;
+    }
+
+    .no-tailwindcss-base ol,
+    .no-tailwindcss-base ul {
+        list-style: revert;
+        margin: revert;
+        padding: revert;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
 
 .navbar-fixed {
-	@apply fixed z-[9999] bg-white bg-opacity-80;
-	backdrop-filter: blur(5px);
-	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    @apply fixed z-[9999] bg-white bg-opacity-80 backdrop-blur-sm dark:bg-dark dark:bg-opacity-50;
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .hamburger-line {
-	@apply w-[30px] h-[2px] my-2 block bg-dark;
+    @apply my-2 block h-[2px] w-[30px] bg-dark dark:bg-white;
 }
 
 .hamburger-active > span:nth-child(1) {
-	@apply rotate-45;
+    @apply rotate-45;
 }
 
 .hamburger-active > span:nth-child(2) {
-	@apply scale-0;
+    @apply scale-0;
 }
 
 .hamburger-active > span:nth-child(3) {
-	@apply -rotate-45;
+    @apply -rotate-45;
 }
 
 /* Dashboard start*/
 .fade-A {
-	animation: animA 10s infinite alternate;
+    animation: animA 10s infinite alternate;
 }
 .fade-B {
-	animation: animB 10s infinite alternate;
+    animation: animB 10s infinite alternate;
 }
 .titleHome {
-	font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 @keyframes animA {
-	0%,
-	40% {
-		opacity: 1;
-	}
-	60%,
-	100% {
-		opacity: 0;
-	}
+    0%,
+    40% {
+        opacity: 1;
+    }
+    60%,
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes animB {
-	0%,
-	40% {
-		opacity: 0;
-	}
-	60%,
-	100% {
-		opacity: 1;
-	}
+    0%,
+    40% {
+        opacity: 0;
+    }
+    60%,
+    100% {
+        opacity: 1;
+    }
 }
 /* Dashboard end */
+
+/* Start toggle dark mode */
+#dark-toggle:checked ~ label div.toggle-circle {
+    @apply translate-x-3;
+}
+/* End toggle dark mode */

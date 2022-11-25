@@ -13,6 +13,7 @@ return [
         'master' => 'Utama',
         'user_permission' => 'Izin pengguna',
         'setting' => 'Pengaturan',
+        'inbox' => 'Pesan Masuk',
     ],
     'link' => [
         'dashboard' => 'Dasbor',
@@ -22,6 +23,7 @@ return [
         'roles' => 'Wewenang',
         'users' => 'Pengguna',
         'profile' => 'Profil',
+        'message' => "Pesan Kontak",
         'logout' => 'Keluar',
 
     ],

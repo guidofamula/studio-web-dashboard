@@ -15,6 +15,10 @@ return [
     'category_update' => 'Update',
     'category_detail' => 'Detail',
     'category_delete' => 'Delete',
+    'manage_inbox' => 'Manage Inbox',
+    'inbox_show' => 'Show',
+    'inbox_detail' => 'Detail',
+    'inbox_delete' => 'Delete',
     'manage_tags' => 'Manage Tags',
     'tag_show' => 'Show',
     'tag_create' => "Add",
@@ -32,4 +36,6 @@ return [
     'user_update' => 'Update',
     'user_detail' => 'Detail',
     'user_delete' => 'Delete',
+    'manage_filemanager' => 'Manage File',
+    'filemanager_show' => 'Show',
 ];

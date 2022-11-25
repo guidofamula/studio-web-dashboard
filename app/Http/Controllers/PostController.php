@@ -40,7 +40,7 @@ class PostController extends Controller
         }
 
         return view('posts.index', [
-            'posts' => $posts->paginate(5)->withQueryString(),
+            'posts' => $posts->latest()->paginate(5)->withQueryString(),
             'statuses' => $this->statuses(),
             'statusSelected' => $statusSelected,
         ]);

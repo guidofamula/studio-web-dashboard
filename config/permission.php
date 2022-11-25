@@ -22,6 +22,11 @@ return [
             'tag_update',
             'tag_delete'
         ],
+        'manage_inbox' => [
+            'inbox_show',
+            'inbox_detail',
+            'inbox_delete'
+        ],
         'manage_roles' => [
             'role_show',
             'role_create',
@@ -35,6 +40,9 @@ return [
             'user_update',
             'user_detail',
             'user_delete'
+        ],
+        'manage_filemanager' => [
+            'filemanager_show',
         ],
     ],
 

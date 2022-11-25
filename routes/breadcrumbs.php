@@ -150,3 +150,16 @@ Breadcrumbs::for('edit-user', function (BreadcrumbTrail $trail, $user) {
     $trail->push(trans('users.title.edit'), route('users.edit', ['user' => $user]));
     $trail->push($user->name, '#');
 });
+
+// Dashboard -> Inbox
+Breadcrumbs::for('dashboard-inbox', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push(trans('inbox.title.index'), route('dashboard.inbox'));
+});
+
+// Dashboard -> Inbox -> Detail
+Breadcrumbs::for('detail-inbox', function (BreadcrumbTrail $trail, $inbox) {
+    $trail->parent('dashboard-inbox');
+    $trail->push(trans('inbox.title.detail'), route('dashboard.inbox-detail', ['inbox' => $inbox]));
+    $trail->push($inbox->name, '#');
+});
